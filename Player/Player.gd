@@ -23,6 +23,7 @@ func _physics_process(delta):
 	else:
 		velocity =  velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
+	#allows for the player to sprint (Purely Debug Tool)
 	if(Input.is_action_pressed("ui_sprint")):
 		velocity = velocity.move_toward(input_vector * MAX_SPEED * 10, delta * ACCELERATION * 10)
 	

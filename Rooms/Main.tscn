@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Room_Transition.gd" type="Script" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
+[ext_resource path="res://Rooms/Battle_Transition.gd" type="Script" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background (MAP)" type="Sprite" parent="."]
+position = Vector2( 0, -0.514954 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 779.378, 563.052 )
+
+[node name="Room_Transition" type="Area2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room_Transition"]
+position = Vector2( 545.362, 553.844 )
+polygon = PoolVector2Array( -7.13239, -12.5021, 10.1128, 12.3026, 6.88422, 15.6099, -10.4397, -9.82477 )
+
+[node name="Sprite" type="Sprite" parent="Room_Transition"]
+position = Vector2( 545.362, 553.844 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Professor" type="Area2D" parent="."]
+position = Vector2( 334.79, 625.083 )
+script = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Professor"]
+polygon = PoolVector2Array( -4.27863, -11.0858, 3.39453, -10.7704, 7.91437, -7.4068, 10.2268, -3.6228, 9.80637, 3.52484, 7.38879, 8.35999, 2.97409, 10.8827, -3.96329, 10.7775, -8.58823, 8.35999, -11.0058, 3.73505, -10.9007, -4.25348, -8.16779, -7.4068 )
+__meta__ = {
+"_edit_lock_": true
+}
