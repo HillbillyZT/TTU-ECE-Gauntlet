@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://etc/Temp_Moves_Button.PNG" type="Texture" id=1]
+[ext_resource path="res://etc/Temp_Professors_Button.PNG" type="Texture" id=2]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.006
+anchor_bottom = 0.995
+margin_right = -0.100006
+margin_bottom = -1.52588e-05
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 352.0
+margin_bottom = 198.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 50.0
+margin_top = 150.0
+margin_right = 235.0
+margin_bottom = 234.0
+rect_scale = Vector2( 0.25, 0.25 )
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_right = 185.0
+margin_bottom = 84.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 200.0
+margin_top = 150.0
+margin_right = 339.0
+margin_bottom = 240.0
+rect_scale = Vector2( 0.25, 0.25 )
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 139.0
+margin_bottom = 90.0
+texture = ExtResource( 2 )
