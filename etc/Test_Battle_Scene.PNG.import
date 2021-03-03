@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stephens-world.png-9a662359e1a3c444634dd79cab739091.stex"
+path="res://.import/Test_Battle_Scene.PNG-6efb4e26fa775c35cf5436648b050db7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/stephens/stephens-world.png"
-dest_files=[ "res://.import/stephens-world.png-9a662359e1a3c444634dd79cab739091.stex" ]
+source_file="res://etc/Test_Battle_Scene.PNG"
+dest_files=[ "res://.import/Test_Battle_Scene.PNG-6efb4e26fa775c35cf5436648b050db7.stex" ]
 
 [params]
 

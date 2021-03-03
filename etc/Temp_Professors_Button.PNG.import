@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stephens-world.png-9a662359e1a3c444634dd79cab739091.stex"
+path="res://.import/Temp_Professors_Button.PNG-063d29ae7203802e2f68d86055284900.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/stephens/stephens-world.png"
-dest_files=[ "res://.import/stephens-world.png-9a662359e1a3c444634dd79cab739091.stex" ]
+source_file="res://etc/Temp_Professors_Button.PNG"
+dest_files=[ "res://.import/Temp_Professors_Button.PNG-063d29ae7203802e2f68d86055284900.stex" ]
 
 [params]
 
