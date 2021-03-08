@@ -17,16 +17,19 @@ texture = ExtResource( 4 )
 position = Vector2( 779.378, 563.052 )
 
 [node name="Room_Transition" type="Area2D" parent="."]
+position = Vector2( 546.027, 554.466 )
 script = ExtResource( 1 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room_Transition"]
-position = Vector2( 545.362, 553.844 )
-polygon = PoolVector2Array( -7.13239, -12.5021, 10.1128, 12.3026, 6.88422, 15.6099, -10.4397, -9.82477 )
-
 [node name="Sprite" type="Sprite" parent="Room_Transition"]
-position = Vector2( 545.362, 553.844 )
+position = Vector2( -0.219055, -0.763245 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Room_Transition"]
+polygon = PoolVector2Array( -9.97498, -9.82098, 4.83618, 13.231, 9.06799, 9.22198, -6.07727, -13.7187 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -37,6 +40,22 @@ script = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Professor"]
 polygon = PoolVector2Array( -4.27863, -11.0858, 3.39453, -10.7704, 7.91437, -7.4068, 10.2268, -3.6228, 9.80637, 3.52484, 7.38879, 8.35999, 2.97409, 10.8827, -3.96329, 10.7775, -8.58823, 8.35999, -11.0058, 3.73505, -10.9007, -4.25348, -8.16779, -7.4068 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Wall" type="Area2D" parent="."]
+position = Vector2( 664.497, 541.027 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+polygon = PoolVector2Array( -160.519, -55.6983, -100.978, -50.9153, -100.477, -37.567, -67.1061, -3.86224, 103.42, -3.86224, 104.943, -243.711, 115.045, -243.149, 114.599, 6.31592, 103.086, 6.98334, 103.086, 3.64624, -70.1095, 4.31366, -109.654, -34.2299, -109.487, -45.4091, -168.377, -46.1574 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 25.2468, 45.3896 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 __meta__ = {
 "_edit_lock_": true
 }
