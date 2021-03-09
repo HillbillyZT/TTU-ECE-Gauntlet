@@ -49,13 +49,3 @@ position = Vector2( 664.497, 541.027 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
 polygon = PoolVector2Array( -160.519, -55.6983, -100.978, -50.9153, -100.477, -37.567, -67.1061, -3.86224, 103.42, -3.86224, 104.943, -243.711, 115.045, -243.149, 114.599, 6.31592, 103.086, 6.98334, 103.086, 3.64624, -70.1095, 4.31366, -109.654, -34.2299, -109.487, -45.4091, -168.377, -46.1574 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 25.2468, 45.3896 )
-
-[node name="Sprite" type="Sprite" parent="StaticBody2D"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-__meta__ = {
-"_edit_lock_": true
-}
