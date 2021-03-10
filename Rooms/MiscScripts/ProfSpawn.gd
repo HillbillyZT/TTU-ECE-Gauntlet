@@ -13,7 +13,7 @@ func _process(delta):
 	var to_spawn = true
 	var bodies = get_overlapping_bodies()
 	for b in bodies:
-		if(b.get_filename() == "res://Professor/ProfessorWorldObj.tscn"): 
+		if(b.is_in_group("Professors")): 
 			to_spawn = false
 	if(to_spawn):
 		spawn_professor()
