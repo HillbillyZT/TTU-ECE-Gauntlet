@@ -12,6 +12,7 @@ var velocity: Vector2 = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(get_tree().get_current_scene())
+	add_to_group("Player")
 	pass # Replace with function body.
 
 func _physics_process(delta):
