@@ -13,15 +13,11 @@ func _ready():
 func _pressed():
 	var node = get_node(".").get_parent()
 	node.visible = false
-	node  = node.get_parent()
+	node = node.get_parent()
 	for children in node.get_children():
-		if children.name == "Control2":
+		if children.name == "Control":
 			node = children
 	node.visible = true
-	
-	
-	
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
