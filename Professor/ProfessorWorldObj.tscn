@@ -8,6 +8,7 @@ radius = 5.71434
 height = 11.3634
 
 [node name="ProfessorWorldObj" type="StaticBody2D"]
+position = Vector2( -28.2744, -6.29056 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -16,6 +17,5 @@ texture = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, 1.12373 )
 shape = SubResource( 1 )

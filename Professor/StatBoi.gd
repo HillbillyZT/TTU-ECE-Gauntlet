@@ -30,6 +30,7 @@ func _init(hp: int, strength: int, def: int, intel: int):
 #TODO hook up to signal from damaging controller, argument dmg
 func damage(dmg: int):
 	current_hp = current_hp - dmg
+	# emit signal if is_dead()
 
 
 func is_dead():
@@ -37,7 +38,3 @@ func is_dead():
 		emit_signal("is_dead")
 		return true
 	return false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

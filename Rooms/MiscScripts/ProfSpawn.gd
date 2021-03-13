@@ -26,7 +26,6 @@ func spawn_professor():
 	var bodies = get_overlapping_bodies()
 	for b in bodies:
 		print(b.name)
-	pass
 
 # Stub. Decide what professor to spawn, with what stats, etc.
 func select_professor():
