@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Rooms/Professors_Button.gd" type="Script" id=1]
-[ext_resource path="res://Rooms/Test_Button.gd" type="Script" id=2]
+[ext_resource path="res://Rooms/Battle_Scene/Professors_Button.gd" type="Script" id=1]
+[ext_resource path="res://Rooms/Battle_Scene/Test_Button.gd" type="Script" id=2]
 [ext_resource path="res://etc/Temp_Moves_Button.PNG" type="Texture" id=3]
 [ext_resource path="res://etc/Temp_Professors_Button.PNG" type="Texture" id=4]
+
 
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0

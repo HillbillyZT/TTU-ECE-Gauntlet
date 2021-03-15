@@ -7,12 +7,13 @@ const FRICTION = 1000
 
 var input_vector: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
-
+onready var backpack = get_node("Backpack")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(get_tree().get_current_scene())
 	add_to_group("Player")
+	backpack.visible = false
 	pass # Replace with function body.
 
 func _physics_process(delta):
@@ -31,7 +32,8 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	
 func _process(delta):
-	if(Input.is_action_just_pressed("ui_menu")):
-		get_tree().change_scene("res://Player/Player_Backpack.tscn")
-
+	if(Input.is_action_pressed("ui_menu")):
+		backpack.visible = true
+		if Input.is_action_just_pressed("ui_menu"):
+			backpack.visible = false
 
