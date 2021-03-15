@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Room_Transition.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
 [ext_resource path="res://Rooms/Battle_Scene/Battle_Transition.gd" type="Script" id=5]
 [ext_resource path="res://sprites/tiles/spritesheet-building.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Temp_Shop.png" type="Texture" id=7]
+[ext_resource path="res://Rooms/Shop.gd" type="Script" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall-slant-left"
@@ -258,3 +260,22 @@ shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 60.5827, 422.168 )
+script = ExtResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( -6.10352e-05, 0 )
+scale = Vector2( 0.06, 0.06 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -36.5336, 14.5099, 36.1343, 14.8844, 36.1343, -3.84442, -36.3463, -4.21899 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="Open_Shop" from="Area2D" to="Player" method="_on_Area2D_Open_Shop"]

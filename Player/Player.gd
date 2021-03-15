@@ -34,6 +34,8 @@ func _physics_process(delta):
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_menu")):
 		backpack.visible = !(backpack.visible)
-		#if Input.is_action_just_pressed("ui_menu"):
-			#backpack.visible = false
 
+
+
+func _on_Area2D_Open_Shop():
+	print("Opening Shop...")
