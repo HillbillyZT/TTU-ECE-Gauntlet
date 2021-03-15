@@ -32,6 +32,6 @@ func _physics_process(delta):
 	
 func _process(delta):
 	if(Input.is_action_just_pressed("ui_menu")):
-		print("asdf")
+		get_tree().change_scene("res://Player/Player_Backpack.tscn")
 
 

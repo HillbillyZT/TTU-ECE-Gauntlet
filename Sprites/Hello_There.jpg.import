@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nutter-world.png-1c135102f2d8f38692502d01a72629ef.stex"
+path="res://.import/Hello_There.jpg-a087eb611a7d9e11fff255d8f88b04b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/nutter/nutter-world.png"
-dest_files=[ "res://.import/nutter-world.png-1c135102f2d8f38692502d01a72629ef.stex" ]
+source_file="res://Sprites/Hello_There.jpg"
+dest_files=[ "res://.import/Hello_There.jpg-a087eb611a7d9e11fff255d8f88b04b7.stex" ]
 
 [params]
 
