@@ -32,8 +32,8 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	
 func _process(delta):
-	if(Input.is_action_pressed("ui_menu")):
-		backpack.visible = true
-		if Input.is_action_just_pressed("ui_menu"):
-			backpack.visible = false
+	if(Input.is_action_just_pressed("ui_menu")):
+		backpack.visible = !(backpack.visible)
+		#if Input.is_action_just_pressed("ui_menu"):
+			#backpack.visible = false
 
