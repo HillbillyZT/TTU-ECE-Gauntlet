@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Room_Transition.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
-[ext_resource path="res://Rooms/Battle_Transition.gd" type="Script" id=5]
+[ext_resource path="res://Rooms/Battle_Scene/Battle_Transition.gd" type="Script" id=5]
 [ext_resource path="res://sprites/tiles/spritesheet-building.png" type="Texture" id=6]
 
 [sub_resource type="TileSet" id=1]
@@ -191,6 +191,12 @@
 12/shapes = [  ]
 12/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 166.626, 12.3459 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 82.7979, 10 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Background (MAP)" type="Sprite" parent="."]
@@ -208,7 +214,7 @@ tile_data = PoolIntArray( 1179649, 5, 0, 1179650, 5, 0, 1179651, 5, 0, 1310697, 
 position = Vector2( 779.378, 563.052 )
 
 [node name="Room_Transition" type="Area2D" parent="."]
-position = Vector2( 546.027, 554.466 )
+position = Vector2( 540.016, 566.84 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Room_Transition"]
@@ -235,8 +241,20 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Wall" type="Area2D" parent="."]
-position = Vector2( 664.497, 541.027 )
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 383.15, 482.765 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
-polygon = PoolVector2Array( -160.519, -55.6983, -100.978, -50.9153, -100.477, -37.567, -67.1061, -3.86224, 103.42, -3.86224, 104.943, -243.711, 115.045, -243.149, 114.599, 6.31592, 103.086, 6.98334, 103.086, 3.64624, -70.1095, 4.31366, -109.654, -34.2299, -109.487, -45.4091, -168.377, -46.1574 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 685.105, 533.026 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
