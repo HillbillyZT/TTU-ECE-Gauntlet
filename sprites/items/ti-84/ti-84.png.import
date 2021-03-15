@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ti-84.png-ba2da49da1f0d3a37d6f48c0d647aace.stex"
+path="res://.import/ti-84.png-0a6651b47bb44d931b7959be600dc70f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/items/ti-84/ti-84.png"
-dest_files=[ "res://.import/ti-84.png-ba2da49da1f0d3a37d6f48c0d647aace.stex" ]
+source_file="res://sprites/items/ti-84/ti-84.png"
+dest_files=[ "res://.import/ti-84.png-0a6651b47bb44d931b7959be600dc70f.stex" ]
 
 [params]
 
