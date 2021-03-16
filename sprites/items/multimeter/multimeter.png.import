@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet-building.png-d991b1a68db8169e1f12f405846d7e41.stex"
+path="res://.import/multimeter.png-522e6a4fede0e31e5d065ac4ef616332.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tiles/spritesheet-building.png"
-dest_files=[ "res://.import/spritesheet-building.png-d991b1a68db8169e1f12f405846d7e41.stex" ]
+source_file="res://sprites/items/multimeter/multimeter.png"
+dest_files=[ "res://.import/multimeter.png-522e6a4fede0e31e5d065ac4ef616332.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spritesheet-building.png-d991b1a68db8169e1f12f405846d7e41.stex"
+path="res://.import/soldering-iron.png-d888eb66138f20736be61b907e473feb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tiles/spritesheet-building.png"
-dest_files=[ "res://.import/spritesheet-building.png-d991b1a68db8169e1f12f405846d7e41.stex" ]
+source_file="res://sprites/items/soldering-iron/soldering-iron.png"
+dest_files=[ "res://.import/soldering-iron.png-d888eb66138f20736be61b907e473feb.stex" ]
 
 [params]
 
