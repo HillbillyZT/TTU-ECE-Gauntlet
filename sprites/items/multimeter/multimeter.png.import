@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/multimeter.png-522e6a4fede0e31e5d065ac4ef616332.stex"
+path="res://.import/multimeter.png-dc02280eb03cfa58c32dc4830ab0b8ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/multimeter/multimeter.png"
-dest_files=[ "res://.import/multimeter.png-522e6a4fede0e31e5d065ac4ef616332.stex" ]
+source_file="res://Sprites/items/multimeter/multimeter.png"
+dest_files=[ "res://.import/multimeter.png-dc02280eb03cfa58c32dc4830ab0b8ba.stex" ]
 
 [params]
 
