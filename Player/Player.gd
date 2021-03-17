@@ -30,11 +30,11 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(input_vector * MAX_SPEED * 10, delta * ACCELERATION * 10)
 		
 	move_and_slide(velocity)
-	
-func _process(delta):
-	if(Input.is_action_just_pressed("ui_menu")):
-		backpack.visible = !(backpack.visible)
 
+
+func _input(event):
+	if(event.is_action_pressed("ui_menu")):
+		backpack.visible = !(backpack.visible)
 
 
 func _on_Area2D_Open_Shop():
