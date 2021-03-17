@@ -263,11 +263,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="ShopHitBox" type="Area2D" parent="."]
 position = Vector2( 60.5827, 422.168 )
 script = ExtResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="Area2D"]
+[node name="Sprite" type="Sprite" parent="ShopHitBox"]
 position = Vector2( -6.10352e-05, 0 )
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 7 )
@@ -275,7 +275,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ShopHitBox"]
 polygon = PoolVector2Array( -36.5336, 14.5099, 36.1343, 14.8844, 36.1343, -3.84442, -36.3463, -4.21899 )
 __meta__ = {
 "_edit_lock_": true
@@ -283,4 +283,4 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 779.378, 563.052 )
-[connection signal="Open_Shop" from="Area2D" to="Player" method="_on_Area2D_Open_Shop"]
+[connection signal="Open_Shop" from="ShopHitBox" to="Player" method="_on_Area2D_Open_Shop"]
