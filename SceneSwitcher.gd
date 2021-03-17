@@ -6,7 +6,7 @@ extends Node
 var world_scene
 
 #always set to active scene
-var current_scene
+var current_scene = null
 
 
 # Called when the node enters the scene tree for the first time.
