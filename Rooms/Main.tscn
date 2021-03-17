@@ -5,10 +5,11 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
 [ext_resource path="res://Professor/ProfessorWorldObj.gd" type="Script" id=5]
-[ext_resource path="res://sprites/tiles/spritesheet-building.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/tiles/spritesheet-building.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Temp_Shop.png" type="Texture" id=7]
 [ext_resource path="res://Rooms/Shop.gd" type="Script" id=8]
 [ext_resource path="res://Professor/ProfessorWorldObj.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall-slant-left"
