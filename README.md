@@ -6,7 +6,7 @@
 
 1. Player
     * Idle animation
-	  * No hair flip
+    * No hair flip
 3. Research Shaders
 4. UI
 5. Battle Scene
