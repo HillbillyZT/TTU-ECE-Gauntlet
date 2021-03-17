@@ -10,7 +10,6 @@
 [ext_resource path="res://Rooms/Shop.gd" type="Script" id=8]
 [ext_resource path="res://Professor/ProfessorWorldObj.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="TileSet" id=1]
 0/name = "wall-slant-left"
 0/texture = ExtResource( 6 )
@@ -194,6 +193,48 @@
 12/shape_one_way_margin = 0.0
 12/shapes = [  ]
 12/z_index = 0
+13/name = "desk-left"
+13/texture = ExtResource( 6 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 120, 24, 24, 24 )
+13/tile_mode = 0
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 0, 0 )
+13/shape_offset = Vector2( 0, 0 )
+13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape_one_way = false
+13/shape_one_way_margin = 0.0
+13/shapes = [  ]
+13/z_index = 0
+14/name = "desk-mid"
+14/texture = ExtResource( 6 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 144, 24, 24, 24 )
+14/tile_mode = 0
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 0, 0 )
+14/shape_offset = Vector2( 0, 0 )
+14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape_one_way = false
+14/shape_one_way_margin = 0.0
+14/shapes = [  ]
+14/z_index = 0
+15/name = "desk-right"
+15/texture = ExtResource( 6 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 144, 0, 24, 24 )
+15/tile_mode = 0
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 0, 0 )
+15/shape_offset = Vector2( 0, 0 )
+15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape_one_way = false
+15/shape_one_way_margin = 0.0
+15/shapes = [  ]
+15/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 166.626, 12.3459 )
@@ -263,11 +304,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ShopHitBox" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 60.5827, 422.168 )
 script = ExtResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="ShopHitBox"]
+[node name="Sprite" type="Sprite" parent="Area2D"]
 position = Vector2( -6.10352e-05, 0 )
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 7 )
@@ -275,7 +316,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ShopHitBox"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -36.5336, 14.5099, 36.1343, 14.8844, 36.1343, -3.84442, -36.3463, -4.21899 )
 __meta__ = {
 "_edit_lock_": true
@@ -283,4 +324,4 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 779.378, 563.052 )
-[connection signal="Open_Shop" from="ShopHitBox" to="Player" method="_on_Area2D_Open_Shop"]
+[connection signal="Open_Shop" from="Area2D" to="Player" method="_on_Area2D_Open_Shop"]
