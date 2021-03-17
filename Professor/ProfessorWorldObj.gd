@@ -20,4 +20,5 @@ func _on_PlayerDetector_body_entered(body):
 		print(body)
 		if body.name == "Player":
 			approached = true
+			body.velocity = Vector2.ZERO
 			SceneSwitcher.change_scene_instanced("res://Rooms/Battle_Scene/Test_Battle_Scene.tscn")

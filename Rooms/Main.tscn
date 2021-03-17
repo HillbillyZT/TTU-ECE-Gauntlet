@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Room_Transition.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -85,7 +85,7 @@
 5/texture = ExtResource( 6 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 24, 72, 24, 24 )
+5/region = Rect2( 48, 48, 24, 24 )
 5/tile_mode = 0
 5/occluder_offset = Vector2( 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
@@ -235,11 +235,28 @@
 15/shape_one_way_margin = 0.0
 15/shapes = [  ]
 15/z_index = 0
+16/name = "floor-center"
+16/texture = ExtResource( 6 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 24, 48, 24, 24 )
+16/tile_mode = 0
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape_one_way = false
+16/shape_one_way_margin = 0.0
+16/shapes = [  ]
+16/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 166.626, 12.3459 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 10.8316
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 166.626, 12.3459 )
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 82.7979, 10 )
 
 [node name="Node2D" type="Node2D"]
@@ -283,14 +300,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ProfessorWorldObj" parent="Professor" instance=ExtResource( 9 )]
-position = Vector2( 57.6504, -7.91422 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Professor"]
+shape = SubResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 383.15, 482.765 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -299,7 +316,7 @@ __meta__ = {
 position = Vector2( 685.105, 533.026 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -324,4 +341,7 @@ __meta__ = {
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 779.378, 563.052 )
+
+[node name="ProfessorWorldObj" parent="." instance=ExtResource( 9 )]
+position = Vector2( 335.114, 624.414 )
 [connection signal="Open_Shop" from="Area2D" to="Player" method="_on_Area2D_Open_Shop"]
