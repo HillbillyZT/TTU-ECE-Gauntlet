@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://etc/Test_Battle_Scene.PNG" type="Texture" id=1]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Button.gd" type="Script" id=2]
@@ -8,8 +8,9 @@
 [ext_resource path="res://Rooms/Battle_Scene/Moves.gd" type="Script" id=6]
 [ext_resource path="res://Rooms/Battle_Scene/BackButton.gd" type="Script" id=7]
 [ext_resource path="res://Rooms/ProfessorsList.gd" type="Script" id=8]
+[ext_resource path="res://Rooms/Battle_Scene/Move1.gd" type="Script" id=9]
 
-[node name="Node2D" type="Node2D"]
+[node name="Battle_Scene_Test" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -0.166368, -3.63013 )
@@ -62,6 +63,7 @@ script = ExtResource( 6 )
 margin_right = 86.0
 margin_bottom = 36.0
 text = "Move 1"
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -165,3 +167,4 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="Control2/Move1" to="Control2/Move1" method="_on_Move1_pressed"]

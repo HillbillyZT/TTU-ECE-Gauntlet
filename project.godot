@@ -19,6 +19,10 @@ config/name="ECE Gauntlet"
 run/main_scene="res://Rooms/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+SceneSwitcher="*res://SceneSwitcher.gd"
+
 [display]
 
 window/size/width=350

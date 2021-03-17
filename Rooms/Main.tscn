@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Room_Transition.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
-[ext_resource path="res://Rooms/Battle_Scene/Battle_Transition.gd" type="Script" id=5]
+[ext_resource path="res://Professor/ProfessorWorldObj.gd" type="Script" id=5]
 [ext_resource path="res://sprites/tiles/spritesheet-building.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Temp_Shop.png" type="Texture" id=7]
 [ext_resource path="res://Rooms/Shop.gd" type="Script" id=8]
+[ext_resource path="res://Professor/ProfessorWorldObj.tscn" type="PackedScene" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall-slant-left"
@@ -234,7 +235,7 @@ __meta__ = {
 }
 
 [node name="Professor" type="Area2D" parent="."]
-position = Vector2( 334.79, 625.083 )
+position = Vector2( 277.464, 632.328 )
 script = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Professor"]
@@ -242,6 +243,9 @@ polygon = PoolVector2Array( -4.27863, -11.0858, 3.39453, -10.7704, 7.91437, -7.4
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ProfessorWorldObj" parent="Professor" instance=ExtResource( 9 )]
+position = Vector2( 57.6504, -7.91422 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 383.15, 482.765 )
