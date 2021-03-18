@@ -22,6 +22,7 @@ extents = Vector2( 82.7979, 10 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Background (MAP)" type="Sprite" parent="."]
+visible = false
 position = Vector2( 0, -0.514954 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )

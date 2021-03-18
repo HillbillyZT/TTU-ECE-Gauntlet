@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Sprites/storrs/storrs-spritesheet.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/sarraf/sarraf-spritesheet.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/stephens/stephens-spritesheet.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/helm/helm-spritesheet.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/woody/woody-spritesheet.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/gale/gale-spritesheet.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/nikishin/nikishin-spritesheet.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/player/player-spritesheet.png" type="Texture" id=8]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -8, 0 )
+
+[node name="storrs-spritesheet" type="Sprite" parent="."]
+position = Vector2( 16, 8 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="woody-spritesheet" type="Sprite" parent="."]
+position = Vector2( 104, 56 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="gale-spritesheet" type="Sprite" parent="."]
+position = Vector2( 168, 56 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="helm-spritesheet" type="Sprite" parent="."]
+position = Vector2( 232, 56 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="nikishin-spritesheet" type="Sprite" parent="."]
+position = Vector2( 296, 56 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player-spritesheet" type="Sprite" parent="."]
+position = Vector2( 360, 56 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="sarraf-spritesheet" type="Sprite" parent="."]
+position = Vector2( 424, 56 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="stephens-spritesheet" type="Sprite" parent="."]
+position = Vector2( 488, 56 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
