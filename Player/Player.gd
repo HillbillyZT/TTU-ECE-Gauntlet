@@ -17,6 +17,15 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	$Sprite.playing = true
+	if(Input.is_action_pressed("ui_left")): $Sprite.set_animation("walk_left")
+	elif (Input.is_action_pressed("ui_right")): $Sprite.set_animation("walk_right")
+	elif (Input.is_action_pressed("ui_down")): $Sprite.set_animation("walk_down")
+	elif (Input.is_action_pressed("ui_up")): $Sprite.set_animation("walk_up")
+	else: 
+		$Sprite.playing = false
+		$Sprite.frame = 0
+	
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	input_vector = input_vector.normalized()
