@@ -20,5 +20,4 @@ func _on_Roster_Open_Roster():
 	self.visible = !self.visible
 
 
-func _on_Back_back_button_pressed():
-	self.visible = !self.visible
+

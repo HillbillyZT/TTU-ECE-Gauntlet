@@ -16,16 +16,31 @@ func _ready():
 #	pass
 
 func _on_Roster_Open_Roster():
-	
+	"""
 	var children = node.get_children()
 	for child in children:
 		child.visible = !child.visible
+	node.visible = !node.visible
+	"""
 	node.visible = !node.visible
 
 
 func _on_Back_back_button_pressed():
+	"""
 	node.visible = !node.visible
 	var children = node.get_children()
 	for child in children:
 		child.visible = !child.visible
+	"""
+	node.visible = !node.visible
+	
 		
+
+
+func _on_Items_items():
+	"""
+	var children = node.get_children()
+	for child in children:
+		child.visible = !child.visible
+	"""
+	node.visible = !node.visible

@@ -47,4 +47,8 @@ func _input(event):
 
 
 func _on_Area2D_Open_Shop():
-	print("Opening Shop...")
+	var player = get_node(".")
+	var children = player.get_children()
+	for child in children:
+		if child.name == "Player_Shop":
+			child.visible = !child.visible
