@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Room_Transition.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,16 +6,18 @@
 [ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
 [ext_resource path="res://Professor/ProfessorWorldObj.gd" type="Script" id=5]
 [ext_resource path="res://Tiles/ece/ece.tres" type="TileSet" id=6]
-[ext_resource path="res://Sprites/Temp_Shop.png" type="Texture" id=7]
+[ext_resource path="res://Rooms/Too_Far_From_Shop.gd" type="Script" id=7]
 [ext_resource path="res://Rooms/Shop.gd" type="Script" id=8]
 [ext_resource path="res://Professor/ProfessorWorldObj.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Tiles/overlay.tres" type="TileSet" id=10]
+[ext_resource path="res://Rooms/Item_Shop.gd" type="Script" id=11]
+[ext_resource path="res://Rooms/Exit_Shop.gd" type="Script" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 10.8316
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 166.626, 12.3459 )
+extents = Vector2( 40.3861, 10 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -69,39 +71,54 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Professor"]
 shape = SubResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2( 383.15, 482.765 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Shop" type="Area2D" parent="."]
 visible = false
 position = Vector2( 60.5827, 422.168 )
 script = ExtResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="Area2D"]
-visible = false
-position = Vector2( -6.10352e-05, 0 )
-scale = Vector2( 0.06, 0.06 )
-texture = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shop"]
 polygon = PoolVector2Array( -36.5336, 14.5099, 36.1343, 14.8844, 36.1343, -3.84442, -36.3463, -4.21899 )
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Too_Far_From_Shop" type="Area2D" parent="."]
+visible = false
+position = Vector2( 60.0678, 474.536 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Too_Far_From_Shop"]
+position = Vector2( 7.62939e-06, -1.11359 )
+shape = SubResource( 2 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 779.378, 563.052 )
 
+[node name="Player_Shop" type="Control" parent="Player"]
+margin_left = -173.0
+margin_top = -99.0
+margin_right = 173.0
+margin_bottom = 98.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Exit_Shop" type="Button" parent="Player/Player_Shop"]
+margin_left = 309.712
+margin_top = 176.136
+margin_right = 344.712
+margin_bottom = 196.136
+text = "Exit"
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ProfessorWorldObj" parent="." instance=ExtResource( 9 )]
 position = Vector2( 335.114, 624.414 )
-[connection signal="Open_Shop" from="Area2D" to="Player" method="_on_Area2D_Open_Shop"]
+[connection signal="Open_Shop" from="Shop" to="Player" method="_on_Area2D_Open_Shop"]
+[connection signal="too_far" from="Too_Far_From_Shop" to="Player/Player_Shop" method="_on_Too_Far_From_Shop_too_far"]
+[connection signal="too_far" from="Too_Far_From_Shop" to="Shop" method="_on_Too_Far_From_Shop_too_far"]
+[connection signal="closed" from="Player/Player_Shop/Exit_Shop" to="Shop" method="_on_Exit_Shop_closed"]
