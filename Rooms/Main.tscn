@@ -112,6 +112,21 @@ shape = SubResource( 2 )
 [node name="ProfSpawn" parent="ECE Map" instance=ExtResource( 17 )]
 position = Vector2( 693.237, 574.582 )
 
+[node name="ProfSpawn2" parent="ECE Map" instance=ExtResource( 17 )]
+position = Vector2( 670.988, 574.582 )
+
+[node name="ProfSpawn3" parent="ECE Map" instance=ExtResource( 17 )]
+position = Vector2( 647.15, 574.85 )
+
+[node name="ProfSpawn4" parent="ECE Map" instance=ExtResource( 17 )]
+position = Vector2( 624.902, 575.677 )
+
+[node name="ProfSpawn5" parent="ECE Map" instance=ExtResource( 17 )]
+position = Vector2( 715.221, 574.087 )
+
+[node name="ProfSpawn6" parent="ECE Map" instance=ExtResource( 17 )]
+position = Vector2( 737.734, 573.558 )
+
 [node name="Player" parent="ECE Map" instance=ExtResource( 2 )]
 position = Vector2( 779.378, 563.052 )
 
@@ -180,13 +195,13 @@ __meta__ = {
 }
 
 [node name="ProfessorWorldObj" parent="ECE Map" instance=ExtResource( 9 )]
-position = Vector2( 335.114, 624.414 )
+position = Vector2( 759.138, 579.118 )
 [connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 1" method="_on_ECE_Map_return_name"]
 [connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 2" method="_on_ECE_Map_return_name"]
 [connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 0" method="_on_ECE_Map_return_name"]
 [connection signal="Open_Shop" from="ECE Map/Shop" to="ECE Map/Player" method="_on_Area2D_Open_Shop"]
-[connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Shop" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player/Player_Shop" method="_on_Too_Far_From_Shop_too_far"]
+[connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Shop" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="closed" from="ECE Map/Player/Player_Shop/Exit_Shop" to="ECE Map/Shop" method="_on_Exit_Shop_closed"]
 [connection signal="name" from="ECE Map/Player/Player_Shop/GridContainer/Item 0" to="ECE Map" method="_on_Item_1_name"]
 [connection signal="name" from="ECE Map/Player/Player_Shop/GridContainer/Item 1" to="ECE Map" method="_on_Item_1_name"]
