@@ -9,7 +9,6 @@ radius = 5.71434
 height = 11.3634
 
 [node name="ProfessorWorldObj" type="StaticBody2D"]
-position = Vector2( -28.2744, -6.29056 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -17,11 +16,20 @@ texture = ExtResource( 2 )
 
 [node name="StatBoi" type="Node2D" parent="."]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlayerDetector" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2( 0, 1.12373 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 [connection signal="area_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_area_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

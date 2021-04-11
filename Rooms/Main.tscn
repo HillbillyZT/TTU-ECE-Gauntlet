@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Room_Transition.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Rooms/Main.gd" type="Script" id=14]
 [ext_resource path="res://Rooms/ECE Map.gd" type="Script" id=15]
 [ext_resource path="res://Rooms/Item 1.gd" type="Script" id=16]
+[ext_resource path="res://Rooms/ProfSpawn.tscn" type="PackedScene" id=17]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 10.8316
@@ -108,6 +109,9 @@ script = ExtResource( 7 )
 position = Vector2( 7.62939e-06, -1.11359 )
 shape = SubResource( 2 )
 
+[node name="ProfSpawn" parent="ECE Map" instance=ExtResource( 17 )]
+position = Vector2( 693.237, 574.582 )
+
 [node name="Player" parent="ECE Map" instance=ExtResource( 2 )]
 position = Vector2( 779.378, 563.052 )
 
@@ -177,9 +181,9 @@ __meta__ = {
 
 [node name="ProfessorWorldObj" parent="ECE Map" instance=ExtResource( 9 )]
 position = Vector2( 335.114, 624.414 )
-[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 0" method="_on_ECE_Map_return_name"]
 [connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 1" method="_on_ECE_Map_return_name"]
 [connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 2" method="_on_ECE_Map_return_name"]
+[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 0" method="_on_ECE_Map_return_name"]
 [connection signal="Open_Shop" from="ECE Map/Shop" to="ECE Map/Player" method="_on_Area2D_Open_Shop"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Shop" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player/Player_Shop" method="_on_Too_Far_From_Shop_too_far"]

@@ -1,10 +1,25 @@
 extends Node2D
+#class_name ProfessorWorldObj
 
 var approached: bool = false
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
+onready var stats = $StatBoi
+var prof_name: String
+
+func init(prof_name, prof_stats: Dictionary):
+	stats = $StatBoi
+	position = Vector2.ZERO
+	stats.setStats(prof_stats.hp, prof_stats.strength, prof_stats.def, prof_stats.intel)
+	self.prof_name = prof_name
+	var sprite = $Sprite
+	sprite.texture = load(prof_stats.sprite)
+	if(prof_name == "nutter"):
+		sprite.vframes = 1
+		sprite.hframes = 1
+	else:
+		sprite.vframes = 4
+		sprite.hframes = 4
+	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

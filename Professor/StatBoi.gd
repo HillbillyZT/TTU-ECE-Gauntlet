@@ -19,7 +19,7 @@ export var stat_def: int = 10
 func _ready():
 	pass # Replace with function body.
 
-func _init(hp: int, strength: int, def: int, intel: int):
+func setStats(hp: int, strength: int, def: int, intel: int):
 	stat_health = hp
 	stat_str = strength
 	stat_def = def
