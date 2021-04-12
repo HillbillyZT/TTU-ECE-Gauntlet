@@ -3,7 +3,8 @@ extends KinematicBody2D
 const MAX_SPEED = 105
 const ACCELERATION = 1000
 const FRICTION = 1000
-
+var items = []
+var money = 0
 
 var input_vector: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
