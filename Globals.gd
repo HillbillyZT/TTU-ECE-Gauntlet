@@ -55,6 +55,8 @@ var prof_base = {
 
 var prof_current = {}
 
+var prof_battle;
+
 func _ready():
 	pass # Replace with function body.
 

@@ -111,16 +111,16 @@ position = Vector2( 7.62939e-06, -1.11359 )
 shape = SubResource( 2 )
 
 [node name="ProfSpawn" parent="ECE Map" instance=ExtResource( 17 )]
-position = Vector2( 692.487, 580.332 )
+position = Vector2( 623, 581 )
 
 [node name="ProfSpawn2" parent="ECE Map" instance=ExtResource( 17 )]
-position = Vector2( 670.488, 580.332 )
+position = Vector2( 646, 581 )
 
 [node name="ProfSpawn3" parent="ECE Map" instance=ExtResource( 17 )]
-position = Vector2( 647.15, 580.35 )
+position = Vector2( 668, 581 )
 
 [node name="ProfSpawn4" parent="ECE Map" instance=ExtResource( 17 )]
-position = Vector2( 624.152, 580.927 )
+position = Vector2( 692, 581 )
 
 [node name="ProfSpawn5" parent="ECE Map" instance=ExtResource( 17 )]
 position = Vector2( 715.221, 580.837 )
@@ -234,9 +234,9 @@ __meta__ = {
 
 [node name="ProfessorWorldObj" parent="ECE Map" instance=ExtResource( 9 )]
 position = Vector2( 759.138, 579.118 )
-[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 1" method="_on_ECE_Map_return_name"]
-[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 0" method="_on_ECE_Map_return_name"]
 [connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 2" method="_on_ECE_Map_return_name"]
+[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 0" method="_on_ECE_Map_return_name"]
+[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 1" method="_on_ECE_Map_return_name"]
 [connection signal="Open_Shop" from="ECE Map/Shop" to="ECE Map/Player" method="_on_Area2D_Open_Shop"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Shop" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player/Player_Shop" method="_on_Too_Far_From_Shop_too_far"]
