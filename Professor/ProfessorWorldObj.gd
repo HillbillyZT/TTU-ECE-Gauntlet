@@ -37,4 +37,5 @@ func _on_PlayerDetector_body_entered(body):
 			approached = true
 			body.velocity = Vector2.ZERO
 			Globals.prof_battle = self.prof_name
+			Globals.player_buffered_position = body.position
 			SceneSwitcher.change_scene_instanced("res://Rooms/Battle_Scene/Test_Battle_Scene.tscn")
