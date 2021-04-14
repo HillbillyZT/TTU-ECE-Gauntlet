@@ -57,7 +57,7 @@ var prof_current = {}
 
 var prof_battle;
 
-var temp_player_roster = prof_base
+var temp_player_roster = ["storrs","stephens","sarraf"]
 
 func _ready():
 	pass # Replace with function body.
