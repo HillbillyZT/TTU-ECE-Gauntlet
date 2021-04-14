@@ -12,3 +12,7 @@ polygon = PoolVector2Array( -10.016, -12.84, 9.98401, 7.15997, 11.984, 5.15997, 
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

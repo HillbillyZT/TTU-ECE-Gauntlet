@@ -7,7 +7,7 @@ var world_scene
 var rooms: Array = [
 	preload("res://Rooms/Test_Room.tscn").instance(), \
 	preload("res://Rooms/Test_Room.tscn").instance(), \
-	preload("res://Rooms/Battle_Rooms/Room2.tscn"), \
+	preload("res://Rooms/Battle_Rooms/Room2.tscn").instance(), \
 	preload("res://Rooms/Battle_Rooms/Room2.tscn"), \
 	preload("res://Rooms/Battle_Rooms/Room2.tscn")
 ]
@@ -24,11 +24,15 @@ func _ready():
 	current_scene = world_scene
 	
 	# set var rooms = [all instanced rooms]
-
-
+signal update_player_pos
 func change_scene(target: Node):
 	remove_current_scene()
+	if(target == world_scene):
+		world_scene.get_node("ECE Map").get_node("Player").position = Globals.player_buffered_position
+	elif(rooms.has(target)):
+		target.get_node("Player").position = Globals.player_buffered_position
 	current_scene = target #duh
+	
 	add_scene_compat() # add scene to tree
 
 
@@ -49,7 +53,7 @@ func add_scene_compat():
 func remove_current_scene():
 	# if the current scene is not the world scene (TODO: GROUP),
 	# then delete the scene; do not persist.
-	if(current_scene != world_scene):
+	if(current_scene != world_scene && !rooms.has(current_scene)):
 		current_scene.queue_free()
 	# otherwise, just remove the scene from the tree. We want to keep its data.
 	else:

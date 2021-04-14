@@ -1,8 +1,6 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Room_Transition.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
 [ext_resource path="res://Professor/ProfessorWorldObj.gd" type="Script" id=5]
 [ext_resource path="res://Tiles/ece/ece.tres" type="TileSet" id=6]
@@ -58,25 +56,10 @@ tile_data = PoolIntArray( -1048598, 5, 0, -327702, 5, 0, 196587, 6, 0, 983016, 7
 [node name="Room_Transition" parent="ECE Map" instance=ExtResource( 11 )]
 position = Vector2( 278.759, 588.461 )
 
-[node name="Room_Transition2" type="Area2D" parent="ECE Map"]
-position = Vector2( 539.339, 567.312 )
-script = ExtResource( 1 )
+[node name="Room_Transition2" parent="ECE Map" instance=ExtResource( 11 )]
+position = Vector2( 539.682, 566.187 )
+rotation = 0.0
 portal_exit_pos = Vector2( 670, 720 )
-
-[node name="Sprite" type="Sprite" parent="ECE Map/Room_Transition2"]
-visible = false
-position = Vector2( -0.219055, -0.763245 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ECE Map/Room_Transition2"]
-polygon = PoolVector2Array( -10.016, -12.84, 9.98401, 7.15997, 11.984, 5.15997, -8.01599, -14.84 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Professor" type="Area2D" parent="ECE Map"]
 position = Vector2( 277.464, 632.328 )
@@ -129,7 +112,7 @@ position = Vector2( 715.221, 580.837 )
 position = Vector2( 738.234, 581.558 )
 
 [node name="Player" parent="ECE Map" instance=ExtResource( 2 )]
-position = Vector2( 794.94, 568.805 )
+position = Vector2( 796.297, 573.564 )
 
 [node name="ProfessorWorldObj" parent="ECE Map" instance=ExtResource( 9 )]
 position = Vector2( 759.138, 579.118 )

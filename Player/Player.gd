@@ -16,7 +16,7 @@ func _ready():
 	add_to_group("Player")
 	backpack.visible = false
 	self.position = Globals.player_buffered_position
-	pass # Replace with function body.
+	SceneSwitcher.connect("update_player_pos", self, "_on_update_player_pos")
 
 func _physics_process(delta):
 	$Sprite.playing = true
@@ -54,3 +54,6 @@ func _on_Area2D_Open_Shop():
 	for child in children:
 		if child.name == "Player_Shop":
 			child.visible = !child.visible
+
+func _on_update_player_pos():
+	self.position = Globals.player_buffered_position
