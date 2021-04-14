@@ -9,7 +9,6 @@ signal show
 onready var Name = self.name
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	Name = Name[5]
 	emit_signal("name",Name)
 
