@@ -1,4 +1,4 @@
-extends Control
+extends TextureButton
 
 
 # Declare member variables here. Examples:
@@ -8,18 +8,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.visible = false
-	
+	self.texture_normal = load(Globals.player_roster["sarraf"]["sprite"])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Too_Far_From_Shop_too_far():
-	self.visible = false
-
-
-func _on_Shop_Open_Shop():
-	self.visible = true

@@ -57,6 +57,8 @@ var prof_current = {}
 
 var prof_battle;
 
+var temp_player_roster = prof_base
+
 func _ready():
 	pass # Replace with function body.
 
