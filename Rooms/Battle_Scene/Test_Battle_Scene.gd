@@ -8,6 +8,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var professor_dict = Globals.prof_current[Globals.prof_battle]
+	
 	if Globals.prof_battle != null:
 		print(Globals.prof_battle)
 	else:

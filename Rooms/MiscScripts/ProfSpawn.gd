@@ -40,11 +40,13 @@ func spawn_professor():
 func generate_professor():
 	var professor_name = select_professor()
 	var professor_gen = Globals.prof_base.get(professor_name)
+	Globals.prof_current[professor_name] = professor_gen
+	professor_gen = Globals.prof_current[professor_name]
 	
 	# augment stats based on position modifier
 	for key in professor_gen:
 		if(key == "sprite"): continue
-		professor_gen[key] = ceil(professor_gen[key] * (statMod / 1000.0))
+		professor_gen[key] = ceil(professor_gen[key] * (statMod / 100.0))
 	
 	return [professor_name, professor_gen]
 

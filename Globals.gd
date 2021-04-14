@@ -1,7 +1,7 @@
 extends Node
 
 
-var prof_base = {
+const prof_base = {
 	"gale": {
 		hp = 100,
 		strength = 10,

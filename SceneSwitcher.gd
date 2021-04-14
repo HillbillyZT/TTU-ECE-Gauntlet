@@ -4,6 +4,7 @@ extends Node
 
 # Declare scene vars
 var world_scene
+var rooms: Array = []
 
 #always set to active scene
 var current_scene = null
@@ -13,8 +14,10 @@ var current_scene = null
 func _ready():
 	world_scene = get_tree().get_root().get_child( \
 		get_tree().get_root().get_child_count() - 1)
-	
+	world_scene.add_to_group("persistent")
 	current_scene = world_scene
+	
+	# set var rooms = [all instanced rooms]
 
 
 func change_scene(target: Node):

@@ -234,12 +234,12 @@ __meta__ = {
 
 [node name="ProfessorWorldObj" parent="ECE Map" instance=ExtResource( 9 )]
 position = Vector2( 759.138, 579.118 )
-[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 0" method="_on_ECE_Map_return_name"]
-[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 1" method="_on_ECE_Map_return_name"]
 [connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 2" method="_on_ECE_Map_return_name"]
+[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 1" method="_on_ECE_Map_return_name"]
+[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 0" method="_on_ECE_Map_return_name"]
 [connection signal="Open_Shop" from="ECE Map/Shop" to="ECE Map/Player" method="_on_Area2D_Open_Shop"]
-[connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player/Player_Shop" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Shop" method="_on_Too_Far_From_Shop_too_far"]
+[connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player/Player_Shop" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="closed" from="ECE Map/Player/Player_Shop/Exit_Shop" to="ECE Map/Shop" method="_on_Exit_Shop_closed"]
 [connection signal="name" from="ECE Map/Player/Player_Shop/GridContainer/Item 0" to="ECE Map" method="_on_Item_1_name"]
 [connection signal="show" from="ECE Map/Player/Player_Shop/GridContainer/Item 0" to="ECE Map/Player/Player_Shop/Item_Description" method="_on_Item_0_show"]
