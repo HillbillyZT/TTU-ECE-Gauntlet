@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Rooms/Battle_Rooms/Room4.gd" type="Script" id=1]
 [ext_resource path="res://Animations/Fade_In.tres" type="Animation" id=2]
+[ext_resource path="res://Tiles/ece/ece.tres" type="TileSet" id=3]
+[ext_resource path="res://Tiles/overlay.tres" type="TileSet" id=4]
 
 [node name="Trans_Rect" type="ColorRect"]
 modulate = Color( 1, 1, 1, 0 )
@@ -12,3 +14,13 @@ __meta__ = {
 
 [node name="Trans_Anim" type="AnimationPlayer" parent="."]
 anims/Fade_In = ExtResource( 2 )
+
+[node name="TM_Base" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 24, 24 )
+format = 1
+
+[node name="TM_Overlay" type="TileMap" parent="TM_Base"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 24, 24 )
+format = 1

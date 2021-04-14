@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Rooms/Battle_Rooms/Room5.gd" type="Script" id=1]
+[ext_resource path="res://Tiles/ece/ece.tres" type="TileSet" id=2]
+[ext_resource path="res://Tiles/overlay.tres" type="TileSet" id=3]
 
 [node name="Trans_Rect" type="ColorRect"]
 script = ExtResource( 1 )
@@ -9,3 +11,13 @@ __meta__ = {
 }
 
 [node name="Trans_Anim" type="AnimationPlayer" parent="."]
+
+[node name="TM_Base" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 24, 24 )
+format = 1
+
+[node name="TM_Overlay" type="TileMap" parent="TM_Base"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 24, 24 )
+format = 1
