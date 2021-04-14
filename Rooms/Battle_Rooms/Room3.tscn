@@ -1,28 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Rooms/Battle_Rooms/Room3.gd" type="Script" id=1]
-[ext_resource path="res://Animations/Fade_In.tres" type="Animation" id=2]
 [ext_resource path="res://Tiles/ece/ece.tres" type="TileSet" id=3]
 [ext_resource path="res://Tiles/overlay.tres" type="TileSet" id=4]
 
-[node name="Trans_Rect" type="ColorRect"]
-modulate = Color( 1, 1, 1, 0 )
-color = Color( 0, 0, 0, 1 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Trans_Anim" type="AnimationPlayer" parent="."]
-anims/Fade_In = ExtResource( 2 )
-
-[node name="TM_Base" type="TileMap" parent="."]
+[node name="TM_Base" type="TileMap"]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 24, 24 )
 format = 1
 tile_data = PoolIntArray( -196611, 0, 0, -196610, 9, 0, -196609, 9, 0, -262144, 9, 0, -262143, 9, 0, -262142, 9, 0, -262141, 9, 0, -262140, 1, 0, -131075, 8, 0, -196604, 10, 0, -65539, 8, 0, -131068, 10, 0, -3, 8, 0, -2, 12, 0, -1, 12, 0, -65536, 12, 0, -65535, 12, 0, -65534, 12, 0, -65533, 12, 0, -65532, 10, 0, 65533, 8, 0, 65534, 12, 0, 65535, 12, 0, 0, 12, 0, 1, 12, 0, 2, 12, 0, 3, 12, 0, 4, 10, 0, 131069, 2, 0, 131070, 6, 0, 131071, 11, 0, 65536, 11, 0, 65537, 11, 0, 65538, 11, 0, 65539, 11, 0, 65540, 10, 0, 196606, 2, 0, 131076, 3, 0 )
 
-[node name="TM_Overlay" type="TileMap" parent="TM_Base"]
+[node name="TM_Overlay" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 24, 24 )
 format = 1
