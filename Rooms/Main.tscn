@@ -55,7 +55,8 @@ format = 1
 tile_data = PoolIntArray( -1048598, 5, 0, -327702, 5, 0, 196587, 6, 0, 983016, 7, 0, 1114113, 8, 0, 1114114, 9, 0, 1114115, 10, 0, 1310700, 1, 0, 1572839, 3, 0, 1507350, 2, 0, 1638393, 2, 0, 1572875, 3, 0 )
 
 [node name="Room_Transition" type="Area2D" parent="ECE Map"]
-position = Vector2( 270.978, 590.214 )
+position = Vector2( 278.411, 588.133 )
+rotation = -1.5708
 script = ExtResource( 1 )
 portal_exit_pos = Vector2( 370, 735 )
 
