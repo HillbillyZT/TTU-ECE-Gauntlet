@@ -14,7 +14,7 @@ func _pressed():
 	node.visible = false
 	node  = node.get_parent()
 	for children in node.get_children():
-		if children.name == "Control3":
+		if children.name == "Professor Set":
 			node = children
 	node.visible = true
 

@@ -5,6 +5,7 @@ const ACCELERATION = 1000
 const FRICTION = 1000
 var items = []
 var money = 0
+var roster = []
 
 var input_vector: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
@@ -12,7 +13,6 @@ onready var backpack = get_node("Backpack")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(get_tree().get_current_scene())
 	add_to_group("Player")
 	backpack.visible = false
 	pass # Replace with function body.

@@ -3,6 +3,8 @@
 [ext_resource path="res://Sprites/player/player-spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 
+
+
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 24, 13, 24 )

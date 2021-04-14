@@ -16,6 +16,7 @@
 [ext_resource path="res://Player/Items.gd" type="Script" id=14]
 [ext_resource path="res://Player/Item_Screen.gd" type="Script" id=15]
 
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -202,10 +203,10 @@ __meta__ = {
 [connection signal="Prof5_Pressed" from="Roster_Screen/Prof5" to="Roster_Screen/RichTextLabel" method="_on_Prof5_Prof5_Pressed"]
 [connection signal="Prof6_Pressed" from="Roster_Screen/Prof6" to="Roster_Screen/RichTextLabel" method="_on_Prof6_Prof6_Pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen" method="_on_Back_back_button_pressed"]

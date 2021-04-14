@@ -17,7 +17,6 @@ func _ready():
 
 
 func _on_Item_1_name(index):
-	print(index)
 	emit_signal("return_name",items[int(index)],index)
 
 
