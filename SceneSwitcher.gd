@@ -4,7 +4,13 @@ extends Node
 
 # Declare scene vars
 var world_scene
-var rooms: Array = []
+var rooms: Array = [
+	preload("res://Rooms/Test_Room.tscn").instance(), \
+	preload("res://Rooms/Test_Room.tscn").instance(), \
+	preload("res://Rooms/Battle_Rooms/Room2.tscn"), \
+	preload("res://Rooms/Battle_Rooms/Room2.tscn"), \
+	preload("res://Rooms/Battle_Rooms/Room2.tscn")
+]
 
 #always set to active scene
 var current_scene = null
