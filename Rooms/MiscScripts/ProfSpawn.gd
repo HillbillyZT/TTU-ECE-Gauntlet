@@ -22,8 +22,7 @@ func attempt_spawn():
 		spawn_professor()
 
 
-# Stub. This method will handle professor spawning.
-# Called by signal from item shop.
+
 func spawn_professor():
 	var professor = generate_professor()
 	var prof_obj = PWO.instance()
@@ -36,7 +35,7 @@ func spawn_professor():
 	for b in bodies:
 		print(b.name)
 
-# Stub. Decide what professor to spawn, with what stats, etc.
+
 func generate_professor():
 	var professor_name = select_professor()
 	var professor_gen = Globals.prof_base.get(professor_name)
