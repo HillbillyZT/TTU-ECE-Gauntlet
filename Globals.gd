@@ -52,12 +52,12 @@ const prof_base = {
 		sprite = "res://Sprites/storrs/storrs-spritesheet.png"
 	}
 }
-
 var prof_current = {}
 
 var prof_battle;
 
 var temp_player_roster = prof_base
+var player_buffered_position = Vector2(794, 569)
 
 func _ready():
 	pass # Replace with function body.

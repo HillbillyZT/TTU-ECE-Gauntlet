@@ -15,6 +15,7 @@ onready var backpack = get_node("Backpack")
 func _ready():
 	add_to_group("Player")
 	backpack.visible = false
+	self.position = Globals.player_buffered_position
 	pass # Replace with function body.
 
 func _physics_process(delta):
