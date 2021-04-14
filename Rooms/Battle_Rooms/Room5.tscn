@@ -1,6 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="Node2D" type="ColorRect"]
+[ext_resource path="res://Rooms/Battle_Rooms/Room5.gd" type="Script" id=1]
+
+[node name="Trans_Rect" type="ColorRect"]
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Trans_Anim" type="AnimationPlayer" parent="."]

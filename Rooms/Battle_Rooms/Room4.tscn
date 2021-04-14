@@ -1,6 +1,14 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Node2D" type="ColorRect"]
+[ext_resource path="res://Rooms/Battle_Rooms/Room4.gd" type="Script" id=1]
+[ext_resource path="res://Animations/Fade_In.tres" type="Animation" id=2]
+
+[node name="Trans_Rect" type="ColorRect"]
+modulate = Color( 1, 1, 1, 0 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Trans_Anim" type="AnimationPlayer" parent="."]
+anims/Fade_In = ExtResource( 2 )
