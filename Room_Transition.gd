@@ -9,6 +9,7 @@ func _physics_process(delta):
 		if body.name == "Player":
 			#get_tree().change_scene("res://Rooms/Test_Room.tscn") #no persistence
 			#Globals.new_player_pos = body.position
+			Globals.player_buffered_position = portal_exit_pos
 			SceneSwitcher.change_scene(SceneSwitcher.rooms[room_destination]) #wrong, impersistent
 			#SceneSwitcher.change_scene(SceneSwitcher.rooms[0])
 	
