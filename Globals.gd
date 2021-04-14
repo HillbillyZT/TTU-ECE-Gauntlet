@@ -56,8 +56,8 @@ var prof_current = {}
 
 var prof_battle;
 
-var temp_player_roster = prof_base
 var player_buffered_position = Vector2(794, 569)
+var temp_player_roster = ["storrs","stephens","sarraf"]
 
 func _ready():
 	pass # Replace with function body.
