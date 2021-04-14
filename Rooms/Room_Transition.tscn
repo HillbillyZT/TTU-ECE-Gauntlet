@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Room_Transition.gd" type="Script" id=1]
+
+[node name="Room_Transition" type="Area2D"]
+rotation = -1.5708
+script = ExtResource( 1 )
+portal_exit_pos = Vector2( 370, 735 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -10.016, -12.84, 9.98401, 7.15997, 11.984, 5.15997, -8.01599, -14.84 )
+__meta__ = {
+"_edit_lock_": true
+}

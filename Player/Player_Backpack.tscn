@@ -16,7 +16,6 @@
 [ext_resource path="res://Player/Items.gd" type="Script" id=14]
 [ext_resource path="res://Player/Item_Screen.gd" type="Script" id=15]
 
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -28,6 +27,7 @@ __meta__ = {
 }
 
 [node name="Main_Backpack_Buttons" type="Control" parent="."]
+visible = false
 margin_top = -98.0
 margin_right = 174.0
 margin_bottom = 98.0
@@ -69,6 +69,7 @@ __meta__ = {
 }
 
 [node name="Info_Screen_Base" type="Control" parent="."]
+visible = false
 margin_left = -173.0
 margin_top = -98.0
 margin_bottom = 99.0
@@ -98,10 +99,10 @@ __meta__ = {
 }
 
 [node name="Prof1" type="Button" parent="Roster_Screen"]
-margin_left = 297.896
-margin_top = 1.18922
-margin_right = 346.896
-margin_bottom = 21.1892
+margin_left = 250.0
+margin_top = 1.0
+margin_right = 299.0
+margin_bottom = 21.0
 text = "Prof 1"
 script = ExtResource( 8 )
 __meta__ = {
@@ -109,42 +110,42 @@ __meta__ = {
 }
 
 [node name="Prof2" type="Button" parent="Roster_Screen"]
-margin_left = 297.302
-margin_top = 29.1356
-margin_right = 346.302
-margin_bottom = 49.1356
+margin_left = 250.0
+margin_top = 28.0
+margin_right = 299.0
+margin_bottom = 48.0
 text = "Prof 2"
 script = ExtResource( 9 )
 
 [node name="Prof3" type="Button" parent="Roster_Screen"]
-margin_left = 296.54
-margin_top = 57.4054
-margin_right = 345.54
-margin_bottom = 77.4054
+margin_left = 249.703
+margin_top = 55.0
+margin_right = 298.703
+margin_bottom = 75.0
 text = "Prof 3"
 script = ExtResource( 10 )
 
 [node name="Prof4" type="Button" parent="Roster_Screen"]
-margin_left = 296.838
-margin_top = 84.9459
-margin_right = 345.838
-margin_bottom = 104.946
+margin_left = 250.0
+margin_top = 82.0
+margin_right = 299.0
+margin_bottom = 102.0
 text = "Prof 4"
 script = ExtResource( 11 )
 
 [node name="Prof5" type="Button" parent="Roster_Screen"]
-margin_left = 297.027
-margin_top = 113.567
-margin_right = 346.027
-margin_bottom = 133.567
+margin_left = 250.0
+margin_top = 109.0
+margin_right = 299.0
+margin_bottom = 129.0
 text = "Prof 5"
 script = ExtResource( 12 )
 
 [node name="Prof6" type="Button" parent="Roster_Screen"]
-margin_left = 297.622
-margin_top = 143.73
-margin_right = 346.622
-margin_bottom = 163.73
+margin_left = 250.0
+margin_top = 136.0
+margin_right = 299.0
+margin_bottom = 156.0
 text = "Prof 6"
 script = ExtResource( 13 )
 __meta__ = {
@@ -172,6 +173,7 @@ __meta__ = {
 }
 
 [node name="Item_Screen" type="Control" parent="."]
+visible = false
 margin_left = -174.0
 margin_top = -98.0
 margin_right = 173.0
@@ -191,11 +193,11 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_Open_Roster"]
 [connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Roster_Screen" method="_on_Roster_Open_Roster"]
+[connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_Open_Roster"]
 [connection signal="script_changed" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_script_changed"]
-[connection signal="items" from="Main_Backpack_Buttons/Items" to="Info_Screen_Base" method="_on_Items_items"]
 [connection signal="items" from="Main_Backpack_Buttons/Items" to="Item_Screen" method="_on_Items_items"]
+[connection signal="items" from="Main_Backpack_Buttons/Items" to="Info_Screen_Base" method="_on_Items_items"]
 [connection signal="Prof_Pressed" from="Roster_Screen/Prof1" to="Roster_Screen/RichTextLabel" method="_on_Prof1_Prof_Pressed"]
 [connection signal="Prof2_Pressed" from="Roster_Screen/Prof2" to="Roster_Screen/RichTextLabel" method="_on_Prof2_Prof2_Pressed"]
 [connection signal="Prof3_Pressed" from="Roster_Screen/Prof3" to="Roster_Screen/RichTextLabel" method="_on_Prof3_Prof3_Pressed"]
@@ -203,10 +205,10 @@ __meta__ = {
 [connection signal="Prof5_Pressed" from="Roster_Screen/Prof5" to="Roster_Screen/RichTextLabel" method="_on_Prof5_Prof5_Pressed"]
 [connection signal="Prof6_Pressed" from="Roster_Screen/Prof6" to="Roster_Screen/RichTextLabel" method="_on_Prof6_Prof6_Pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
