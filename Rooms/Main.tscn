@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Room_Transition.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -10,15 +10,10 @@
 [ext_resource path="res://Rooms/Shop.gd" type="Script" id=8]
 [ext_resource path="res://Professor/ProfessorWorldObj.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Tiles/overlay.tres" type="TileSet" id=10]
-[ext_resource path="res://Rooms/Item_Shop.gd" type="Script" id=11]
-[ext_resource path="res://Rooms/Exit_Shop.gd" type="Script" id=12]
 [ext_resource path="res://Animations/Fade_In.tres" type="Animation" id=13]
 [ext_resource path="res://Rooms/Main.gd" type="Script" id=14]
 [ext_resource path="res://Rooms/ECE Map.gd" type="Script" id=15]
-[ext_resource path="res://Rooms/Item 1.gd" type="Script" id=16]
 [ext_resource path="res://Rooms/ProfSpawn.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Rooms/TextureRect.gd" type="Script" id=18]
-[ext_resource path="res://Sprites/Black_Texture.PNG" type="Texture" id=19]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 10.8316
@@ -129,121 +124,8 @@ position = Vector2( 715.221, 580.837 )
 position = Vector2( 738.234, 581.558 )
 
 [node name="Player" parent="ECE Map" instance=ExtResource( 2 )]
-position = Vector2( 779.378, 563.052 )
-
-[node name="Player_Shop" type="Control" parent="ECE Map/Player"]
-visible = false
-margin_left = -175.0
-margin_top = -100.0
-margin_right = 176.0
-margin_bottom = 101.0
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Exit_Shop" type="Button" parent="ECE Map/Player/Player_Shop"]
-visible = false
-margin_left = 309.712
-margin_top = 176.136
-margin_right = 344.712
-margin_bottom = 196.136
-text = "Exit"
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer" type="GridContainer" parent="ECE Map/Player/Player_Shop"]
-anchor_bottom = 0.157
-margin_left = 237.0
-margin_top = 2.0
-margin_right = 346.0
-margin_bottom = 137.0
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Item 0" type="Button" parent="ECE Map/Player/Player_Shop/GridContainer"]
-margin_right = 55.0
-margin_bottom = 20.0
-text = "Item 0"
-script = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Item 1" type="Button" parent="ECE Map/Player/Player_Shop/GridContainer"]
-margin_top = 24.0
-margin_right = 55.0
-margin_bottom = 44.0
-text = "Item 1"
-script = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Item 2" type="Button" parent="ECE Map/Player/Player_Shop/GridContainer"]
-margin_top = 48.0
-margin_right = 55.0
-margin_bottom = 68.0
-text = "Item 2"
-script = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Item_Description" type="TextureRect" parent="ECE Map/Player/Player_Shop"]
-margin_right = 482.0
-margin_bottom = 271.0
-rect_scale = Vector2( 0.482899, 0.742695 )
-texture = ExtResource( 19 )
-script = ExtResource( 18 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Item Description" type="RichTextLabel" parent="ECE Map/Player/Player_Shop/Item_Description"]
-margin_left = -4.05908
-margin_right = 481.941
-margin_bottom = 274.0
-rect_scale = Vector2( 0.991095, 0.985247 )
-text = "This is ... . It costs X dogecoin. It helps with ...
-
-Are you sure you want to purchase this?"
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Confirm" type="Button" parent="ECE Map/Player/Player_Shop/Item_Description"]
-margin_top = 250.0
-margin_right = 482.0
-margin_bottom = 270.0
-text = "Click to confirm purchase"
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
+position = Vector2( 794.94, 568.805 )
 
 [node name="ProfessorWorldObj" parent="ECE Map" instance=ExtResource( 9 )]
 position = Vector2( 759.138, 579.118 )
-[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 2" method="_on_ECE_Map_return_name"]
-[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 0" method="_on_ECE_Map_return_name"]
-[connection signal="return_name" from="ECE Map" to="ECE Map/Player/Player_Shop/GridContainer/Item 1" method="_on_ECE_Map_return_name"]
-[connection signal="Open_Shop" from="ECE Map/Shop" to="ECE Map/Player" method="_on_Area2D_Open_Shop"]
-[connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player/Player_Shop" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Shop" method="_on_Too_Far_From_Shop_too_far"]
-[connection signal="closed" from="ECE Map/Player/Player_Shop/Exit_Shop" to="ECE Map/Shop" method="_on_Exit_Shop_closed"]
-[connection signal="name" from="ECE Map/Player/Player_Shop/GridContainer/Item 0" to="ECE Map" method="_on_Item_1_name"]
-[connection signal="show" from="ECE Map/Player/Player_Shop/GridContainer/Item 0" to="ECE Map/Player/Player_Shop/Item_Description" method="_on_Item_0_show"]
-[connection signal="name" from="ECE Map/Player/Player_Shop/GridContainer/Item 1" to="ECE Map" method="_on_Item_1_name"]
-[connection signal="show" from="ECE Map/Player/Player_Shop/GridContainer/Item 1" to="ECE Map/Player/Player_Shop/Item_Description" method="_on_Item_1_show"]
-[connection signal="name" from="ECE Map/Player/Player_Shop/GridContainer/Item 2" to="ECE Map" method="_on_Item_1_name"]
-[connection signal="show" from="ECE Map/Player/Player_Shop/GridContainer/Item 2" to="ECE Map/Player/Player_Shop/Item_Description" method="_on_Item_2_show"]
