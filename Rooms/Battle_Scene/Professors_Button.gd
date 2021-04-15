@@ -16,6 +16,8 @@ func _pressed():
 	for children in node.get_children():
 		if children.name == "Professor Set":
 			node = children
+		if children.name == "Professors":
+			children.visible = false
 	node.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
