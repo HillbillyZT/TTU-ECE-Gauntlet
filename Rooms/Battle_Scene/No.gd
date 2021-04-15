@@ -14,9 +14,6 @@ func _pressed():
 	var root = get_node("..").get_parent()
 	for child in root.get_children():
 		if child.name == "Drop Set":
-			child.visible = true
-		if child.name == "Main Buttons":
 			child.visible = false
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+		if child.name == "Main Buttons":
+			child.visible = true
