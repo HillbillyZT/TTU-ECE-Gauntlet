@@ -1,9 +1,10 @@
 extends Button
 
-onready var keys = Globals.temp_player_roster.keys()
 signal change_displayed
+signal change_cur_prof
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var keys = Globals.temp_player_roster.keys()
 	if keys.size() <= 0:
 		print("um... This shouldn't be possible...")
 		self.visible = false
@@ -12,3 +13,4 @@ func _ready():
 
 func _pressed():
 	emit_signal("change_displayed",Globals.prof_current[self.text]["sprite"])
+	emit_signal("change_cur_prof",self.text)

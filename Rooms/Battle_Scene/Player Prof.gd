@@ -14,3 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Battle_Scene_Test_change_texture(texture):
+	self.texture = load(texture)

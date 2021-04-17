@@ -44,7 +44,7 @@ func generate_professor():
 	
 	# augment stats based on position modifier
 	for key in professor_gen:
-		if(key == "sprite"): continue
+		if(key == "sprite"||key == "moves"): continue
 		professor_gen[key] = ceil(professor_gen[key] * (statMod / 100.0))
 	
 	return [professor_name, professor_gen]

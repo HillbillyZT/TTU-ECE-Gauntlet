@@ -8,7 +8,7 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 # TODO make this reference the previous scene, not OG
 # TODO when exiting battle, DELETE PROFESSOR
