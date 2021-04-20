@@ -43,35 +43,35 @@ region = Rect2( 39, 0, 13, 24 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 24, 13, 24 )
+region = Rect2( 0, 72, 13, 24 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 13, 24, 13, 24 )
+region = Rect2( 13, 72, 13, 24 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 26, 24, 13, 24 )
+region = Rect2( 26, 72, 13, 24 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 39, 24, 13, 24 )
+region = Rect2( 39, 72, 13, 24 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 72, 13, 24 )
+region = Rect2( 0, 24, 13, 24 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 13, 72, 13, 24 )
+region = Rect2( 13, 24, 13, 24 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 26, 72, 13, 24 )
+region = Rect2( 26, 24, 13, 24 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 39, 72, 13, 24 )
+region = Rect2( 39, 24, 13, 24 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
@@ -87,12 +87,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "walk_left",
+"name": "walk_up",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
-"name": "walk_up",
+"name": "walk_left",
 "speed": 5.0
 } ]
 
@@ -107,7 +107,7 @@ script = ExtResource( 2 )
 position = Vector2( -0.515625, -0.201785 )
 frames = SubResource( 17 )
 animation = "walk_left"
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -144,7 +144,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="Player_Shop"]
+[node name="Items" type="GridContainer" parent="Player_Shop"]
 anchor_bottom = 0.157
 margin_left = 237.0
 margin_top = 2.0
@@ -155,7 +155,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Item 0" type="Button" parent="Player_Shop/GridContainer"]
+[node name="Item 0" type="Button" parent="Player_Shop/Items"]
 margin_right = 55.0
 margin_bottom = 20.0
 text = "Item 0"
@@ -165,7 +165,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Item 1" type="Button" parent="Player_Shop/GridContainer"]
+[node name="Item 1" type="Button" parent="Player_Shop/Items"]
 margin_top = 24.0
 margin_right = 55.0
 margin_bottom = 44.0
@@ -176,7 +176,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Item 2" type="Button" parent="Player_Shop/GridContainer"]
+[node name="Item 2" type="Button" parent="Player_Shop/Items"]
 margin_top = 48.0
 margin_right = 55.0
 margin_bottom = 68.0
@@ -217,6 +217,6 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-[connection signal="show" from="Player_Shop/GridContainer/Item 0" to="Player_Shop/Item_Description" method="_on_Item_0_show"]
-[connection signal="show" from="Player_Shop/GridContainer/Item 1" to="Player_Shop/Item_Description" method="_on_Item_1_show"]
-[connection signal="show" from="Player_Shop/GridContainer/Item 2" to="Player_Shop/Item_Description" method="_on_Item_2_show"]
+[connection signal="show" from="Player_Shop/Items/Item 0" to="Player_Shop/Item_Description" method="_on_Item_0_show"]
+[connection signal="show" from="Player_Shop/Items/Item 1" to="Player_Shop/Item_Description" method="_on_Item_1_show"]
+[connection signal="show" from="Player_Shop/Items/Item 2" to="Player_Shop/Item_Description" method="_on_Item_2_show"]

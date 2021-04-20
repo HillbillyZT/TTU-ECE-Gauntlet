@@ -22,4 +22,5 @@ func _on_Too_Far_From_Shop_too_far():
 
 
 func _on_Shop_Open_Shop():
+	print("Recieved signal")
 	self.visible = true

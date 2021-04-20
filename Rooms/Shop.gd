@@ -4,11 +4,11 @@ signal Open_Shop
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
-var sent
+signal items
+onready var sent = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	emit_signal("items")
 
 func _physics_process(delta):
 	var bodies = get_overlapping_bodies()
@@ -31,3 +31,4 @@ func _on_Exit_Shop_closed():
 
 func _on_Too_Far_From_Shop_too_far():
 	sent = 0
+

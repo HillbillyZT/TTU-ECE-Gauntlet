@@ -47,13 +47,31 @@ func _input(event):
 	if(event.is_action_pressed("ui_menu")):
 		backpack.visible = !(backpack.visible)
 
-
-func _on_Area2D_Open_Shop():
-	var player = get_node(".")
-	var children = player.get_children()
-	for child in children:
-		if child.name == "Player_Shop":
-			child.visible = !child.visible
-
 func _on_update_player_pos():
 	self.position = Globals.player_buffered_position
+
+
+func _on_Shop_Open_Shop():
+	var children = self.get_children()
+	for child in children:
+		if child.name == "Player_Shop":
+			child.visible = true
+
+
+func _on_Too_Far_From_Shop_too_far():
+	var children = self.get_children()
+	for child in children:
+		if child.name == "Player_Shop":
+			child.visible = false
+
+
+func _on_ECE_Map_return_list(items):
+	#plz help, this is horrifying.... but works :)
+	var i = 0
+	for child in self.get_children():
+		if child.name == "Player_Shop":
+			for childs in child.get_children():
+				if childs.name == "Items":
+					for childe in childs.get_children():
+						childe.text = items[i]
+						i += 1

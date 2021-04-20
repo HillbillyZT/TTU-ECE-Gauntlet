@@ -9,10 +9,10 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/gale/gale-spritesheet.png",
 		moves = {
-			1:"Gale1",
-			2:"Gale2",
-			3:"Gale3",
-			4:"Gale4"
+			1:"Ventilate",
+			2:"Recruitment",
+			3:"Integrate",
+			4:"Pop Quiz"
 		}
 	},
 	"helm": {
@@ -22,10 +22,10 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/helm/helm-spritesheet.png",
 		moves = {
-			1:"Helm1",
-			2:"Helm2",
-			3:"Helm3",
-			4:"Helm4"
+			1:"Three-Stage Amp",
+			2:"Interrupt Vector",
+			3:"No Curve",
+			4:"Differentiate"
 		}
 	},
 	"nikishin": {
@@ -35,10 +35,10 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/nikishin/nikishin-spritesheet.png",
 		moves = {
-			1:"nikishin1",
-			2:"nikishin2",
-			3:"nikishin3",
-			4:"nikishin4"
+			1:"Sips Waterbottle, Grimace",
+			2:"Final Solution",
+			3:"No Curve",
+			4:"Pop Quiz"
 		}
 	},
 	"nutter": {
@@ -61,10 +61,10 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/sarraf/sarraf-spritesheet.png",
 		moves = {
-			1:"sarraf1",
-			2:"sarraf2",
-			3:"sarraf3",
-			4:"sarraf4"
+			1:"Computer Vision",
+			2:"Machine Learning",
+			3:"Integrate",
+			4:"Differentiate"
 		}
 	}, 
 	"stephens":{
@@ -74,10 +74,10 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/stephens/stephens-spritesheet.png",
 		moves = {
-			1:"stephens1",
-			2:"stephens2",
-			3:"stephens3",
-			4:"stephens4"
+			1:"Fourier Transform",
+			2:"Convolution",
+			3:"Pop Quiz",
+			4:"Integrate"
 		}
 	},
 	"storrs":{
@@ -87,10 +87,10 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/storrs/storrs-spritesheet.png",
 		moves = {
-			1:"storrs1",
-			2:"storrs2",
-			3:"storrs3",
-			4:"storrs4"
+			1:"Linear Transformation",
+			2:"Node Voltage Analysis",
+			3:"No Curve",
+			4:"Differentiate"
 		}
 	}
 }

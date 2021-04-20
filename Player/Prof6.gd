@@ -9,7 +9,10 @@ signal Prof6_Pressed
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var keys = Globals.temp_player_roster.keys()
-	self.text = keys[5]
+	if keys.size() > 5:
+		self.text = keys[5]
+	else:
+		self.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

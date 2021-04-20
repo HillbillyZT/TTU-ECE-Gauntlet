@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
-[ext_resource path="res://Professor/ProfessorWorldObj.gd" type="Script" id=5]
 [ext_resource path="res://Tiles/ece/ece.tres" type="TileSet" id=6]
 [ext_resource path="res://Rooms/Too_Far_From_Shop.gd" type="Script" id=7]
 [ext_resource path="res://Rooms/Shop.gd" type="Script" id=8]
@@ -14,10 +13,7 @@
 [ext_resource path="res://Rooms/ECE Map.gd" type="Script" id=15]
 [ext_resource path="res://Rooms/ProfSpawn.tscn" type="PackedScene" id=17]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 10.8316
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.3861, 10 )
 
 [node name="Trans_Rect" type="ColorRect"]
@@ -61,18 +57,39 @@ position = Vector2( 539.682, 566.187 )
 rotation = 0.0
 portal_exit_pos = Vector2( 670, 720 )
 
-[node name="Professor" type="Area2D" parent="ECE Map"]
-position = Vector2( 277.464, 632.328 )
-script = ExtResource( 5 )
+[node name="Room_Transition3" parent="ECE Map" instance=ExtResource( 11 )]
+position = Vector2( -156.004, 590.863 )
+rotation = 0.0
+portal_exit_pos = Vector2( 0, 0 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ECE Map/Professor"]
-polygon = PoolVector2Array( -4.27863, -11.0858, 3.39453, -10.7704, 7.91437, -7.4068, 10.2268, -3.6228, 9.80637, 3.52484, 7.38879, 8.35999, 2.97409, 10.8827, -3.96329, 10.7775, -8.58823, 8.35999, -11.0058, 3.73505, -10.9007, -4.25348, -8.16779, -7.4068 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Room_Transition4" parent="ECE Map" instance=ExtResource( 11 )]
+position = Vector2( -584.713, 563.214 )
+portal_exit_pos = Vector2( 670, 720 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ECE Map/Professor"]
-shape = SubResource( 1 )
+[node name="Room_Transition5" parent="ECE Map" instance=ExtResource( 11 )]
+position = Vector2( -467.576, 485.618 )
+rotation = -3.14159
+portal_exit_pos = Vector2( 670, 720 )
+
+[node name="Room_Transition6" parent="ECE Map" instance=ExtResource( 11 )]
+position = Vector2( -566.578, 355.697 )
+rotation = -3.92699
+portal_exit_pos = Vector2( 670, 720 )
+
+[node name="Room_Transition7" parent="ECE Map" instance=ExtResource( 11 )]
+position = Vector2( -478.279, 69.0986 )
+rotation = -2.35619
+portal_exit_pos = Vector2( 670, 720 )
+
+[node name="Room_Transition8" parent="ECE Map" instance=ExtResource( 11 )]
+position = Vector2( -529.415, -118.796 )
+rotation = 0.785398
+portal_exit_pos = Vector2( 670, 720 )
+
+[node name="Room_Transition9" parent="ECE Map" instance=ExtResource( 11 )]
+position = Vector2( -530.045, -383.065 )
+rotation = 0.785398
+portal_exit_pos = Vector2( 670, 720 )
 
 [node name="Shop" type="Area2D" parent="ECE Map"]
 position = Vector2( 60.5827, 422.168 )
@@ -91,7 +108,7 @@ script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ECE Map/Too_Far_From_Shop"]
 position = Vector2( 7.62939e-06, -1.11359 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ProfSpawn" parent="ECE Map" instance=ExtResource( 17 )]
 position = Vector2( 623, 580.625 )
@@ -116,4 +133,8 @@ position = Vector2( 796.297, 573.564 )
 
 [node name="ProfessorWorldObj" parent="ECE Map" instance=ExtResource( 9 )]
 position = Vector2( 759.138, 579.118 )
+[connection signal="return_list" from="ECE Map" to="ECE Map/Player" method="_on_ECE_Map_return_list"]
+[connection signal="Open_Shop" from="ECE Map/Shop" to="ECE Map/Player" method="_on_Shop_Open_Shop"]
+[connection signal="items" from="ECE Map/Shop" to="ECE Map" method="_on_Shop_items"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Shop" method="_on_Too_Far_From_Shop_too_far"]
+[connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player" method="_on_Too_Far_From_Shop_too_far"]

@@ -13,7 +13,7 @@ func _ready():
 # TODO make this reference the previous scene, not OG
 # TODO when exiting battle, DELETE PROFESSOR
 func _pressed():
-	SceneSwitcher.change_scene(SceneSwitcher.world_scene) 
+	print("you used the {str} move!".format({"str":self.text}))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
