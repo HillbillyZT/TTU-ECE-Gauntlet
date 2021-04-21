@@ -12,7 +12,6 @@ func _ready():
 
 func _pressed():
 	emit_signal("used_move", "Player", self.text)
-	pass
 	
 
 # ================================ FUNCTIONS ===================================
