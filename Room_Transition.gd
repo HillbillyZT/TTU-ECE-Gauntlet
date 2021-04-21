@@ -28,6 +28,5 @@ func timeout():
 	timeout = true
 	my_timer.start()
 
-
 func _on_Timer_timeout():
 	timeout = false

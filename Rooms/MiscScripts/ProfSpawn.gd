@@ -45,13 +45,15 @@ func generate_professor():
 	# augment stats based on position modifier
 	for key in professor_gen:
 		if(key == "sprite"||key == "moves"): continue
+		
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 		if(key != "hp"):
-			professor_gen[key] = stepify((professor_gen[key] * (statMod / 100.0) + rng.randf_range(-2,2)), .1)
+			professor_gen[key] = stepify((professor_gen[key] * \
+								(statMod / 100.0) + rng.randf_range(-2,2)), .1)
 		else:
 			professor_gen[key] = stepify(professor_gen[key] + rng.randi_range(-20,20), 1)
-	 #stepify( rng.randf_range(-1,1), .1)
+			
 	return [professor_name, professor_gen]
 
 func select_professor():
