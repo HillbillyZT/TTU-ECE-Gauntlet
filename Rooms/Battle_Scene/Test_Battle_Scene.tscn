@@ -191,7 +191,6 @@ __meta__ = {
 [node name="Prof1_Animated" type="AnimatedSprite" parent="Professor Set/Prof1"]
 position = Vector2( 86, 10 )
 frames = ExtResource( 27 )
-animation = "woody"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -210,7 +209,6 @@ __meta__ = {
 [node name="Prof2_Animated" type="AnimatedSprite" parent="Professor Set/Prof2"]
 position = Vector2( -11, 10 )
 frames = ExtResource( 27 )
-animation = "woody"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -229,7 +227,6 @@ __meta__ = {
 [node name="Prof3_Animated" type="AnimatedSprite" parent="Professor Set/Prof3"]
 position = Vector2( 86, 10 )
 frames = ExtResource( 27 )
-animation = "woody"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -248,7 +245,6 @@ __meta__ = {
 [node name="Prof4_Animated" type="AnimatedSprite" parent="Professor Set/Prof4"]
 position = Vector2( -11, 10 )
 frames = ExtResource( 27 )
-animation = "woody"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -267,7 +263,6 @@ __meta__ = {
 [node name="Prof5_Animated" type="AnimatedSprite" parent="Professor Set/Prof5"]
 position = Vector2( 86, 10 )
 frames = ExtResource( 27 )
-animation = "woody"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -286,7 +281,6 @@ __meta__ = {
 [node name="Prof6_Animated" type="AnimatedSprite" parent="Professor Set/Prof6"]
 position = Vector2( -11, 10 )
 frames = ExtResource( 27 )
-animation = "woody"
 __meta__ = {
 "_edit_lock_": true
 }

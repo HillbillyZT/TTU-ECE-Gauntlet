@@ -35,8 +35,8 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/nikishin/nikishin-spritesheet.png",
 		moves = {
-			1:"Sips Waterbottle, Grimace",
-			2:"Final Solution",
+			1:"Sip Water",
+			2:"Divergence",
 			3:"No Curve",
 			4:"Pop Quiz"
 		}

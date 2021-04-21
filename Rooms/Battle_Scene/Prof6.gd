@@ -11,7 +11,8 @@ func _ready():
 		prof_animated.visible = false
 	else:
 		self.text = keys[5]
-		prof_animated.play(self.text)
+		if self.text in prof_animated.frames.get_animation_names():
+			prof_animated.play(self.text)
 
 func _pressed():
 	emit_signal("change_displayed",Globals.prof_current[self.text]["sprite"])
