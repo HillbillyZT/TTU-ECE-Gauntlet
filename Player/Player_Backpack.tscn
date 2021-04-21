@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Sprites/Temp_Backpack_info.PNG" type="Texture" id=1]
 [ext_resource path="res://Player/Roster_Button.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Player/Prof6.gd" type="Script" id=13]
 [ext_resource path="res://Player/Items.gd" type="Script" id=14]
 [ext_resource path="res://Player/Item_Screen.gd" type="Script" id=15]
+[ext_resource path="res://Theme/UI.tres" type="Theme" id=16]
 
 [node name="Node2D" type="Node2D"]
 
@@ -30,16 +31,17 @@ __meta__ = {
 margin_top = -98.0
 margin_right = 174.0
 margin_bottom = 98.0
+theme = ExtResource( 16 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Roster" type="Button" parent="Main_Backpack_Buttons"]
-margin_left = 119.365
-margin_top = 0.529312
-margin_right = 172.365
-margin_bottom = 20.5293
+margin_left = 50.0
+margin_top = 1.0
+margin_right = 108.0
+margin_bottom = 21.0
 text = "Roster"
 script = ExtResource( 2 )
 __meta__ = {
@@ -47,19 +49,19 @@ __meta__ = {
 }
 
 [node name="Professor-Dex" type="Button" parent="Main_Backpack_Buttons"]
-margin_left = 70.4924
-margin_top = 23.1196
-margin_right = 172.492
-margin_bottom = 43.1196
+margin_left = 50.0
+margin_top = 23.0
+margin_right = 173.0
+margin_bottom = 43.0
 text = "Professor-Dex"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Items" type="Button" parent="Main_Backpack_Buttons"]
-margin_left = 121.811
+margin_left = 50.0
 margin_top = 45.0
-margin_right = 171.811
+margin_right = 100.0
 margin_bottom = 65.0
 text = "Items"
 script = ExtResource( 14 )
@@ -72,6 +74,7 @@ visible = false
 margin_left = -173.0
 margin_top = -98.0
 margin_bottom = 99.0
+theme = ExtResource( 16 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,10 +91,12 @@ __meta__ = {
 }
 
 [node name="Roster_Screen" type="Control" parent="."]
+visible = false
 margin_left = -174.0
 margin_top = -99.0
 margin_right = 174.0
 margin_bottom = 98.0
+theme = ExtResource( 16 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -180,6 +185,7 @@ margin_left = -174.0
 margin_top = -98.0
 margin_right = 173.0
 margin_bottom = 99.0
+theme = ExtResource( 16 )
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
