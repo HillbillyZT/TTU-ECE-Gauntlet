@@ -99,6 +99,8 @@ var prof_current = {}
 var prof_battle;
 
 var player_buffered_position = Vector2(794, 569)
+var player_buffered_velocity = Vector2(0,0)
+
 var temp_player_roster = prof_current
 
 func _ready():

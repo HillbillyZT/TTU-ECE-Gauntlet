@@ -15,8 +15,13 @@ onready var backpack = get_node("Backpack")
 func _ready():
 	add_to_group("Player")
 	backpack.visible = false
-	self.position = Globals.player_buffered_position
+	_on_update_player_pos()
+	
+	#Signal Connections
 	SceneSwitcher.connect("update_player_pos", self, "_on_update_player_pos")
+	SceneSwitcher.connect("player_update", self, "_on_player_update")
+	SceneSwitcher.connect("player_store", self, "_on_player_store")
+	
 
 func _physics_process(delta):
 	$Sprite.playing = true
@@ -49,7 +54,13 @@ func _input(event):
 
 func _on_update_player_pos():
 	self.position = Globals.player_buffered_position
+	self.velocity = Globals.player_buffered_velocity
 
+func _on_player_update():
+	pass
+
+func _on_player_store():
+	pass
 
 func _on_Shop_Open_Shop():
 	var children = self.get_children()
