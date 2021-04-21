@@ -16,4 +16,3 @@ func _pressed():
 	
 
 # ================================ FUNCTIONS ===================================
-	# print("you used the {str} move!".format({"str":self.text}))

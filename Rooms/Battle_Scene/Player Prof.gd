@@ -31,7 +31,3 @@ func get_sprite_back_tex(sprite_path):
 	var sprite_tex = ImageTexture.new()
 	sprite_tex.create_from_image(sprite, 0)
 	return sprite_tex
-
-func attack():
-	
-	pass

@@ -30,7 +30,7 @@ func stat_anim_p(usr):
 	print("%s boosts their stats!" % usr)
 
 func stat_anim_m(usr):
-	print("%s boosts their stats!" % usr)
+	print("%s lowers opponents stats!" % usr)
 
 func stat_anim_pm(usr):
-	print("%s boosts their stats!" % usr)
+	print("%s boosts their stats and lowers their opponents stats!" % usr)
