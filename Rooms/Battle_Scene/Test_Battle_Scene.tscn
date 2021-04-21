@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Battle/background-ece.png" type="Texture" id=1]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Button.gd" type="Script" id=2]
@@ -10,12 +10,8 @@
 [ext_resource path="res://Rooms/ProfessorsList.gd" type="Script" id=8]
 [ext_resource path="res://Rooms/Battle_Scene/Move1.gd" type="Script" id=9]
 [ext_resource path="res://Tiles/desk/desk.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/storrs/storrs-spritesheet.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/nikishin/nikishin-spritesheet.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/nutter/nutter-world.png" type="Texture" id=13]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Battle_Scene.gd" type="Script" id=14]
 [ext_resource path="res://Rooms/Battle_Scene/Prof1.gd" type="Script" id=15]
-[ext_resource path="res://Rooms/Battle_Scene/TextureButton.gd" type="Script" id=16]
 [ext_resource path="res://Rooms/Battle_Scene/Drop Set.gd" type="Script" id=17]
 [ext_resource path="res://Rooms/Battle_Scene/No.gd" type="Script" id=18]
 [ext_resource path="res://Rooms/Battle_Scene/Drop.gd" type="Script" id=19]
@@ -65,10 +61,10 @@ __meta__ = {
 }
 
 [node name="Moves" type="Button" parent="Main Buttons"]
-margin_left = 2.0
-margin_top = 168.0
-margin_right = 73.0
-margin_bottom = 195.0
+margin_left = 3.0
+margin_top = 157.0
+margin_right = 74.0
+margin_bottom = 197.0
 text = "Moves"
 script = ExtResource( 2 )
 __meta__ = {
@@ -76,20 +72,20 @@ __meta__ = {
 }
 
 [node name="Hire" type="Button" parent="Main Buttons"]
-margin_left = 75.0
-margin_top = 168.0
-margin_right = 146.0
-margin_bottom = 195.0
+margin_left = 76.0
+margin_top = 157.0
+margin_right = 147.0
+margin_bottom = 197.0
 text = "Hire"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Professors" type="Button" parent="Main Buttons"]
-margin_left = 200.0
-margin_top = 168.0
-margin_right = 271.0
-margin_bottom = 195.0
+margin_left = 203.0
+margin_top = 157.0
+margin_right = 274.0
+margin_bottom = 197.0
 text = "Profs"
 script = ExtResource( 5 )
 __meta__ = {
@@ -97,10 +93,10 @@ __meta__ = {
 }
 
 [node name="Drop" type="Button" parent="Main Buttons"]
-margin_left = 273.0
-margin_top = 168.0
-margin_right = 344.0
-margin_bottom = 195.0
+margin_left = 276.0
+margin_top = 157.0
+margin_right = 347.0
+margin_bottom = 197.0
 text = "Drop"
 script = ExtResource( 19 )
 
@@ -117,10 +113,10 @@ __meta__ = {
 }
 
 [node name="Move1" type="Button" parent="Move Set"]
-margin_left = -52.0
-margin_top = 93.0
-margin_right = 19.0
-margin_bottom = 120.0
+margin_left = -51.0
+margin_top = 82.0
+margin_right = 92.0
+margin_bottom = 101.0
 text = "Move 1"
 script = ExtResource( 9 )
 __meta__ = {
@@ -128,37 +124,37 @@ __meta__ = {
 }
 
 [node name="Move2" type="Button" parent="Move Set"]
-margin_left = 21.0
-margin_top = 93.0
-margin_right = 92.0
-margin_bottom = 120.0
+margin_left = 146.0
+margin_top = 82.0
+margin_right = 293.0
+margin_bottom = 101.0
 text = "Move 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Move3" type="Button" parent="Move Set"]
-margin_left = 146.0
-margin_top = 93.0
-margin_right = 217.0
-margin_bottom = 120.0
+margin_left = -51.0
+margin_top = 103.0
+margin_right = 92.0
+margin_bottom = 122.0
 text = "Move 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Move4" type="Button" parent="Move Set"]
-margin_left = 219.0
-margin_top = 93.0
-margin_right = 290.0
-margin_bottom = 120.0
+margin_left = 146.0
+margin_top = 103.0
+margin_right = 293.0
+margin_bottom = 122.0
 text = "Move 4"
 
 [node name="Back" type="Button" parent="Move Set"]
 margin_left = 94.0
-margin_top = 96.0
+margin_top = 92.0
 margin_right = 144.0
-margin_bottom = 116.0
+margin_bottom = 112.0
 text = "Back"
 script = ExtResource( 7 )
 __meta__ = {
@@ -179,9 +175,9 @@ __meta__ = {
 
 [node name="Prof1" type="Button" parent="Professor Set"]
 margin_left = 1.0
-margin_top = 30.0
+margin_top = 16.0
 margin_right = 76.0
-margin_bottom = 50.0
+margin_bottom = 36.0
 text = "Prof"
 script = ExtResource( 15 )
 __meta__ = {
@@ -197,9 +193,9 @@ __meta__ = {
 
 [node name="Prof2" type="Button" parent="Professor Set"]
 margin_left = 278.0
-margin_top = 30.0
+margin_top = 16.0
 margin_right = 353.0
-margin_bottom = 50.0
+margin_bottom = 36.0
 text = "Prof"
 script = ExtResource( 24 )
 __meta__ = {
@@ -215,9 +211,9 @@ __meta__ = {
 
 [node name="Prof3" type="Button" parent="Professor Set"]
 margin_left = 1.0
-margin_top = 81.0
+margin_top = 67.0
 margin_right = 76.0
-margin_bottom = 101.0
+margin_bottom = 87.0
 text = "Prof"
 script = ExtResource( 25 )
 __meta__ = {
@@ -233,9 +229,9 @@ __meta__ = {
 
 [node name="Prof4" type="Button" parent="Professor Set"]
 margin_left = 278.0
-margin_top = 81.0
+margin_top = 67.0
 margin_right = 353.0
-margin_bottom = 101.0
+margin_bottom = 87.0
 text = "Prof"
 script = ExtResource( 23 )
 __meta__ = {
@@ -251,9 +247,9 @@ __meta__ = {
 
 [node name="Prof5" type="Button" parent="Professor Set"]
 margin_left = 1.0
-margin_top = 132.0
+margin_top = 118.0
 margin_right = 76.0
-margin_bottom = 152.0
+margin_bottom = 138.0
 text = "Prof"
 script = ExtResource( 4 )
 __meta__ = {
@@ -269,9 +265,9 @@ __meta__ = {
 
 [node name="Prof6" type="Button" parent="Professor Set"]
 margin_left = 278.0
-margin_top = 132.0
+margin_top = 118.0
 margin_right = 353.0
-margin_bottom = 152.0
+margin_bottom = 138.0
 text = "Prof"
 script = ExtResource( 3 )
 __meta__ = {
@@ -286,29 +282,12 @@ __meta__ = {
 }
 
 [node name="Back" type="Button" parent="Professor Set"]
-margin_left = 137.0
-margin_top = 169.0
-margin_right = 212.0
-margin_bottom = 189.0
+margin_left = 150.0
+margin_top = 167.0
+margin_right = 200.0
+margin_bottom = 187.0
 text = "Back"
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TestProf1" type="TextureButton" parent="Professor Set"]
-visible = false
-anchor_left = 0.433
-anchor_top = 0.03
-anchor_right = 0.579
-anchor_bottom = 0.505
-margin_left = -1.117
-margin_top = -1.0
-margin_right = -0.0710144
-texture_normal = ExtResource( 11 )
-texture_pressed = ExtResource( 13 )
-texture_hover = ExtResource( 12 )
-script = ExtResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -325,7 +304,7 @@ __meta__ = {
 }
 
 [node name="Player Prof" type="Sprite" parent="Professors"]
-position = Vector2( 115, 112 )
+position = Vector2( 115, 101 )
 script = ExtResource( 21 )
 
 [node name="Enemy Prof" type="Sprite" parent="Professors"]
@@ -346,21 +325,22 @@ __meta__ = {
 
 [node name="Confirmation Text" type="RichTextLabel" parent="Drop Set"]
 margin_left = 62.0
-margin_top = 2.0
+margin_top = -8.0
 margin_right = 280.0
 margin_bottom = 32.0
 theme = ExtResource( 20 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "      Are you sure?
   Your GPA will suffer!"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Yes" type="Button" parent="Drop Set"]
-margin_left = 5.0
-margin_top = 2.0
-margin_right = 57.0
+margin_left = 3.0
+margin_top = -8.0
+margin_right = 67.0
 margin_bottom = 32.0
 text = "Yes"
 script = ExtResource( 26 )
@@ -369,23 +349,17 @@ __meta__ = {
 }
 
 [node name="No" type="Button" parent="Drop Set"]
-margin_left = 285.0
-margin_top = 3.0
-margin_right = 337.0
-margin_bottom = 33.0
+margin_left = 283.0
+margin_top = -8.0
+margin_right = 347.0
+margin_bottom = 32.0
 text = "No"
 script = ExtResource( 18 )
 [connection signal="change_moves" from="." to="Move Set" method="_on_Battle_Scene_Test_change_moves"]
 [connection signal="change_texture" from="." to="Professors/Player Prof" method="_on_Battle_Scene_Test_change_texture"]
 [connection signal="change_cur_prof" from="Professor Set/Prof1" to="." method="_change_cur_prof"]
-[connection signal="change_displayed" from="Professor Set/Prof1" to="Professor Set/TestProf1" method="_change_displayed"]
 [connection signal="change_cur_prof" from="Professor Set/Prof2" to="." method="_change_cur_prof"]
-[connection signal="change_displayed" from="Professor Set/Prof2" to="Professor Set/TestProf1" method="_change_displayed"]
 [connection signal="change_cur_prof" from="Professor Set/Prof3" to="." method="_change_cur_prof"]
-[connection signal="change_displayed" from="Professor Set/Prof3" to="Professor Set/TestProf1" method="_change_displayed"]
 [connection signal="change_cur_prof" from="Professor Set/Prof4" to="." method="_change_cur_prof"]
-[connection signal="change_displayed" from="Professor Set/Prof4" to="Professor Set/TestProf1" method="_change_displayed"]
 [connection signal="change_cur_prof" from="Professor Set/Prof5" to="." method="_change_cur_prof"]
-[connection signal="change_displayed" from="Professor Set/Prof5" to="Professor Set/TestProf1" method="_change_displayed"]
 [connection signal="change_cur_prof" from="Professor Set/Prof6" to="." method="_change_cur_prof"]
-[connection signal="change_displayed" from="Professor Set/Prof6" to="Professor Set/TestProf1" method="_change_displayed"]
