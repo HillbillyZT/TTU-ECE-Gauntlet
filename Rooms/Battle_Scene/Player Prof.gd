@@ -1,6 +1,6 @@
 extends Sprite
 
-# ============================= DEFINE CONSTANTS ===============================
+# =========================== MEMBERS & CONSTANTS ==============================
 const SPRITE_W = 13
 const SPRITE_H = 19
 const SPRITE_SIZE = Vector2(SPRITE_W, SPRITE_H)
@@ -31,3 +31,7 @@ func get_sprite_back_tex(sprite_path):
 	var sprite_tex = ImageTexture.new()
 	sprite_tex.create_from_image(sprite, 0)
 	return sprite_tex
+
+func attack():
+	
+	pass
