@@ -1,9 +1,6 @@
 extends Button
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal cur_sel
 signal name
 signal show
 onready var Name = self.name
@@ -18,6 +15,7 @@ func _ready():
 #	pass
 func _pressed():
 	emit_signal("show",self.text,"15")
+	emit_signal("cur_sel",self.text)
 
 func _on_ECE_Map_return_name(string,index):
 	if(int(index) == int(self.name[5])):
