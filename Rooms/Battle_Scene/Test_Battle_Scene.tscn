@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Battle/background-ece.png" type="Texture" id=1]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Button.gd" type="Script" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://Rooms/Battle_Scene/Drop Set.gd" type="Script" id=17]
 [ext_resource path="res://Rooms/Battle_Scene/No.gd" type="Script" id=18]
 [ext_resource path="res://Rooms/Battle_Scene/Drop.gd" type="Script" id=19]
-[ext_resource path="res://Sprites/woody/woody-spritesheet.png" type="Texture" id=20]
 [ext_resource path="res://Rooms/Battle_Scene/Player Prof.gd" type="Script" id=21]
 [ext_resource path="res://Rooms/Battle_Scene/Enemy Prof.gd" type="Script" id=22]
 [ext_resource path="res://Rooms/Battle_Scene/Prof4.gd" type="Script" id=23]
@@ -277,13 +276,11 @@ __meta__ = {
 }
 
 [node name="Player Prof" type="Sprite" parent="Professors"]
-position = Vector2( 57, 112 )
-texture = ExtResource( 20 )
+position = Vector2( 115, 112 )
 script = ExtResource( 21 )
 
 [node name="Enemy Prof" type="Sprite" parent="Professors"]
-position = Vector2( 296, 111 )
-texture = ExtResource( 20 )
+position = Vector2( 235, 82 )
 script = ExtResource( 22 )
 
 [node name="Drop Set" type="Control" parent="."]

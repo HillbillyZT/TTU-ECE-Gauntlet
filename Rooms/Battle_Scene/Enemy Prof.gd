@@ -1,16 +1,26 @@
 extends Sprite
 
+# ============================= DEFINE CONSTANTS ===============================
+const SPRITE_W = 13
+const SPRITE_H = 24
+const SPRITE_SCALE = 5
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
+# ============================ SIGNAL PROCESSING ===============================
 func _ready():
-	self.texture = load(Globals.prof_current[Globals.prof_battle]["sprite"])
+	var path_to_sprite = Globals.prof_current[Globals.prof_battle]["sprite"]
+	self.texture = get_sprite_front_tex(path_to_sprite)
+	
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+# ================================ FUNCTIONS ===================================
+func get_sprite_front_tex(sprite_path):
+	var sprite = Image.new()
+	if sprite.load(sprite_path) != OK:
+		print("ENEMY PROF SPRITE SHEET FAILED TO LOAD")
+	# Get front-facing sprite Image, scale
+	sprite.crop(SPRITE_W, SPRITE_H)
+	sprite.resize(SPRITE_W*SPRITE_SCALE, SPRITE_H*SPRITE_SCALE, 0)
+	# Get front-facing sprite Texture
+	var sprite_tex = ImageTexture.new()
+	sprite_tex.create_from_image(sprite, 0)
+	return sprite_tex
