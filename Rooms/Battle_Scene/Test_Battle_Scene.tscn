@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Battle/background-ece.png" type="Texture" id=1]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Button.gd" type="Script" id=2]
@@ -19,12 +19,14 @@
 [ext_resource path="res://Rooms/Battle_Scene/Drop Set.gd" type="Script" id=17]
 [ext_resource path="res://Rooms/Battle_Scene/No.gd" type="Script" id=18]
 [ext_resource path="res://Rooms/Battle_Scene/Drop.gd" type="Script" id=19]
+[ext_resource path="res://Theme/UI.tres" type="Theme" id=20]
 [ext_resource path="res://Rooms/Battle_Scene/Player Prof.gd" type="Script" id=21]
 [ext_resource path="res://Rooms/Battle_Scene/Enemy Prof.gd" type="Script" id=22]
 [ext_resource path="res://Rooms/Battle_Scene/Prof4.gd" type="Script" id=23]
 [ext_resource path="res://Rooms/Battle_Scene/Prof2.gd" type="Script" id=24]
 [ext_resource path="res://Rooms/Battle_Scene/Prof3.gd" type="Script" id=25]
 [ext_resource path="res://Rooms/Battle_Scene/Yes.gd" type="Script" id=26]
+[ext_resource path="res://Sprites/sframes_thumbnail.tres" type="SpriteFrames" id=27]
 
 [node name="Battle_Scene_Test" type="Node2D"]
 script = ExtResource( 14 )
@@ -46,6 +48,7 @@ __meta__ = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+offset_h = 0.03
 __meta__ = {
 "_edit_lock_": true
 }
@@ -55,17 +58,17 @@ margin_left = -174.0
 margin_top = -102.0
 margin_right = 177.0
 margin_bottom = 98.0
+theme = ExtResource( 20 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Moves" type="Button" parent="Main Buttons"]
-margin_left = 4.0
-margin_top = 167.0
-margin_right = 194.0
-margin_bottom = 244.0
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 2.0
+margin_top = 168.0
+margin_right = 73.0
+margin_bottom = 195.0
 text = "Moves"
 script = ExtResource( 2 )
 __meta__ = {
@@ -73,46 +76,40 @@ __meta__ = {
 }
 
 [node name="Hire" type="Button" parent="Main Buttons"]
-visible = false
-margin_left = 91.3337
-margin_top = 164.0
-margin_right = 288.334
-margin_bottom = 254.0
-rect_scale = Vector2( 0.4, 0.4 )
+margin_left = 75.0
+margin_top = 168.0
+margin_right = 146.0
+margin_bottom = 195.0
 text = "Hire"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Drop" type="Button" parent="Main Buttons"]
-margin_left = 270.0
-margin_top = 167.0
-margin_right = 455.0
-margin_bottom = 244.0
-rect_scale = Vector2( 0.4, 0.4 )
-text = "Drop"
-script = ExtResource( 19 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Professors" type="Button" parent="Main Buttons"]
-margin_left = 145.0
-margin_top = 167.0
-margin_right = 290.0
-margin_bottom = 244.0
-rect_scale = Vector2( 0.4, 0.4 )
-text = "Professors"
+margin_left = 200.0
+margin_top = 168.0
+margin_right = 271.0
+margin_bottom = 195.0
+text = "Profs"
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Drop" type="Button" parent="Main Buttons"]
+margin_left = 273.0
+margin_top = 168.0
+margin_right = 344.0
+margin_bottom = 195.0
+text = "Drop"
+script = ExtResource( 19 )
 
 [node name="Move Set" type="Control" parent="."]
 margin_left = -120.0
 margin_top = -27.0
 margin_right = 54.0
 margin_bottom = 72.0
+theme = ExtResource( 20 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true,
@@ -146,6 +143,9 @@ margin_top = 93.0
 margin_right = 217.0
 margin_bottom = 120.0
 text = "Move 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Move4" type="Button" parent="Move Set"]
 margin_left = 219.0
@@ -170,6 +170,7 @@ margin_left = -176.0
 margin_top = -102.0
 margin_right = 173.0
 margin_bottom = 98.0
+theme = ExtResource( 20 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true,
@@ -177,65 +178,117 @@ __meta__ = {
 }
 
 [node name="Prof1" type="Button" parent="Professor Set"]
-margin_top = 2.71939
-margin_right = 75.0
-margin_bottom = 22.7194
+margin_left = 1.0
+margin_top = 30.0
+margin_right = 76.0
+margin_bottom = 50.0
 text = "Prof"
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Prof1_Animated" type="AnimatedSprite" parent="Professor Set/Prof1"]
+position = Vector2( 86, 10 )
+frames = ExtResource( 27 )
+animation = "woody"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Prof2" type="Button" parent="Professor Set"]
-margin_left = 276.0
-margin_top = 3.0
-margin_right = 351.0
-margin_bottom = 23.0
+margin_left = 278.0
+margin_top = 30.0
+margin_right = 353.0
+margin_bottom = 50.0
 text = "Prof"
 script = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Prof2_Animated" type="AnimatedSprite" parent="Professor Set/Prof2"]
+position = Vector2( -11, 10 )
+frames = ExtResource( 27 )
+animation = "woody"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Prof3" type="Button" parent="Professor Set"]
 margin_left = 1.0
-margin_top = 68.0
+margin_top = 81.0
 margin_right = 76.0
-margin_bottom = 88.0
+margin_bottom = 101.0
 text = "Prof"
 script = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Prof3_Animated" type="AnimatedSprite" parent="Professor Set/Prof3"]
+position = Vector2( 86, 10 )
+frames = ExtResource( 27 )
+animation = "woody"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Prof4" type="Button" parent="Professor Set"]
-margin_left = 276.0
-margin_top = 64.0
-margin_right = 351.0
-margin_bottom = 84.0
+margin_left = 278.0
+margin_top = 81.0
+margin_right = 353.0
+margin_bottom = 101.0
 text = "Prof"
 script = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Prof4_Animated" type="AnimatedSprite" parent="Professor Set/Prof4"]
+position = Vector2( -11, 10 )
+frames = ExtResource( 27 )
+animation = "woody"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Prof5" type="Button" parent="Professor Set"]
-margin_left = 2.0
-margin_top = 139.0
-margin_right = 77.0
-margin_bottom = 159.0
+margin_left = 1.0
+margin_top = 132.0
+margin_right = 76.0
+margin_bottom = 152.0
 text = "Prof"
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prof5_Animated" type="AnimatedSprite" parent="Professor Set/Prof5"]
+position = Vector2( 86, 10 )
+frames = ExtResource( 27 )
+animation = "woody"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Prof6" type="Button" parent="Professor Set"]
-margin_left = 276.0
-margin_top = 138.0
-margin_right = 351.0
-margin_bottom = 158.0
+margin_left = 278.0
+margin_top = 132.0
+margin_right = 353.0
+margin_bottom = 152.0
 text = "Prof"
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="Prof6_Animated" type="AnimatedSprite" parent="Professor Set/Prof6"]
+position = Vector2( -11, 10 )
+frames = ExtResource( 27 )
+animation = "woody"
+__meta__ = {
+"_edit_lock_": true
 }
 
 [node name="Back" type="Button" parent="Professor Set"]
@@ -250,6 +303,7 @@ __meta__ = {
 }
 
 [node name="TestProf1" type="TextureButton" parent="Professor Set"]
+visible = false
 anchor_left = 0.433
 anchor_top = 0.03
 anchor_right = 0.579
@@ -270,6 +324,7 @@ margin_left = -174.0
 margin_top = -97.0
 margin_right = 173.0
 margin_bottom = 63.0
+theme = ExtResource( 20 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -288,8 +343,10 @@ margin_left = -174.0
 margin_top = 63.0
 margin_right = 175.0
 margin_bottom = 99.0
+theme = ExtResource( 20 )
 script = ExtResource( 17 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -298,8 +355,10 @@ margin_left = 62.0
 margin_top = 2.0
 margin_right = 280.0
 margin_bottom = 32.0
+theme = ExtResource( 20 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Are you sure you want to do this?"
+text = "      Are you sure?
+  Your GPA will suffer!"
 __meta__ = {
 "_edit_use_anchors_": false
 }

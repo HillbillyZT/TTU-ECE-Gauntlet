@@ -7,6 +7,8 @@ signal change_texture
 signal change_moves
 var cur_prof
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
