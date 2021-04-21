@@ -1,6 +1,5 @@
 extends Node
 
-
 const prof_base = {
 	"gale": {
 		hp = 100,
@@ -94,6 +93,74 @@ const prof_base = {
 		}
 	}
 }
+
+const move_base = {
+	"Ventilate" : {
+		type = "dmg",
+		mult = 3
+	},
+	"Recruitment" : {	# 60% usr atk, 20% enemy atk
+		type = "stat+-",
+		mult = 1.6
+	},
+	"Integrate" : {
+		type = "dmg",
+		mult = 2.5
+	},
+	"Pop Quiz" : {
+		type = "dmg",
+		mult = 2.5
+	},
+	"Three-Stage Amp" : {	# 300% all str, def, int
+		type = "stat+",
+		mult = 3
+	},
+	"Interrupt Vector" : {
+		type = "dmg",
+		mult = 3
+	},
+	"No Curve" : {
+		type = "dmg",
+		mult = 2.5
+	},
+	"Differentiate" : {
+		type = "dmg",
+		mult = 2.5
+	},
+	"Sip Water" : {			# atk++, def-, int-
+		type = "stat+",
+		mult = 2
+	},
+	"Divergence" : {		# use atk + int
+		type = "dmg",
+		mult = 1
+	},
+	"Computer Vision" : {	# on enemy
+		type = "stat-",
+		mult = .75
+	},
+	"Machine Learning" : {	# int
+		type = "stat+",
+		mult = 1.5
+	},
+	"Fourier Transform" : {	# def buff
+		type = "stat+",
+		mult = 2
+	},
+	"Convolution" : {		# dmg += (atk+def+int)*mult
+		type = "dmg",
+		mult = 1.1
+	},
+	"Linear Transformation" : {
+		type = "stat+",
+		mult = 2
+	},
+	"Node Voltage Analysis" : {
+		type = "dmg",
+		mult = 4
+	}
+}
+
 var prof_current = {}
 
 var prof_battle;

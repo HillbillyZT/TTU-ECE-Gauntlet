@@ -1,12 +1,9 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+# =========================== MEMBERS & CONSTANTS ==============================
 
 
-# Called when the node enters the scene tree for the first time.
+# ============================ SIGNAL PROCESSING ===============================
 func _ready():
 	self.visible = false
 	var children = self.get_children()
@@ -17,11 +14,7 @@ func _ready():
 	children[3].text = Globals.temp_player_roster[keys[0]]["moves"][4]
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
+# ================================ FUNCTIONS ===================================
 func _on_Battle_Scene_Test_change_moves(move_set):
 	var children = self.get_children()
 	children[0].text = move_set[1]
