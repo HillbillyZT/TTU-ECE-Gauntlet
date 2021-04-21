@@ -1,29 +1,24 @@
-extends Control
+extends Button
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var node = get_node(".")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.visible = true
+	var child = self.get_child(0)
+	#child.set_position(Vector2(30,-1000))
+	#child.rect_global_position = Rect2(0,0,20,20)
+	child.add_item("Your Mother :)")
+	
+func _pressed():
+	var child = self.get_child(0)
+	child.add_item("click")
+	child.popup()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func _on_Roster_Open_Roster():
-	node.visible = !node.visible
-
-
-func _on_Back_back_button_pressed():
-	node.visible = !node.visible
-	
-		
-
-
-func _on_Items_items():
-	node.visible = !node.visible

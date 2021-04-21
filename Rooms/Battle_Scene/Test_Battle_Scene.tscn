@@ -101,6 +101,7 @@ text = "Drop"
 script = ExtResource( 19 )
 
 [node name="Move Set" type="Control" parent="."]
+visible = false
 margin_left = -120.0
 margin_top = -27.0
 margin_right = 54.0
@@ -162,6 +163,7 @@ __meta__ = {
 }
 
 [node name="Professor Set" type="Control" parent="."]
+visible = false
 margin_left = -176.0
 margin_top = -102.0
 margin_right = 173.0
@@ -312,6 +314,7 @@ position = Vector2( 235, 82 )
 script = ExtResource( 22 )
 
 [node name="Drop Set" type="Control" parent="."]
+visible = false
 margin_left = -174.0
 margin_top = 63.0
 margin_right = 175.0

@@ -161,6 +161,25 @@ const move_base = {
 	}
 }
 
+const item_base = {
+	"TI-84":{
+		"Name":"TI-84",
+		"Type":"Defense",
+		"Boost": 5
+	},
+	"Multimeter":{
+		"Name":"Multimeter",
+		"Type":"HP",
+		"Boost": 10
+	},
+	"Soldering Iron":{
+		"Name":"Soldering Iron",
+		"Type":"Attack",
+		"Boost": 5
+	}
+}
+
+
 var prof_current = {}
 
 var prof_battle;
@@ -169,7 +188,7 @@ var player_buffered_position = Vector2(794, 569)
 var player_buffered_velocity = Vector2(0,0)
 
 var temp_player_roster = prof_current
-
+var player_items = []
 func _ready():
 	pass # Replace with function body.
 
