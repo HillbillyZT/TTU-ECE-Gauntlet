@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Sprites/Temp_Backpack_info.PNG" type="Texture" id=1]
 [ext_resource path="res://Player/Roster_Button.gd" type="Script" id=2]
@@ -17,8 +17,10 @@
 [ext_resource path="res://Player/Item_Screen.gd" type="Script" id=15]
 [ext_resource path="res://Theme/UI.tres" type="Theme" id=16]
 [ext_resource path="res://Player/Player_Backpack.gd" type="Script" id=17]
-[ext_resource path="res://Player/TEST_DISPLAY_ITEMS.gd" type="Script" id=18]
+[ext_resource path="res://Player/Button.gd" type="Script" id=18]
 [ext_resource path="res://Sprites/Black_Texture.PNG" type="Texture" id=19]
+[ext_resource path="res://Player/Item Buttons.gd" type="Script" id=20]
+[ext_resource path="res://Player/RichTextLabel.gd" type="Script" id=21]
 
 [node name="Player Backpack" type="Node2D"]
 script = ExtResource( 17 )
@@ -206,7 +208,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="Item_Screen"]
+[node name="Item_Info_Screen" type="Control" parent="Item_Screen"]
 margin_right = 174.0
 margin_bottom = 196.0
 theme = ExtResource( 16 )
@@ -214,28 +216,65 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="Item_Screen/Control"]
+[node name="Item_Info Screen" type="TextureRect" parent="Item_Screen/Item_Info_Screen"]
 margin_left = -4.96219
 margin_top = -1.0
 margin_right = 477.038
 margin_bottom = 270.0
-rect_scale = Vector2( 0.3, 0.75 )
+rect_scale = Vector2( 0.38, 0.75 )
 texture = ExtResource( 19 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="TEST_DISPLAY_ITEMS" type="RichTextLabel" parent="Item_Screen/Control"]
-margin_right = 145.0
-margin_bottom = 197.0
+[node name="Item_Description" type="RichTextLabel" parent="Item_Screen/Item_Info_Screen"]
+margin_right = 174.0
+margin_bottom = 201.0
+script = ExtResource( 21 )
+
+[node name="Item Buttons" type="Control" parent="Item_Screen"]
+margin_left = 237.0
+margin_right = 347.0
+margin_bottom = 175.0
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Item_Screen/Item Buttons"]
+margin_left = -20.0
+margin_right = 90.0
+margin_bottom = 19.0
 script = ExtResource( 18 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[connection signal="update" from="." to="Item_Screen/Control/TEST_DISPLAY_ITEMS" method="_on_Player_Backpack_update"]
+[node name="Button2" type="Button" parent="Item_Screen/Item Buttons"]
+margin_left = -20.0
+margin_top = 22.0
+margin_right = 90.0
+margin_bottom = 41.0
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Item_Screen/Item Buttons"]
+margin_left = -20.0
+margin_top = 44.0
+margin_right = 90.0
+margin_bottom = 63.0
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[connection signal="update" from="." to="Item_Screen/Item Buttons" method="_on_Player_Backpack_update"]
 [connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_Open_Roster"]
 [connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Roster_Screen" method="_on_Roster_Open_Roster"]
 [connection signal="script_changed" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_script_changed"]
@@ -247,11 +286,14 @@ __meta__ = {
 [connection signal="Prof4_Pressed" from="Roster_Screen/Prof4" to="Roster_Screen/RichTextLabel" method="_on_Prof4_Prof4_Pressed"]
 [connection signal="Prof5_Pressed" from="Roster_Screen/Prof5" to="Roster_Screen/RichTextLabel" method="_on_Prof5_Prof5_Pressed"]
 [connection signal="Prof6_Pressed" from="Roster_Screen/Prof6" to="Roster_Screen/RichTextLabel" method="_on_Prof6_Prof6_Pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
+[connection signal="update" from="Item_Screen/Item Buttons/Button" to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]
+[connection signal="update" from="Item_Screen/Item Buttons/Button2" to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]
+[connection signal="update" from="Item_Screen/Item Buttons/Button3" to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]

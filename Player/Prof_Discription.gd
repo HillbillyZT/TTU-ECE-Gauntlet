@@ -47,3 +47,7 @@ func _on_Prof5_Prof5_Pressed():
 func _on_Prof6_Prof6_Pressed():
 	self.visible = true
 	Button_Pressed("Prof 6")
+
+
+func _on_Button3_update():
+	pass # Replace with function body.
