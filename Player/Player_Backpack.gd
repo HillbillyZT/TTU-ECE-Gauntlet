@@ -10,7 +10,7 @@ signal update
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for item in Globals.item_base:
-		items[item] = {"name":item,"Quantity":1}
+		items[item] = {"name":item,"Quantity":0}
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -137,5 +137,5 @@ position = Vector2( 759.138, 579.118 )
 [connection signal="return_list" from="ECE Map" to="ECE Map/Player" method="_on_ECE_Map_return_list"]
 [connection signal="Open_Shop" from="ECE Map/Shop" to="ECE Map/Player" method="_on_Shop_Open_Shop"]
 [connection signal="items" from="ECE Map/Shop" to="ECE Map" method="_on_Shop_items"]
-[connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Shop" method="_on_Too_Far_From_Shop_too_far"]
+[connection signal="too_far" from="ECE Map/Too_Far_From_Shop" to="ECE Map/Player" method="_on_Too_Far_From_Shop_too_far"]

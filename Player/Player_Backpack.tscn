@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Sprites/Temp_Backpack_info.PNG" type="Texture" id=1]
 [ext_resource path="res://Player/Roster_Button.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Sprites/Black_Texture.PNG" type="Texture" id=19]
 [ext_resource path="res://Player/Item Buttons.gd" type="Script" id=20]
 [ext_resource path="res://Player/RichTextLabel.gd" type="Script" id=21]
+[ext_resource path="res://Player/Professor Buttons.gd" type="Script" id=22]
 
 [node name="Player Backpack" type="Node2D"]
 script = ExtResource( 17 )
@@ -232,6 +233,56 @@ __meta__ = {
 margin_right = 174.0
 margin_bottom = 201.0
 script = ExtResource( 21 )
+
+[node name="Professor Buttons" type="Control" parent="Item_Screen/Item_Info_Screen"]
+margin_left = -5.0
+margin_top = 140.0
+margin_right = 178.0
+margin_bottom = 202.0
+script = ExtResource( 22 )
+
+[node name="Button" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+margin_left = 3.0
+margin_right = 86.0
+margin_bottom = 19.0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+margin_left = 90.0
+margin_right = 173.0
+margin_bottom = 19.0
+script = ExtResource( 9 )
+
+[node name="Button3" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+margin_left = 3.0
+margin_top = 18.0
+margin_right = 86.0
+margin_bottom = 37.0
+script = ExtResource( 10 )
+
+[node name="Button4" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+margin_left = 90.0
+margin_top = 18.0
+margin_right = 173.0
+margin_bottom = 37.0
+script = ExtResource( 11 )
+
+[node name="Button5" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+margin_left = 3.0
+margin_top = 36.0
+margin_right = 86.0
+margin_bottom = 55.0
+script = ExtResource( 12 )
+
+[node name="Button6" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+margin_left = 90.0
+margin_top = 36.0
+margin_right = 173.0
+margin_bottom = 55.0
+script = ExtResource( 13 )
 
 [node name="Item Buttons" type="Control" parent="Item_Screen"]
 margin_left = 237.0

@@ -17,7 +17,6 @@ func _ready():
 		
 func _pressed():
 	var parent = get_node("..")
-	print(parent.name)
 	emit_signal("update",self.text,parent.items_on_hand)
 
 
