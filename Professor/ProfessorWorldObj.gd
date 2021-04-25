@@ -9,7 +9,7 @@ var prof_name: String
 func init(prof_name, prof_stats: Dictionary):
 	stats = $StatBoi
 	position = Vector2.ZERO
-	stats.setStats(prof_stats.hp, prof_stats.strength, prof_stats.def, prof_stats.intel)
+	stats.setStats(prof_stats.hp, prof_stats.strength, prof_stats.defense, prof_stats.intel)
 	self.prof_name = prof_name
 	var sprite = $Sprite
 	sprite.texture = load(prof_stats.sprite)

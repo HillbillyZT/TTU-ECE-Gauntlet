@@ -7,6 +7,7 @@ extends Node2D
 #var items =[]
 var items = {}
 signal update
+signal used
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for item in Globals.item_base:
@@ -24,3 +25,8 @@ func _on_Confirm_buy(item):
 	else:
 		items[item] = {"name":item,"Quantity":1}
 	emit_signal("update",self.items)
+
+
+func _on_Item_Description_used(name):
+	items[name]["Quantity"] -= 1
+	emit_signal("update",name,self.items)

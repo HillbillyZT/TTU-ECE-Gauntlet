@@ -25,3 +25,6 @@ func _on_Player_Backpack_update(items):
 		else:
 			child.visible = false
 	items_on_hand = items
+
+
+

@@ -5,7 +5,7 @@ extends Button
 # var a = 2
 # var b = "text"
 signal Prof_Pressed
-
+onready var parent = get_node("..")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var keys = Globals.temp_player_roster.keys()
@@ -16,5 +16,8 @@ func _ready():
 #func _process(delta):
 #	pass
 func _pressed():
-	emit_signal("Prof_Pressed")
+	if parent.name == "Professor Buttons":
+		emit_signal("Prof_Pressed",self.text)
+	else:
+		emit_signal("Prof_Pressed")
 	

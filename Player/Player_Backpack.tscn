@@ -233,6 +233,9 @@ __meta__ = {
 margin_right = 174.0
 margin_bottom = 201.0
 script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Professor Buttons" type="Control" parent="Item_Screen/Item_Info_Screen"]
 margin_left = -5.0
@@ -241,7 +244,7 @@ margin_right = 178.0
 margin_bottom = 202.0
 script = ExtResource( 22 )
 
-[node name="Button" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+[node name="Prof1" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
 margin_left = 3.0
 margin_right = 86.0
 margin_bottom = 19.0
@@ -250,34 +253,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+[node name="Prof2" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
 margin_left = 90.0
 margin_right = 173.0
 margin_bottom = 19.0
 script = ExtResource( 9 )
 
-[node name="Button3" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+[node name="Prof3" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
 margin_left = 3.0
 margin_top = 18.0
 margin_right = 86.0
 margin_bottom = 37.0
 script = ExtResource( 10 )
 
-[node name="Button4" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+[node name="Prof4" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
 margin_left = 90.0
 margin_top = 18.0
 margin_right = 173.0
 margin_bottom = 37.0
 script = ExtResource( 11 )
 
-[node name="Button5" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+[node name="Prof5" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
 margin_left = 3.0
 margin_top = 36.0
 margin_right = 86.0
 margin_bottom = 55.0
 script = ExtResource( 12 )
 
-[node name="Button6" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
+[node name="Prof6" type="Button" parent="Item_Screen/Item_Info_Screen/Professor Buttons"]
 margin_left = 90.0
 margin_top = 36.0
 margin_right = 173.0
@@ -326,8 +329,9 @@ __meta__ = {
 }
 
 [connection signal="update" from="." to="Item_Screen/Item Buttons" method="_on_Player_Backpack_update"]
-[connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_Open_Roster"]
+[connection signal="update" from="." to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]
 [connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Roster_Screen" method="_on_Roster_Open_Roster"]
+[connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_Open_Roster"]
 [connection signal="script_changed" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_script_changed"]
 [connection signal="items" from="Main_Backpack_Buttons/Items" to="Info_Screen_Base" method="_on_Items_items"]
 [connection signal="items" from="Main_Backpack_Buttons/Items" to="Item_Screen" method="_on_Items_items"]
@@ -337,14 +341,22 @@ __meta__ = {
 [connection signal="Prof4_Pressed" from="Roster_Screen/Prof4" to="Roster_Screen/RichTextLabel" method="_on_Prof4_Prof4_Pressed"]
 [connection signal="Prof5_Pressed" from="Roster_Screen/Prof5" to="Roster_Screen/RichTextLabel" method="_on_Prof5_Prof5_Pressed"]
 [connection signal="Prof6_Pressed" from="Roster_Screen/Prof6" to="Roster_Screen/RichTextLabel" method="_on_Prof6_Prof6_Pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
+[connection signal="update" from="Item_Screen/Item_Info_Screen/Item_Description" to="Item_Screen/Item_Info_Screen/Professor Buttons" method="_on_Item_Description_update"]
+[connection signal="used" from="Item_Screen/Item_Info_Screen/Item_Description" to="." method="_on_Item_Description_used"]
+[connection signal="Prof_Pressed" from="Item_Screen/Item_Info_Screen/Professor Buttons/Prof1" to="Item_Screen/Item_Info_Screen/Item_Description" method="_Prof_Pressed"]
+[connection signal="Prof2_Pressed" from="Item_Screen/Item_Info_Screen/Professor Buttons/Prof2" to="Item_Screen/Item_Info_Screen/Item_Description" method="_Prof_Pressed"]
+[connection signal="Prof3_Pressed" from="Item_Screen/Item_Info_Screen/Professor Buttons/Prof3" to="Item_Screen/Item_Info_Screen/Item_Description" method="_Prof_Pressed"]
+[connection signal="Prof4_Pressed" from="Item_Screen/Item_Info_Screen/Professor Buttons/Prof4" to="Item_Screen/Item_Info_Screen/Item_Description" method="_Prof_Pressed"]
+[connection signal="Prof5_Pressed" from="Item_Screen/Item_Info_Screen/Professor Buttons/Prof5" to="Item_Screen/Item_Info_Screen/Item_Description" method="_Prof_Pressed"]
+[connection signal="Prof6_Pressed" from="Item_Screen/Item_Info_Screen/Professor Buttons/Prof6" to="Item_Screen/Item_Info_Screen/Item_Description" method="_Prof_Pressed"]
 [connection signal="update" from="Item_Screen/Item Buttons/Button" to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]
 [connection signal="update" from="Item_Screen/Item Buttons/Button2" to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]
 [connection signal="update" from="Item_Screen/Item Buttons/Button3" to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]

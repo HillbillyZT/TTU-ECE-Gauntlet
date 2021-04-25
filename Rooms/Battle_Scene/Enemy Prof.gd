@@ -8,7 +8,7 @@ const SPRITE_SCALE = 5
 
 # ============================ SIGNAL PROCESSING ===============================
 func _ready():
-a	var path_to_sprite = Globals.prof_current[Globals.prof_battle]["sprite"]
+	var path_to_sprite = Globals.prof_current[Globals.prof_battle]["sprite"]
 	self.texture = get_sprite_front_tex(path_to_sprite)
 	
 

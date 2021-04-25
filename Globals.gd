@@ -4,7 +4,7 @@ const prof_base = {
 	"gale": {
 		hp = 100,
 		strength = 10,
-		def = 10,
+		defense = 10,
 		intel = 10,
 		sprite = "res://Sprites/gale/gale-spritesheet.png",
 		moves = {
@@ -17,7 +17,7 @@ const prof_base = {
 	"helm": {
 		hp = 100,
 		strength = 10,
-		def = 10,
+		defense = 10,
 		intel = 10,
 		sprite = "res://Sprites/helm/helm-spritesheet.png",
 		moves = {
@@ -30,7 +30,7 @@ const prof_base = {
 	"nikishin": {
 		hp = 100,
 		strength = 10,
-		def = 10,
+		defense = 10,
 		intel = 10,
 		sprite = "res://Sprites/nikishin/nikishin-spritesheet.png",
 		moves = {
@@ -43,7 +43,7 @@ const prof_base = {
 	"nutter": {
 		hp = 100,
 		strength = 10,
-		def = 10,
+		defense = 10,
 		intel = 10,
 		sprite = "res://Sprites/nutter/nutter-world.png",
 		moves = {
@@ -56,7 +56,7 @@ const prof_base = {
 	"sarraf": {
 		hp = 100,
 		strength = 10,
-		def = 10,
+		defense = 10,
 		intel = 10,
 		sprite = "res://Sprites/sarraf/sarraf-spritesheet.png",
 		moves = {
@@ -69,7 +69,7 @@ const prof_base = {
 	"stephens":{
 		hp = 100,
 		strength = 10,
-		def = 10,
+		defense = 10,
 		intel = 10,
 		sprite = "res://Sprites/stephens/stephens-spritesheet.png",
 		moves = {
@@ -82,7 +82,7 @@ const prof_base = {
 	"storrs":{
 		hp = 100,
 		strength = 10,
-		def = 10,
+		defense = 10,
 		intel = 10,
 		sprite = "res://Sprites/storrs/storrs-spritesheet.png",
 		moves = {
@@ -164,17 +164,17 @@ const move_base = {
 const item_base = {
 	"TI-84":{
 		"Name":"TI-84",
-		"Type":"Defense",
+		"Type":"defense",
 		"Boost": 5
 	},
 	"Multimeter":{
 		"Name":"Multimeter",
-		"Type":"HP",
+		"Type":"hp",
 		"Boost": 10
 	},
 	"Soldering Iron":{
 		"Name":"Soldering Iron",
-		"Type":"Attack",
+		"Type":"strength",
 		"Boost": 5
 	}
 }
@@ -188,7 +188,6 @@ var player_buffered_position = Vector2(794, 569)
 var player_buffered_velocity = Vector2(0,0)
 
 var temp_player_roster = prof_current
-var player_items = []
 func _ready():
 	pass # Replace with function body.
 
