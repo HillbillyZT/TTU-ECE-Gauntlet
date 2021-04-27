@@ -5,6 +5,7 @@ const SPRITE_W = 13
 const SPRITE_H = 19
 const SPRITE_SIZE = Vector2(SPRITE_W, SPRITE_H)
 const SPRITE_SCALE = 5
+onready var move_effect = get_node("Player Prof Tween")
 
 
 # ============================ SIGNAL PROCESSING ===============================
@@ -16,6 +17,36 @@ func _ready():
 
 func _on_Battle_Scene_Test_change_texture(path_to_sprite):
 	self.texture = get_sprite_back_tex(path_to_sprite)
+
+func _used_move(move):
+	if Globals.move_base[move].type == "dmg":
+		pass
+	elif Globals.move_base[move].type == "stat+":
+		move_effect.interpolate_property(
+			self,
+			"scale",
+			self.get_scale(),
+			Vector2(1.25, 1.25),
+			.25,
+			Tween.TRANS_QUAD,
+			Tween.EASE_OUT
+		)
+		move_effect.start()
+		move_effect.interpolate_property(
+			self,
+			"position",
+			self.position,
+			self.position + Vector2(0, -12),
+			.25,
+			Tween.TRANS_QUAD,
+			Tween.EASE_OUT
+		)
+		move_effect.start()
+	elif Globals.move_base[move].type == "stat-":
+		pass
+	elif Globals.move_base[move].type == "stat+-":
+		pass
+	
 
 
 # ================================ FUNCTIONS ===================================

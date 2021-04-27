@@ -4,7 +4,7 @@ extends Tween
 onready var Player_Prof := get_parent().get_node("Professors"). \
 						   get_node("Player Prof")
 onready var Enemy_prof  := get_parent().get_node("Professors"). \
-						   get_node("Enemy Prof")
+ 						   get_node("Enemy Prof")
 
 
 # ============================ SIGNAL PROCESSING ===============================
@@ -25,9 +25,32 @@ func _used_move(user, move):
 # ================================ FUNCTIONS ===================================
 func atk_anim(usr):
 	print("%s attacks!" % usr)
+	if usr == "Player":
+		self.interpolate_property(
+			Player_Prof,
+			"position",
+			Vector2(100, 100),
+			1,
+			Tween.TRANS_LINEAR,
+			Tween.EASE_IN_OUT
+		)
+	return
 
 func stat_anim_p(usr):
 	print("%s boosts their stats!" % usr)
+	if usr == "Player":
+		print("usr IS Player")
+		print(Player_Prof.get_scale())
+		self.interpolate_property(
+			Player_Prof,
+			'transform/scale',
+			Player_Prof.get_scale(),
+			Vector2(2.0, 2.0),
+			1,
+			Tween.TRANS_QUAD,
+			Tween.EASE_OUT
+		)
+		self.start()
 
 func stat_anim_m(usr):
 	print("%s lowers opponents stats!" % usr)

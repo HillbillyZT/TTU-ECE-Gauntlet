@@ -5,13 +5,13 @@ onready var tween := $Move_Tween
 
 
 # ============================ SIGNAL PROCESSING ===============================
-signal used_move(user, move)
+signal used_move(move)
 
 func _ready():
 	pass
 
 func _pressed():
-	emit_signal("used_move", "Player", self.text)
+	emit_signal("used_move",self.text)
 	
 
 # ================================ FUNCTIONS ===================================
