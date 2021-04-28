@@ -19,22 +19,15 @@ func _on_Battle_Scene_Test_change_texture(path_to_sprite):
 	self.texture = get_sprite_back_tex(path_to_sprite)
 
 func _used_move(move):
-	print(self.get_path())
 	if Globals.move_base[move].type == "dmg":
-		pass
+		move_effect.move_dmg("Player Prof", "Enemy Prof")
 	elif Globals.move_base[move].type == "stat+":
-		move_effect.user_scale(self, 1.25)
-		move_effect.user_shift(self, Vector2(0, -12))
-		# move_effect.start()
-		# move_effect.user_scale(self, .8)
-		# move_effect.user_shift(self, Vector2(0, 12))
-		# move_effect.start()
+		move_effect.move_statp("Player Prof")
 	elif Globals.move_base[move].type == "stat-":
-		pass
+		move_effect.move_statm("Enemy Prof")
 	elif Globals.move_base[move].type == "stat+-":
-		pass
+		move_effect.move_statpm("Player Prof", "Enemy Prof")
 	
-
 
 # ================================ FUNCTIONS ===================================
 func get_sprite_back_tex(sprite_path):

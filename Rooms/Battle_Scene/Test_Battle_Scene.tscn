@@ -365,7 +365,6 @@ margin_right = 347.0
 margin_bottom = 32.0
 text = "No"
 script = ExtResource( 18 )
-
 [connection signal="change_moves" from="." to="Move Set" method="_on_Battle_Scene_Test_change_moves"]
 [connection signal="change_texture" from="." to="Professors/Player Prof" method="_on_Battle_Scene_Test_change_texture"]
 [connection signal="used_move" from="Move Set/Move1" to="Professors/Player Prof" method="_used_move"]

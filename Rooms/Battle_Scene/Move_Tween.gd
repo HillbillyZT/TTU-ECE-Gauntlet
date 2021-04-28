@@ -3,32 +3,77 @@ extends Tween
 # =========================== MEMBERS & CONSTANTS ==============================
 # onready var Player_Prof := get_parent().get_node("Player Prof")
 # onready var Enemy_Prof  := get_parent().get_node("Enemy Prof")
-var old_pos
-var old_scale
+
 
 
 # ============================ SIGNAL PROCESSING ===============================
 
-func _ready():
-	self.connect("tween_completed", self, "tween_completed")
-
-func tween_all_completed():
-	pass
-
-func tween_completed(obj, key):
-	print("timeout : obj = ",obj,", key = ", key)
-	if key == ":shift":
-		user_shift_back(obj, self.old_pos)
-	elif key == ":scale":
-		user_scale_back(obj, self.old_scale)
-	# if self.prof_name != null:
-	# 	print(self.prof_name)
-	# return
 
 # ================================ FUNCTIONS ===================================
 
+func move_dmg(user, target):
+	var direction
+	if user == "Player Prof":
+		direction = 1
+	else:
+		direction = -1
+	var prof_user = self.get_parent().get_node(user)
+	var prof_target = self.get_parent().get_node(target)
+	
+	self.user_shift(prof_user, Vector2(48*direction, 0), .25)
+	self.start()
+	yield(get_tree().create_timer(.15), "timeout")
+	
+	self.user_rotate(prof_target, 10*direction, .25)
+	self.start()
+	yield(get_tree().create_timer(.35), "timeout")
+	
+	self.user_shift(prof_user, Vector2(-48*direction, 0), .25)
+	self.start()
+	yield(get_tree().create_timer(.25), "timeout")
+	
+	self.user_rotate(prof_target, -10*direction, .25)
+	self.start()
+	yield(get_tree().create_timer(.25), "timeout")
+
+func move_statp(user):
+	var prof_user = self.get_parent().get_node(user)
+	self.user_scale(prof_user, 1.25, .5)
+	self.user_shift(prof_user, Vector2(0, -12), .5)
+	self.start()
+	yield(get_tree().create_timer(.75), "timeout")
+	self.user_scale(prof_user, 1, .25)
+	self.user_shift(prof_user, Vector2(0, 12), .25)
+	self.start()
+	yield(get_tree().create_timer(.75), "timeout")
+
+func move_statm(target):
+	var prof_target = self.get_parent().get_node(target)
+	self.user_scale(prof_target, .75, .5)
+	self.user_shift(prof_target, Vector2(0, 12), .5)
+	self.start()
+	yield(get_tree().create_timer(.75), "timeout")
+	self.user_scale(prof_target, 1, .25)
+	self.user_shift(prof_target, Vector2(0, -12), .25)
+	self.start()
+	yield(get_tree().create_timer(.25), "timeout")
+
+func move_statpm(user, target):
+	var prof_user = self.get_parent().get_node(user)
+	var prof_target = self.get_parent().get_node(target)
+	self.user_scale(prof_user, 1.25, .5)
+	self.user_shift(prof_user, Vector2(0, -12), .5)
+	self.user_scale(prof_target, .75, .5)
+	self.user_shift(prof_target, Vector2(0, 12), .5)
+	self.start()
+	yield(get_tree().create_timer(.75), "timeout")
+	self.user_shift(prof_target, Vector2(0, -12), .25)
+	self.user_scale(prof_target, 1, .25)
+	self.user_scale(prof_user, 1)
+	self.user_shift(prof_user, Vector2(0, 12))
+	self.start()
+
 func user_shift(prof, pos_diff, duration=.25):
-	self.old_pos = prof.position
 	self.interpolate_property(
 		prof,
 		"position",
@@ -38,24 +83,9 @@ func user_shift(prof, pos_diff, duration=.25):
 		Tween.TRANS_QUAD,
 		Tween.EASE_OUT
 	)
-	self.start()
-	return
-	
-func user_shift_back(prof, duration=.25):
-	self.interpolate_property(
-		prof,
-		"position",
-		prof.position,
-		self.old_pos,
-		duration,
-		Tween.TRANS_QUAD,
-		Tween.EASE_OUT
-	)
-	self.start()
 	return
 
 func user_scale(prof, scale_factor, duration=.25):
-	self.old_scale = 1/scale_factor
 	self.interpolate_property(
 		prof,
 		"scale",
@@ -65,18 +95,16 @@ func user_scale(prof, scale_factor, duration=.25):
 		Tween.TRANS_QUAD,
 		Tween.EASE_OUT
 	)
-	self.start()
 	return
 
-func user_scale_back(prof, duration=.25):
+func user_rotate(prof, rot_deg, duration=.25):
 	self.interpolate_property(
 		prof,
-		"scale",
-		prof.get_scale(),
-		Vector2(self.old_scale, self.old_scale),
+		"rotation_degrees",
+		prof.get_rotation_degrees(),
+		prof.get_rotation_degrees() + rot_deg,
 		duration,
 		Tween.TRANS_QUAD,
 		Tween.EASE_OUT
 	)
-	self.start()
 	return
