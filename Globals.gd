@@ -50,19 +50,6 @@ const prof_base = {
 			4:"Pop Quiz"
 		}
 	},
-	"nutter": {
-		hp = 100,
-		strength = 10,
-		defense = 10,
-		intel = 10,
-		sprite = "res://Sprites/nutter/nutter-world.png",
-		moves = {
-			1:"nutter1",
-			2:"nutter2",
-			3:"nutter3",
-			4:"nutter4"
-		}
-	},
 	"sarraf": {
 		hp = 100,
 		strength = 10,

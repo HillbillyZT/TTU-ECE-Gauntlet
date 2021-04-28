@@ -32,8 +32,8 @@ func _ready():
 func change_scene(target: Node):
 	remove_current_scene()
 	if(target == world_scene):
-		world_scene.get_node("ECE Map").get_node("Player").position = Globals.player_buffered_position
-		world_scene.get_node("ECE Map").get_node("Player").velocity = Globals.player_buffered_velocity
+		world_scene.get_node("Player").position = Globals.player_buffered_position
+		world_scene.get_node("Player").velocity = Globals.player_buffered_velocity
 	elif(rooms.has(target)):
 		emit_signal("update_player_pos")
 #		target.get_node("Player").position = Globals.player_buffered_position
