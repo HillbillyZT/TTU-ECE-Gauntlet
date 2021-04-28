@@ -1,59 +1,82 @@
 extends Tween
 
 # =========================== MEMBERS & CONSTANTS ==============================
-onready var Player_Prof := get_parent().get_node("Professors"). \
-						   get_node("Player Prof")
-onready var Enemy_prof  := get_parent().get_node("Professors"). \
- 						   get_node("Enemy Prof")
+# onready var Player_Prof := get_parent().get_node("Player Prof")
+# onready var Enemy_Prof  := get_parent().get_node("Enemy Prof")
+var old_pos
+var old_scale
 
 
 # ============================ SIGNAL PROCESSING ===============================
+
 func _ready():
-	pass # Replace with function body.
+	self.connect("tween_completed", self, "tween_completed")
 
-func _used_move(user, move):
-	if Globals.move_base[move].type == "dmg":
-		atk_anim(user)
-	elif Globals.move_base[move].type == "stat+":
-		stat_anim_p(user)
-	elif Globals.move_base[move].type == "stat-":
-		stat_anim_m(user)
-	elif Globals.move_base[move].type == "stat+-":
-		stat_anim_pm(user)
+func tween_all_completed():
+	pass
 
+func tween_completed(obj, key):
+	print("timeout : obj = ",obj,", key = ", key)
+	if key == ":shift":
+		user_shift_back(obj, self.old_pos)
+	elif key == ":scale":
+		user_scale_back(obj, self.old_scale)
+	# if self.prof_name != null:
+	# 	print(self.prof_name)
+	# return
 
 # ================================ FUNCTIONS ===================================
-func atk_anim(usr):
-	print("%s attacks!" % usr)
-	if usr == "Player":
-		self.interpolate_property(
-			Player_Prof,
-			"position",
-			Vector2(100, 100),
-			1,
-			Tween.TRANS_LINEAR,
-			Tween.EASE_IN_OUT
-		)
+
+func user_shift(prof, pos_diff, duration=.25):
+	self.old_pos = prof.position
+	self.interpolate_property(
+		prof,
+		"position",
+		prof.position,
+		prof.position + pos_diff,
+		duration,
+		Tween.TRANS_QUAD,
+		Tween.EASE_OUT
+	)
+	self.start()
+	return
+	
+func user_shift_back(prof, duration=.25):
+	self.interpolate_property(
+		prof,
+		"position",
+		prof.position,
+		self.old_pos,
+		duration,
+		Tween.TRANS_QUAD,
+		Tween.EASE_OUT
+	)
+	self.start()
 	return
 
-func stat_anim_p(usr):
-	print("%s boosts their stats!" % usr)
-	if usr == "Player":
-		print("usr IS Player")
-		print(Player_Prof.get_scale())
-		self.interpolate_property(
-			Player_Prof,
-			'transform/scale',
-			Player_Prof.get_scale(),
-			Vector2(2.0, 2.0),
-			1,
-			Tween.TRANS_QUAD,
-			Tween.EASE_OUT
-		)
-		self.start()
+func user_scale(prof, scale_factor, duration=.25):
+	self.old_scale = 1/scale_factor
+	self.interpolate_property(
+		prof,
+		"scale",
+		prof.get_scale(),
+		Vector2(scale_factor, scale_factor),
+		duration,
+		Tween.TRANS_QUAD,
+		Tween.EASE_OUT
+	)
+	self.start()
+	return
 
-func stat_anim_m(usr):
-	print("%s lowers opponents stats!" % usr)
-
-func stat_anim_pm(usr):
-	print("%s boosts their stats and lowers their opponents stats!" % usr)
+func user_scale_back(prof, duration=.25):
+	self.interpolate_property(
+		prof,
+		"scale",
+		prof.get_scale(),
+		Vector2(self.old_scale, self.old_scale),
+		duration,
+		Tween.TRANS_QUAD,
+		Tween.EASE_OUT
+	)
+	self.start()
+	return
