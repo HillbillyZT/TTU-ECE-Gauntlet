@@ -1,5 +1,15 @@
 extends Node
 
+var player_GPA = 0.0
+var player_Courses_Taken = 0
+
+func calc_GPA(letter):
+	var gpa = player_GPA
+	gpa = gpa * player_Courses_Taken
+	gpa = gpa + letter
+	player_Courses_Taken = player_Courses_Taken + 1
+	player_GPA = gpa / player_Courses_Taken
+
 const prof_base = {
 	"gale": {
 		hp = 100,

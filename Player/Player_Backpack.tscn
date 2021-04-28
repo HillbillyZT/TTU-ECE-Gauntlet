@@ -78,7 +78,6 @@ __meta__ = {
 }
 
 [node name="Info_Screen_Base" type="Control" parent="."]
-visible = false
 margin_left = -173.0
 margin_top = -98.0
 margin_bottom = 99.0
@@ -89,6 +88,7 @@ __meta__ = {
 }
 
 [node name="Info_ECE" type="TextureRect" parent="Info_Screen_Base"]
+visible = false
 margin_left = 7.72986
 margin_right = 319.73
 margin_bottom = 385.0
@@ -97,6 +97,12 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GPA_Display" type="Label" parent="Info_Screen_Base"]
+margin_right = 40.0
+margin_bottom = 15.0
+theme = ExtResource( 16 )
+text = "GPA - 4.1"
 
 [node name="Roster_Screen" type="Control" parent="."]
 visible = false
@@ -188,6 +194,7 @@ __meta__ = {
 }
 
 [node name="Item_Screen" type="Control" parent="."]
+visible = false
 margin_left = -174.0
 margin_top = -98.0
 margin_right = 173.0
@@ -327,7 +334,6 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-
 [connection signal="update" from="." to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]
 [connection signal="update" from="." to="Item_Screen/Item Buttons" method="_on_Player_Backpack_update"]
 [connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_Open_Roster"]
@@ -342,12 +348,12 @@ __meta__ = {
 [connection signal="Prof5_Pressed" from="Roster_Screen/Prof5" to="Roster_Screen/RichTextLabel" method="_on_Prof5_Prof5_Pressed"]
 [connection signal="Prof6_Pressed" from="Roster_Screen/Prof6" to="Roster_Screen/RichTextLabel" method="_on_Prof6_Prof6_Pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="update" from="Item_Screen/Item_Info_Screen/Item_Description" to="Item_Screen/Item_Info_Screen/Professor Buttons" method="_on_Item_Description_update"]
 [connection signal="used" from="Item_Screen/Item_Info_Screen/Item_Description" to="." method="_on_Item_Description_used"]

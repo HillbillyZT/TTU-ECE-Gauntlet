@@ -11,6 +11,10 @@ var move_heal = 0;
 var move_stat = Vector3.ZERO
 var move_stat_dir = -1;
 
+signal prof_HP_max(p_profHP_max, e_profHP_max)
+signal prof_HP(p_profHP, e_profHP)
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	reset_state_vars()
@@ -37,6 +41,7 @@ func handle_move(move):
 		e_prof = cpu_prof
 	else:
 		e_prof = player_prof
+	emit_signal("prof_HP_max", s_prof.hp, e_prof.hp)
 	
 	# Modify stats, damage buffer
 	if(move == "Convolution"):
@@ -64,9 +69,9 @@ func handle_move(move):
 func init_battle(var plr, var cpu):
 	cpu_prof = cpu;
 	player_prof = plr
-	
 	active_prof = cpu_prof if ((randi() % 2)==1) else player_prof;
 	in_battle= true;
+	
 
 func end_battle():
 	cpu_prof = null;
@@ -100,10 +105,13 @@ func _on_cpu_move(key):
 # Called after every move
 func _on_move():
 	# Check player and cpu prof HP after every move
-	if(player_prof.hp <= 0): 
+	if(player_prof.hp <= 0):
 		pass
 	elif(cpu_prof.hp <= 0):
+		Globals.calc_GPA(4)
+		# SceneSwitcher.change_scene(SceneSwitcher.prev_scene) 
 		pass
+	emit_signal("prof_HP", player_prof.hp, cpu_prof.hp)
 	
 	# Change active prof
 	active_prof = cpu_prof if (active_prof == player_prof) else player_prof

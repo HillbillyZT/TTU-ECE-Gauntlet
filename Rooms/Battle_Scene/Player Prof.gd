@@ -8,6 +8,8 @@ const SPRITE_SCALE = 5
 onready var move_effect = get_parent().get_node("Move_Tween")
 
 
+
+
 # ============================ SIGNAL PROCESSING ===============================
 func _ready():
 	var path_to_sprite = Globals.temp_player_roster \

@@ -10,6 +10,7 @@ extends Button
 func _ready():
 	pass # Replace with function body.
 func _pressed():
+	Globals.calc_GPA(2)
 	SceneSwitcher.change_scene(SceneSwitcher.prev_scene) 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
