@@ -11,9 +11,6 @@ var move_heal = 0;
 var move_stat = Vector3.ZERO
 var move_stat_dir = -1;
 
-signal prof_HP_max(p_profHP_max, e_profHP_max)
-signal prof_HP(p_profHP, e_profHP)
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -41,7 +38,6 @@ func handle_move(move):
 		e_prof = cpu_prof
 	else:
 		e_prof = player_prof
-	emit_signal("prof_HP_max", s_prof.hp, e_prof.hp)
 	
 	# Modify stats, damage buffer
 	if(move == "Convolution"):
@@ -111,7 +107,6 @@ func _on_move():
 		Globals.calc_GPA(4)
 		# SceneSwitcher.change_scene(SceneSwitcher.prev_scene) 
 		pass
-	emit_signal("prof_HP", player_prof.hp, cpu_prof.hp)
 	
 	# Change active prof
 	active_prof = cpu_prof if (active_prof == player_prof) else player_prof
