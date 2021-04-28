@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Battle/background-ece.png" type="Texture" id=1]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Button.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Rooms/ProfessorsList.gd" type="Script" id=8]
 [ext_resource path="res://Rooms/Battle_Scene/Move.gd" type="Script" id=9]
 [ext_resource path="res://Tiles/desk/desk.png" type="Texture" id=10]
+[ext_resource path="res://Rooms/Battle_Scene/Move_Tween.gd" type="Script" id=11]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Battle_Scene.gd" type="Script" id=14]
 [ext_resource path="res://Rooms/Battle_Scene/Prof1.gd" type="Script" id=15]
 [ext_resource path="res://Rooms/Battle_Scene/Drop Set.gd" type="Script" id=17]
@@ -313,11 +314,12 @@ __meta__ = {
 position = Vector2( 115, 101 )
 script = ExtResource( 21 )
 
-[node name="Player Prof Tween" type="Tween" parent="Professors/Player Prof"]
-
 [node name="Enemy Prof" type="Sprite" parent="Professors"]
 position = Vector2( 235, 82 )
 script = ExtResource( 22 )
+
+[node name="Move_Tween" type="Tween" parent="Professors"]
+script = ExtResource( 11 )
 
 [node name="Drop Set" type="Control" parent="."]
 margin_left = -174.0
