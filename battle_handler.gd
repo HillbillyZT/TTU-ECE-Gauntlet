@@ -63,9 +63,10 @@ func handle_move(move):
 
 # Probably keys for plr/cpu
 func init_battle(var plr, var cpu):
-	cpu_prof = cpu;
+	cpu_prof = cpu
 	player_prof = plr
-	active_prof = cpu_prof if ((randi() % 2)==1) else player_prof;
+	active_prof = plr
+	#active_prof = cpu_prof if ((randi() % 2)==1) else player_prof;
 	in_battle= true;
 	
 

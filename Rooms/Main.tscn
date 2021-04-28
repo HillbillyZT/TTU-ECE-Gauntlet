@@ -131,6 +131,7 @@ __meta__ = {
 
 [node name="Trans_Anim" type="AnimationPlayer" parent="Trans_Rect"]
 anims/Fade_In = ExtResource( 13 )
+
 [connection signal="return_list" from="." to="Player" method="_on_ECE_Map_return_list"]
 [connection signal="Open_Shop" from="Shop" to="Player" method="_on_Shop_Open_Shop"]
 [connection signal="items" from="Shop" to="." method="_on_Shop_items"]
