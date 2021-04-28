@@ -38,4 +38,5 @@ func _on_PlayerDetector_body_entered(body):
 			body.velocity = Vector2.ZERO
 			Globals.prof_battle = self.prof_name
 			Globals.player_buffered_position = body.position
+			BattleHandler.init_battle(Globals.temp_player_roster[Globals.temp_player_roster.keys()[0]], Globals.prof_current[self.prof_name])
 			SceneSwitcher.change_scene_instanced("res://Rooms/Battle_Scene/Test_Battle_Scene.tscn")

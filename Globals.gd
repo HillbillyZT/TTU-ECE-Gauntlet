@@ -97,67 +97,68 @@ const prof_base = {
 const move_base = {
 	"Ventilate" : {
 		type = "dmg",
-		mult = 3
+		dmg = 3
 	},
 	"Recruitment" : {	# 60% usr atk, 20% enemy atk
 		type = "stat+-",
-		mult = 1.6
+		stat_s = Vector3(1.6, 0, 0),
+		stat_e = Vector3(1.2, 0, 0)
 	},
 	"Integrate" : {
 		type = "dmg",
-		mult = 2.5
+		dmg = 2.5
 	},
 	"Pop Quiz" : {
 		type = "dmg",
-		mult = 2.5
+		dmg = 2.5
 	},
-	"Three-Stage Amp" : {	# 300% all str, def, int
+	"Three-Stage Amp" : {	# 300% all str, def
 		type = "stat+",
-		mult = 3
+		stat_s = Vector3(3, 3, 3)
 	},
 	"Interrupt Vector" : {
 		type = "dmg",
-		mult = 3
+		dmg = 3
 	},
 	"No Curve" : {
 		type = "dmg",
-		mult = 2.5
+		dmg = 2.5
 	},
 	"Differentiate" : {
 		type = "dmg",
-		mult = 2.5
+		dmg = 2.5
 	},
 	"Sip Water" : {			# atk++, def-, int-
 		type = "stat+",
-		mult = 2
+		stat_s = Vector3(2, 0.5, 0.5)
 	},
-	"Divergence" : {		# use atk + int
+	"Divergence" : {		# use atk + int SPECIAL
 		type = "dmg",
-		mult = 1
+		dmg = 1
 	},
 	"Computer Vision" : {	# on enemy
 		type = "stat-",
-		mult = .75
+		stat_e = Vector3(.75, .75, 0)
 	},
 	"Machine Learning" : {	# int
 		type = "stat+",
-		mult = 1.5
+		stat_s = Vector3(0,0,1.5)
 	},
 	"Fourier Transform" : {	# def buff
 		type = "stat+",
-		mult = 2
+		stat_s = Vector3(0,1.5,0)
 	},
-	"Convolution" : {		# dmg += (atk+def+int)*mult
+	"Convolution" : {		# dmg += (atk+def+int)*mult SPECIAL
 		type = "dmg",
-		mult = 1.1
+		dmg = 1.1
 	},
 	"Linear Transformation" : {
 		type = "stat+",
-		mult = 2
+		stat_s = Vector3(1.5, 1.5, 0)
 	},
 	"Node Voltage Analysis" : {
 		type = "dmg",
-		mult = 4
+		dmg = 4
 	}
 }
 
@@ -187,7 +188,7 @@ var prof_battle;
 var player_buffered_position = Vector2(794, 569)
 var player_buffered_velocity = Vector2(0,0)
 
-var temp_player_roster = prof_current
+var temp_player_roster = prof_current.duplicate()
 func _ready():
 	pass # Replace with function body.
 

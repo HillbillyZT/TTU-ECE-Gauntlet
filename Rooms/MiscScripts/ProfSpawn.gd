@@ -20,6 +20,9 @@ func attempt_spawn():
 			to_spawn = false
 	if(to_spawn):
 		spawn_professor()
+	
+	#REMOVE LATER
+	Globals.temp_player_roster = Globals.prof_current.duplicate()
 
 
 
