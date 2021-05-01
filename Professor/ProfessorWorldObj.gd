@@ -19,7 +19,6 @@ func init(prof_name, prof_stats: Dictionary):
 	else:
 		sprite.vframes = 4
 		sprite.hframes = 4
-	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

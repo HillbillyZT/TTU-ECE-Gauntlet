@@ -16,5 +16,5 @@ func _ready():
 func _change_cur_prof(prof):
 	cur_prof = prof
 	print(cur_prof)
-	emit_signal("change_texture",Globals.temp_player_roster[cur_prof]["sprite"])
-	emit_signal("change_moves",Globals.temp_player_roster[cur_prof]["moves"])	
+	emit_signal("change_texture", cur_prof)
+	emit_signal("change_moves",Globals.temp_player_roster[cur_prof]["moves"])

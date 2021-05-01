@@ -32,7 +32,7 @@ const prof_base = {
 		sprite = "res://Sprites/helm/helm-spritesheet.png",
 		moves = {
 			1:"Three-Stage Amp",
-			2:"Interrupt Vector",
+			2:"Interrupt Vect",
 			3:"No Curve",
 			4:"Differentiate"
 		}
@@ -57,8 +57,8 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/sarraf/sarraf-spritesheet.png",
 		moves = {
-			1:"Computer Vision",
-			2:"Machine Learning",
+			1:"Computer Vis",
+			2:"Machine Learn",
 			3:"Integrate",
 			4:"Differentiate"
 		}
@@ -70,7 +70,7 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/stephens/stephens-spritesheet.png",
 		moves = {
-			1:"Fourier Transform",
+			1:"Fourier Trans",
 			2:"Convolution",
 			3:"Pop Quiz",
 			4:"Integrate"
@@ -83,8 +83,8 @@ const prof_base = {
 		intel = 10,
 		sprite = "res://Sprites/storrs/storrs-spritesheet.png",
 		moves = {
-			1:"Linear Transformation",
-			2:"Node Voltage Analysis",
+			1:"Lin Trans",
+			2:"Node Voltage",
 			3:"No Curve",
 			4:"Differentiate"
 		}
@@ -113,7 +113,7 @@ const move_base = {
 		type = "stat+",
 		stat_s = Vector3(3, 3, 3)
 	},
-	"Interrupt Vector" : {
+	"Interrupt Vect" : {
 		type = "dmg",
 		dmg = 3
 	},
@@ -133,15 +133,15 @@ const move_base = {
 		type = "dmg",
 		dmg = 1
 	},
-	"Computer Vision" : {	# on enemy
+	"Computer Vis" : {	# on enemy
 		type = "stat-",
 		stat_e = Vector3(.75, .75, 0)
 	},
-	"Machine Learning" : {	# int
+	"Machine Learn" : {	# int
 		type = "stat+",
 		stat_s = Vector3(0,0,1.5)
 	},
-	"Fourier Transform" : {	# def buff
+	"Fourier Trans" : {	# def buff
 		type = "stat+",
 		stat_s = Vector3(0,1.5,0)
 	},
@@ -149,11 +149,11 @@ const move_base = {
 		type = "dmg",
 		dmg = 1.1
 	},
-	"Linear Transformation" : {
+	"Lin Trans" : {
 		type = "stat+",
 		stat_s = Vector3(1.5, 1.5, 0)
 	},
-	"Node Voltage Analysis" : {
+	"Node Voltage" : {
 		type = "dmg",
 		dmg = 4
 	}

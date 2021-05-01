@@ -51,11 +51,12 @@ func generate_professor():
 		
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
-		if(key != "hp"):
+		if(key != "hp"):	# set professor[key] with noise
 			professor_gen[key] = stepify((professor_gen[key] * \
 								(statMod / 100.0) + rng.randf_range(-2,2)), .1)
-		else:
+		else:				# set HP with larger amp noise and create max_hp key
 			professor_gen[key] = stepify(professor_gen[key] + rng.randi_range(-20,20), 1)
+			professor_gen["max_hp"] = professor_gen[key]
 			
 	return [professor_name, professor_gen]
 

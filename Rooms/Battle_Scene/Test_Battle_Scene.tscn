@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Battle/background-ece.png" type="Texture" id=1]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Button.gd" type="Script" id=2]
@@ -11,8 +11,11 @@
 [ext_resource path="res://Rooms/Battle_Scene/Move.gd" type="Script" id=9]
 [ext_resource path="res://Tiles/desk/desk.png" type="Texture" id=10]
 [ext_resource path="res://Rooms/Battle_Scene/Move_Tween.gd" type="Script" id=11]
+[ext_resource path="res://Sprites/healthbar/healthbar-full.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/healthbar/healthbar-over.png" type="Texture" id=13]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Battle_Scene.gd" type="Script" id=14]
 [ext_resource path="res://Rooms/Battle_Scene/Prof1.gd" type="Script" id=15]
+[ext_resource path="res://Sprites/healthbar/healthbar-under.png" type="Texture" id=16]
 [ext_resource path="res://Rooms/Battle_Scene/Drop Set.gd" type="Script" id=17]
 [ext_resource path="res://Rooms/Battle_Scene/No.gd" type="Script" id=18]
 [ext_resource path="res://Rooms/Battle_Scene/Drop.gd" type="Script" id=19]
@@ -306,7 +309,6 @@ margin_right = 173.0
 margin_bottom = 63.0
 theme = ExtResource( 20 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -320,6 +322,88 @@ script = ExtResource( 22 )
 
 [node name="Move_Tween" type="Tween" parent="Professors"]
 script = ExtResource( 11 )
+
+[node name="Player_Ctrl_Tags" type="Control" parent="Professors"]
+margin_left = 24.0
+margin_top = 25.0
+margin_right = 174.0
+margin_bottom = 49.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_HB" type="TextureProgress" parent="Professors/Player_Ctrl_Tags"]
+margin_top = 13.0
+margin_right = 150.0
+margin_bottom = 24.0
+value = 100.0
+texture_under = ExtResource( 16 )
+texture_over = ExtResource( 13 )
+texture_progress = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_Name" type="Label" parent="Professors/Player_Ctrl_Tags"]
+margin_left = 2.0
+margin_right = 149.0
+margin_bottom = 15.0
+text = "ptag"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player_Health" type="Label" parent="Professors/Player_Ctrl_Tags"]
+margin_left = 2.0
+margin_right = 149.0
+margin_bottom = 15.0
+text = "ptag"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Ctrl_Tags" type="Control" parent="Professors"]
+margin_left = 174.0
+margin_top = -6.0
+margin_right = 324.0
+margin_bottom = 18.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_HB" type="TextureProgress" parent="Professors/Enemy_Ctrl_Tags"]
+margin_top = 13.0
+margin_right = 150.0
+margin_bottom = 24.0
+value = 100.0
+texture_under = ExtResource( 16 )
+texture_over = ExtResource( 13 )
+texture_progress = ExtResource( 12 )
+fill_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Name" type="Label" parent="Professors/Enemy_Ctrl_Tags"]
+margin_left = 4.0
+margin_right = 149.0
+margin_bottom = 15.0
+text = "e-tag"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Health" type="Label" parent="Professors/Enemy_Ctrl_Tags"]
+margin_left = 4.0
+margin_right = 149.0
+margin_bottom = 15.0
+text = "e-health"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Drop Set" type="Control" parent="."]
 margin_left = -174.0
@@ -365,6 +449,7 @@ margin_right = 347.0
 margin_bottom = 32.0
 text = "No"
 script = ExtResource( 18 )
+
 [connection signal="change_moves" from="." to="Move Set" method="_on_Battle_Scene_Test_change_moves"]
 [connection signal="change_texture" from="." to="Professors/Player Prof" method="_on_Battle_Scene_Test_change_texture"]
 [connection signal="used_move" from="Move Set/Move1" to="Professors/Player Prof" method="_used_move"]
