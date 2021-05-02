@@ -13,6 +13,10 @@ onready var move_effect = get_parent().get_node("Move_Tween")
 onready var health_bar = get_parent().get_node("Player_Ctrl_Tags/Player_HB")
 onready var name_tag = get_parent().get_node("Player_Ctrl_Tags/Player_Name")
 onready var health_frac = get_parent().get_node("Player_Ctrl_Tags/Player_Health")
+# Health bar colors
+var hb_full = preload("res://Sprites/healthbar/healthbar-full.png")
+var hb_mid  = preload("res://Sprites/healthbar/healthbar-mid.png")
+var hb_low  = preload("res://Sprites/healthbar/healthbar-low.png")
 
 
 # ============================ SIGNAL PROCESSING ===============================
@@ -29,6 +33,12 @@ func _process(delta):
 	health_frac.text = str(int(health_bar.value)) \
 					 + '/' \
 					 + str(int(health_bar.max_value))
+	if health_bar.value > .66 * health_bar.max_value:
+		health_bar.texture_progress = hb_full
+	elif health_bar.value > .33 * health_bar.max_value:
+		health_bar.texture_progress = hb_mid
+	else:
+		health_bar.texture_progress = hb_low
 	
 	
 
