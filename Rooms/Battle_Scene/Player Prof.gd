@@ -55,16 +55,16 @@ func _on_Battle_Scene_Test_change_texture(prof_name):
 
 
 # Hook this into the signal from Battle Handler, not UI
-func _used_move(move, player_prof_name, cpu_prof_name):
+func _used_move(move, prof_1: String, prof_2: String):
 	if(move == "0"): return
 	if Globals.move_base[move].type == "dmg":
-		move_effect.move_dmg("Player Prof", "Enemy Prof")
+		move_effect.move_dmg(prof_1, prof_2)
 	elif Globals.move_base[move].type == "stat+":
-		move_effect.move_statp("Player Prof")
+		move_effect.move_statp(prof_1)
 	elif Globals.move_base[move].type == "stat-":
-		move_effect.move_statm("Enemy Prof")
+		move_effect.move_statm(prof_2)
 	elif Globals.move_base[move].type == "stat+-":
-		move_effect.move_statpm("Player Prof", "Enemy Prof")
+		move_effect.move_statpm(prof_1, prof_2)
 	
 
 # ================================ FUNCTIONS ===================================

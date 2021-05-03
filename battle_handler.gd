@@ -120,9 +120,9 @@ func _on_cpu_move(key):
 
 # Called after every move
 func _on_move(move):
-	var names = get_prof_names()
+	#var names = get_prof_names()
 	# Emit signal with move, player, cpu names
-	var params = []
+	var params: Dictionary
 	if(active_prof == player_prof):
 		params[0] = "Player Prof"
 		params[1] = "Enemy Prof"
@@ -130,7 +130,7 @@ func _on_move(move):
 		params[1] = "Player Prof"
 		params[0] = "Enemy Prof"
 	
-	emit_signal("bh_used_move", move, names[0], names[1])
+	emit_signal("bh_used_move", move, params[0], params[1])
 	
 	yield(get_tree().create_timer(2), "timeout")
 	
