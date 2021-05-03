@@ -74,6 +74,7 @@ func init_battle(var plr, var cpu):
 	cpu_prof = cpu
 	player_prof = plr
 	active_prof = plr
+	set_plr_turn()
 	#active_prof = cpu_prof if ((randi() % 2)==1) else player_prof;
 	in_battle= true;
 	
@@ -101,12 +102,14 @@ func _on_player_change_profs(key):
 
 # Signal (key = profname)
 func _on_player_move(move):
-	# Validate move
-	if(active_prof != player_prof):
-		return
-	handle_move(move)
-	
-	_on_move(move)
+	if(plr_turn):
+		plr_turn = false
+		# Validate move
+		if(active_prof != player_prof):
+			return
+		handle_move(move)
+		
+		_on_move(move)
 	
 	pass
 
@@ -147,12 +150,9 @@ func _on_move(move):
 	# Change active prof
 	active_prof = cpu_prof if (active_prof == player_prof) else player_prof
 	if(active_prof == cpu_prof): set_cpu_turn()
+	if(active_prof == player_prof): set_plr_turn()
 	# if(active_prof == cpu_prof): _on_cpu_move("0")
-	
 
-	
-
-	
 	# End conditions, gpa, yeet cetera
 	pass
 
@@ -172,6 +172,10 @@ func get_prof_names():
 var cpu_turn: bool = false
 func set_cpu_turn():
 	cpu_turn = true
+
+var plr_turn = false
+func set_plr_turn():
+	plr_turn = true
 
 func cpu_logic():
 	if(cpu_turn):
