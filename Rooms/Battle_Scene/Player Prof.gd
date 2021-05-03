@@ -53,7 +53,7 @@ func _on_Battle_Scene_Test_change_texture(prof_name):
 
 # Hook this into the signal from Battle Handler, not UI
 func _used_move(move, prof_1: String, prof_2: String):
-	if(move == "0"): return
+	if(move == "change"): return
 	if Globals.move_base[move].type == "dmg":
 		move_effect.move_dmg(prof_1, prof_2)
 	elif Globals.move_base[move].type == "stat+":

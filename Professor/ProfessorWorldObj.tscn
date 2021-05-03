@@ -31,5 +31,6 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
 [connection signal="area_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_area_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]

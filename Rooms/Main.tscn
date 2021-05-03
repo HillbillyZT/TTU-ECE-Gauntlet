@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=2]
 
+[ext_resource path="res://TheHomieUpFront.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://etc/OGMap.PNG" type="Texture" id=4]
 [ext_resource path="res://Tiles/ece/ece.tres" type="TileSet" id=6]
 [ext_resource path="res://Rooms/Too_Far_From_Shop.gd" type="Script" id=7]
 [ext_resource path="res://Rooms/Shop.gd" type="Script" id=8]
-[ext_resource path="res://Professor/ProfessorWorldObj.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Tiles/overlay.tres" type="TileSet" id=10]
 [ext_resource path="res://Rooms/Room_Transition.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Animations/Fade_In.tres" type="Animation" id=13]
@@ -116,9 +116,6 @@ position = Vector2( 715.221, 580.837 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 796.297, 573.564 )
 
-[node name="ProfessorWorldObj" parent="." instance=ExtResource( 9 )]
-position = Vector2( 759.138, 579.118 )
-
 [node name="Trans_Rect" type="ColorRect" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
@@ -131,6 +128,9 @@ __meta__ = {
 
 [node name="Trans_Anim" type="AnimationPlayer" parent="Trans_Rect"]
 anims/Fade_In = ExtResource( 13 )
+
+[node name="TheHomieUpFront" parent="." instance=ExtResource( 1 )]
+position = Vector2( 764.872, 570.138 )
 
 [connection signal="return_list" from="." to="Player" method="_on_ECE_Map_return_list"]
 [connection signal="Open_Shop" from="Shop" to="Player" method="_on_Shop_Open_Shop"]

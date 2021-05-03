@@ -9,7 +9,9 @@ onready var parent = get_node("..")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var keys = Globals.temp_player_roster.keys()
-	self.text = keys[0]
+	if(keys.size() == 0): return
+	else:
+		self.text = keys[0]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

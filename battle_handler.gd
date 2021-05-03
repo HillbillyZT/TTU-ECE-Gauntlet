@@ -84,7 +84,7 @@ func end_battle(player_wins: bool):
 		Globals.calc_GPA(4)
 		emit_signal("bh_battle_ended", "win")
 	else:
-		Globals.calc_GPA(2)
+		Globals.calc_GPA(0)
 		emit_signal("bh_battle_ended", "loss")
 	
 	reset_state_vars()
@@ -96,9 +96,6 @@ func end_battle(player_wins: bool):
 	# Fun time is over
 	SceneSwitcher.change_scene(SceneSwitcher.prev_scene) 
 
-# Signal (key = profname)
-func _on_player_change_profs(key):
-	pass
 
 # Signal (key = profname)
 func _on_player_move(move):
@@ -155,6 +152,14 @@ func _on_move(move):
 
 	# End conditions, gpa, yeet cetera
 	pass
+
+func _on_player_prof_change(name):
+	if(plr_turn):
+		plr_turn = false
+		player_prof = Globals.temp_player_roster[name]
+		active_prof = player_prof
+		_on_move("change")
+		pass
 
 # The least efficient function in this game??
 func get_prof_names():

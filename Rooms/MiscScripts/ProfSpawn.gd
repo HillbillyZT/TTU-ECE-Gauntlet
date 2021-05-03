@@ -22,7 +22,7 @@ func attempt_spawn():
 		spawn_professor()
 	
 	#REMOVE LATER
-	Globals.temp_player_roster = Globals.prof_current.duplicate()
+	#Globals.temp_player_roster = Globals.prof_current.duplicate()
 
 
 
