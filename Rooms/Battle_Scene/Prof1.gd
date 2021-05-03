@@ -18,7 +18,6 @@ func _ready():
 	
 	var keys = Globals.temp_player_roster.keys()
 	if keys.size() <= index:
-		print("um... This shouldn't be possible...")
 		self.visible = false
 		prof_animated.visible = false
 	else:
@@ -28,5 +27,4 @@ func _ready():
 
 func _pressed():
 	emit_signal("change_displayed",Globals.prof_current[self.text]["sprite"])
-	
 	emit_signal("change_cur_prof",self.text)

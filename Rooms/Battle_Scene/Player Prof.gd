@@ -42,8 +42,6 @@ func _process(delta):
 	else:
 		health_bar.texture_progress = hb_low
 	
-	
-
 func _on_Battle_Scene_Test_change_texture(prof_name):
 	player_prof_name = prof_name
 	# Load sprite
@@ -52,7 +50,6 @@ func _on_Battle_Scene_Test_change_texture(prof_name):
 	var prof_max_hp = Globals.temp_player_roster[player_prof_name]["max_hp"]
 	health_bar.max_value = prof_max_hp
 	name_tag.text = player_prof_name
-
 
 # Hook this into the signal from Battle Handler, not UI
 func _used_move(move, prof_1: String, prof_2: String):
