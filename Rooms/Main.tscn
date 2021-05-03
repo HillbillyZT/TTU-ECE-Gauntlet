@@ -135,6 +135,5 @@ position = Vector2( 764.872, 570.138 )
 [connection signal="return_list" from="." to="Player" method="_on_ECE_Map_return_list"]
 [connection signal="Open_Shop" from="Shop" to="Player" method="_on_Shop_Open_Shop"]
 [connection signal="items" from="Shop" to="." method="_on_Shop_items"]
-[connection signal="too_far" from="Too_Far_From_Shop" to="Shop" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="too_far" from="Too_Far_From_Shop" to="Player" method="_on_Too_Far_From_Shop_too_far"]
-[connection signal="body_entered" from="TheHomieUpFront" to="Player" method="_on_TheHomieUpFront_body_entered"]
+[connection signal="too_far" from="Too_Far_From_Shop" to="Shop" method="_on_Too_Far_From_Shop_too_far"]
