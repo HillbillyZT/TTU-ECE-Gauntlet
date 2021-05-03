@@ -86,6 +86,7 @@ func end_battle(player_wins: bool):
 		Globals.calc_GPA(4)
 		Globals.doge += 20
 		emit_signal("bh_battle_ended", "win")
+		player_prof.hp = player_prof.max_hp
 	else:
 		Globals.calc_GPA(0)
 		emit_signal("bh_battle_ended", "loss")

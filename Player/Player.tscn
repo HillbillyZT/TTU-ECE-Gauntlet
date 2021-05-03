@@ -108,6 +108,7 @@ script = ExtResource( 2 )
 position = Vector2( -0.515625, -0.201785 )
 frames = SubResource( 17 )
 animation = "walk_left"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

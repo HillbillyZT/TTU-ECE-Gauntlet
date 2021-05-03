@@ -46,28 +46,33 @@ rotation = 0.0
 portal_exit_pos = Vector2( 670, 720 )
 
 [node name="Room_Transition3" parent="." instance=ExtResource( 11 )]
-position = Vector2( -156.004, 590.863 )
+position = Vector2( -156.004, 590.333 )
 rotation = 0.0
-portal_exit_pos = Vector2( 0, 0 )
+portal_exit_pos = Vector2( 210, 0 )
+room_destination = 1
 
 [node name="Room_Transition4" parent="." instance=ExtResource( 11 )]
 position = Vector2( -584.713, 563.214 )
-portal_exit_pos = Vector2( 670, 720 )
+portal_exit_pos = Vector2( -210, 0 )
+room_destination = 1
 
 [node name="Room_Transition5" parent="." instance=ExtResource( 11 )]
-position = Vector2( -467.576, 485.618 )
+position = Vector2( -467.709, 486.844 )
 rotation = -3.14159
-portal_exit_pos = Vector2( 670, 720 )
+portal_exit_pos = Vector2( -25, 25 )
+room_destination = 2
 
 [node name="Room_Transition6" parent="." instance=ExtResource( 11 )]
-position = Vector2( -566.578, 355.697 )
+position = Vector2( -565.737, 356.538 )
 rotation = -3.92699
-portal_exit_pos = Vector2( 670, 720 )
+portal_exit_pos = Vector2( 55, 55 )
+room_destination = 3
 
 [node name="Room_Transition7" parent="." instance=ExtResource( 11 )]
 position = Vector2( -478.279, 69.0986 )
 rotation = -2.35619
-portal_exit_pos = Vector2( 670, 720 )
+portal_exit_pos = Vector2( -30, 0 )
+room_destination = 4
 
 [node name="Room_Transition8" parent="." instance=ExtResource( 11 )]
 position = Vector2( -529.415, -118.796 )
@@ -135,5 +140,5 @@ position = Vector2( 764.872, 570.138 )
 [connection signal="return_list" from="." to="Player" method="_on_ECE_Map_return_list"]
 [connection signal="Open_Shop" from="Shop" to="Player" method="_on_Shop_Open_Shop"]
 [connection signal="items" from="Shop" to="." method="_on_Shop_items"]
-[connection signal="too_far" from="Too_Far_From_Shop" to="Player" method="_on_Too_Far_From_Shop_too_far"]
 [connection signal="too_far" from="Too_Far_From_Shop" to="Shop" method="_on_Too_Far_From_Shop_too_far"]
+[connection signal="too_far" from="Too_Far_From_Shop" to="Player" method="_on_Too_Far_From_Shop_too_far"]

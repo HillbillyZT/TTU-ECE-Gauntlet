@@ -11,10 +11,10 @@ signal player_store
 var world_scene
 var rooms: Array = [
 	preload("res://Rooms/Test_Room.tscn").instance(), \
-	preload("res://Rooms/Test_Room.tscn").instance(), \
 	preload("res://Rooms/Battle_Rooms/Room2.tscn").instance(), \
-	preload("res://Rooms/Battle_Rooms/Room2.tscn"), \
-	preload("res://Rooms/Battle_Rooms/Room2.tscn")
+	preload("res://Rooms/Battle_Rooms/Room3.tscn").instance(), \
+	preload("res://Rooms/Battle_Rooms/Room4.tscn").instance(), \
+	preload("res://Rooms/Battle_Rooms/Room5.tscn").instance()
 ]
 var prev_scene = null
 #always set to active scene
