@@ -67,7 +67,9 @@ func handle_move(move):
 					e_prof.intel *= move_d[key].z
 	
 	# Apply damage buffer
-	e_prof.hp -= (move_dmg - e_prof.defense * .65)
+	move_dmg *= 1.3 * (s_prof.strength / (s_prof.strength + e_prof.defense))
+	
+	e_prof.hp -= move_dmg
 
 # Probably keys for plr/cpu
 func init_battle(var plr, var cpu):
@@ -82,6 +84,7 @@ func init_battle(var plr, var cpu):
 func end_battle(player_wins: bool):
 	if(player_wins):
 		Globals.calc_GPA(4)
+		Globals.doge += 20
 		emit_signal("bh_battle_ended", "win")
 	else:
 		Globals.calc_GPA(0)

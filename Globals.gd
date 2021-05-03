@@ -10,6 +10,8 @@ func calc_GPA(letter):
 	player_Courses_Taken = player_Courses_Taken + 1
 	player_GPA = gpa / player_Courses_Taken
 
+var doge = 0
+
 const prof_base = {
 	"gale": {
 		hp = 100,
