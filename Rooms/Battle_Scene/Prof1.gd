@@ -7,6 +7,8 @@ var prof_animated
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.connect("change_cur_prof", get_parent().get_parent(), "_change_cur_prof" )
+	var expose = get_tree().get_current_scene()
 	match(index):
 		0: prof_animated = $Prof1_Animated
 		1: prof_animated = $Prof2_Animated
