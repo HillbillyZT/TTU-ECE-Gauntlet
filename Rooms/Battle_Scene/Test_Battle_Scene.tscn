@@ -1,9 +1,7 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Battle/background-ece.png" type="Texture" id=1]
 [ext_resource path="res://Rooms/Battle_Scene/Test_Button.gd" type="Script" id=2]
-[ext_resource path="res://Rooms/Battle_Scene/Prof6.gd" type="Script" id=3]
-[ext_resource path="res://Rooms/Battle_Scene/Prof5.gd" type="Script" id=4]
 [ext_resource path="res://Rooms/Battle_Scene/Professors_Button.gd" type="Script" id=5]
 [ext_resource path="res://Rooms/Battle_Scene/Moves.gd" type="Script" id=6]
 [ext_resource path="res://Rooms/Battle_Scene/BackButton.gd" type="Script" id=7]
@@ -22,9 +20,6 @@
 [ext_resource path="res://Theme/UI.tres" type="Theme" id=20]
 [ext_resource path="res://Rooms/Battle_Scene/Player Prof.gd" type="Script" id=21]
 [ext_resource path="res://Rooms/Battle_Scene/Enemy Prof.gd" type="Script" id=22]
-[ext_resource path="res://Rooms/Battle_Scene/Prof4.gd" type="Script" id=23]
-[ext_resource path="res://Rooms/Battle_Scene/Prof2.gd" type="Script" id=24]
-[ext_resource path="res://Rooms/Battle_Scene/Prof3.gd" type="Script" id=25]
 [ext_resource path="res://Rooms/Battle_Scene/Yes.gd" type="Script" id=26]
 [ext_resource path="res://Sprites/sframes_thumbnail.tres" type="SpriteFrames" id=27]
 
@@ -178,6 +173,7 @@ script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+index = 0
 
 [node name="Prof1_Animated" type="AnimatedSprite" parent="Professor Set/Prof1"]
 position = Vector2( 86, 10 )
@@ -192,10 +188,11 @@ margin_top = 16.0
 margin_right = 353.0
 margin_bottom = 36.0
 text = "Prof"
-script = ExtResource( 24 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+index = 1
 
 [node name="Prof2_Animated" type="AnimatedSprite" parent="Professor Set/Prof2"]
 position = Vector2( -11, 10 )
@@ -210,10 +207,11 @@ margin_top = 67.0
 margin_right = 76.0
 margin_bottom = 87.0
 text = "Prof"
-script = ExtResource( 25 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+index = 2
 
 [node name="Prof3_Animated" type="AnimatedSprite" parent="Professor Set/Prof3"]
 position = Vector2( 86, 10 )
@@ -228,10 +226,11 @@ margin_top = 67.0
 margin_right = 353.0
 margin_bottom = 87.0
 text = "Prof"
-script = ExtResource( 23 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+index = 3
 
 [node name="Prof4_Animated" type="AnimatedSprite" parent="Professor Set/Prof4"]
 position = Vector2( -11, 10 )
@@ -246,10 +245,11 @@ margin_top = 118.0
 margin_right = 76.0
 margin_bottom = 138.0
 text = "Prof"
-script = ExtResource( 4 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+index = 4
 
 [node name="Prof5_Animated" type="AnimatedSprite" parent="Professor Set/Prof5"]
 position = Vector2( 86, 10 )
@@ -264,10 +264,11 @@ margin_top = 118.0
 margin_right = 353.0
 margin_bottom = 138.0
 text = "Prof"
-script = ExtResource( 3 )
+script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+index = 5
 
 [node name="Prof6_Animated" type="AnimatedSprite" parent="Professor Set/Prof6"]
 position = Vector2( -11, 10 )
@@ -453,8 +454,3 @@ script = ExtResource( 19 )
 [connection signal="change_moves" from="." to="Move Set" method="_on_Battle_Scene_Test_change_moves"]
 [connection signal="change_texture" from="." to="Professors/Player Prof" method="_on_Battle_Scene_Test_change_texture"]
 [connection signal="change_cur_prof" from="Professor Set/Prof1" to="." method="_change_cur_prof"]
-[connection signal="change_cur_prof" from="Professor Set/Prof2" to="." method="_change_cur_prof"]
-[connection signal="change_cur_prof" from="Professor Set/Prof3" to="." method="_change_cur_prof"]
-[connection signal="change_cur_prof" from="Professor Set/Prof4" to="." method="_change_cur_prof"]
-[connection signal="change_cur_prof" from="Professor Set/Prof5" to="." method="_change_cur_prof"]
-[connection signal="change_cur_prof" from="Professor Set/Prof6" to="." method="_change_cur_prof"]
