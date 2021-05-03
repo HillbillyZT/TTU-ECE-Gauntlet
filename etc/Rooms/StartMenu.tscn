@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Rooms/Close.gd" type="Script" id=1]
+[ext_resource path="res://Rooms/Load Game.gd" type="Script" id=2]
+[ext_resource path="res://Rooms/New Game.gd" type="Script" id=3]
+[ext_resource path="res://Rooms/About.gd" type="Script" id=4]
+[ext_resource path="res://Rooms/Back.gd" type="Script" id=5]
+[ext_resource path="res://Rooms/About_Screen.gd" type="Script" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Menu" type="Control" parent="."]
+margin_right = 350.0
+margin_bottom = 200.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="New Game" type="Button" parent="Menu"]
+margin_left = 9.0
+margin_top = 103.0
+margin_right = 346.0
+margin_bottom = 123.0
+text = "New Game"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Load Game" type="Button" parent="Menu"]
+margin_left = 9.0
+margin_top = 6.0
+margin_right = 345.0
+margin_bottom = 95.0
+text = "Load Game"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="Menu"]
+margin_left = 12.613
+margin_top = 169.068
+margin_right = 76.613
+margin_bottom = 189.068
+text = "Close"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="About" type="Button" parent="Menu"]
+margin_left = 8.0
+margin_top = 135.0
+margin_right = 349.0
+margin_bottom = 155.0
+text = "About"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 174.553, 99.6375 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="About" type="Control" parent="."]
+margin_right = 350.0
+margin_bottom = 200.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="About"]
+margin_right = 350.0
+margin_bottom = 200.0
+text = "This game is the spawn of 3 Computer Engineering Students at Texas Tech University. 
+"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="About"]
+margin_left = 1.06067
+margin_top = 178.544
+margin_right = 13.0607
+margin_bottom = 198.544
+text = "Back"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
