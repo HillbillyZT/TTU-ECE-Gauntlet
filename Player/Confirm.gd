@@ -9,6 +9,7 @@ func _pressed():
 	var node = get_node("..")
 	node = node.get_parent()
 	if(Globals.doge >= 15):
+		Globals.doge -= 15
 		emit_signal("buy",node.current_item_sel)
 	if(self.text.ends_with("classes")):
 		for child in node.get_children():
