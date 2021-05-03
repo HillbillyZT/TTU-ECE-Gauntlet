@@ -103,6 +103,21 @@ margin_right = 40.0
 margin_bottom = 15.0
 theme = ExtResource( 16 )
 text = "GPA - 4.1"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Doge" type="Label" parent="Info_Screen_Base"]
+margin_top = 15.0
+margin_right = 73.0
+margin_bottom = 30.0
+theme = ExtResource( 16 )
+text = "GPA - 4.1"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 
 [node name="Roster_Screen" type="Control" parent="."]
 visible = false
@@ -333,27 +348,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="update" from="." to="Item_Screen/Item Buttons" method="_on_Player_Backpack_update"]
 [connection signal="update" from="." to="Item_Screen/Item_Info_Screen/Item_Description" method="_update"]
+[connection signal="update" from="." to="Item_Screen/Item Buttons" method="_on_Player_Backpack_update"]
 [connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_Open_Roster"]
 [connection signal="Open_Roster" from="Main_Backpack_Buttons/Roster" to="Roster_Screen" method="_on_Roster_Open_Roster"]
 [connection signal="script_changed" from="Main_Backpack_Buttons/Roster" to="Info_Screen_Base" method="_on_Roster_script_changed"]
-[connection signal="items" from="Main_Backpack_Buttons/Items" to="Item_Screen" method="_on_Items_items"]
 [connection signal="items" from="Main_Backpack_Buttons/Items" to="Info_Screen_Base" method="_on_Items_items"]
+[connection signal="items" from="Main_Backpack_Buttons/Items" to="Item_Screen" method="_on_Items_items"]
 [connection signal="Prof_Pressed" from="Roster_Screen/Prof1" to="Roster_Screen/RichTextLabel" method="_on_Prof1_Prof_Pressed"]
 [connection signal="Prof2_Pressed" from="Roster_Screen/Prof2" to="Roster_Screen/RichTextLabel" method="_on_Prof2_Prof2_Pressed"]
 [connection signal="Prof3_Pressed" from="Roster_Screen/Prof3" to="Roster_Screen/RichTextLabel" method="_on_Prof3_Prof3_Pressed"]
 [connection signal="Prof4_Pressed" from="Roster_Screen/Prof4" to="Roster_Screen/RichTextLabel" method="_on_Prof4_Prof4_Pressed"]
 [connection signal="Prof5_Pressed" from="Roster_Screen/Prof5" to="Roster_Screen/RichTextLabel" method="_on_Prof5_Prof5_Pressed"]
 [connection signal="Prof6_Pressed" from="Roster_Screen/Prof6" to="Roster_Screen/RichTextLabel" method="_on_Prof6_Prof6_Pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Roster_Screen/Back" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Roster_Screen/Back" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Info_Screen_Base" method="_on_Back_back_button_pressed"]
-[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="back_button_pressed" from="Item_Screen/Back2" to="Main_Backpack_Buttons" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen/RichTextLabel" method="_on_Back_back_button_pressed"]
+[connection signal="back_button_pressed" from="Item_Screen/Back2" to="Roster_Screen" method="_on_Back_back_button_pressed"]
 [connection signal="update" from="Item_Screen/Item_Info_Screen/Item_Description" to="Item_Screen/Item_Info_Screen/Professor Buttons" method="_on_Item_Description_update"]
 [connection signal="used" from="Item_Screen/Item_Info_Screen/Item_Description" to="." method="_on_Item_Description_used"]
 [connection signal="Prof_Pressed" from="Item_Screen/Item_Info_Screen/Professor Buttons/Prof1" to="Item_Screen/Item_Info_Screen/Item_Description" method="_Prof_Pressed"]
