@@ -98,8 +98,8 @@ const move_base = {
 	},
 	"Recruitment" : {	# 60% usr atk, 20% enemy atk
 		type = "stat+-",
-		stat_s = Vector3(1.6, 0, 0),
-		stat_e = Vector3(1.2, 0, 0)
+		stat_s = Vector3(1.6, 1, 1),
+		stat_e = Vector3(1.2, 1, 1)
 	},
 	"Integrate" : {
 		type = "dmg",
@@ -135,15 +135,15 @@ const move_base = {
 	},
 	"Computer Vis" : {	# on enemy
 		type = "stat-",
-		stat_e = Vector3(.75, .75, 0)
+		stat_e = Vector3(.75, .75, 1)
 	},
 	"Machine Learn" : {	# int
 		type = "stat+",
-		stat_s = Vector3(0,0,1.5)
+		stat_s = Vector3(1,1,1.5)
 	},
 	"Fourier Trans" : {	# def buff
 		type = "stat+",
-		stat_s = Vector3(0,1.5,0)
+		stat_s = Vector3(1,1.5,1)
 	},
 	"Convolution" : {		# dmg += (atk+def+int)*mult SPECIAL
 		type = "dmg",
@@ -151,7 +151,7 @@ const move_base = {
 	},
 	"Lin Trans" : {
 		type = "stat+",
-		stat_s = Vector3(1.5, 1.5, 0)
+		stat_s = Vector3(1.5, 1.5, 1)
 	},
 	"Node Voltage" : {
 		type = "dmg",
