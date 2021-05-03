@@ -86,3 +86,9 @@ func _on_ECE_Map_return_list(items):
 					for childe in childs.get_children():
 						childe.text = items[i]
 						i += 1
+
+
+func _on_TheHomieUpFront_body_entered(body):
+	for child in self.get_children():
+		if child.name == "You got The Homie Up Front!":
+			child.visible = true

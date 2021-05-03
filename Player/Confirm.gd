@@ -10,4 +10,8 @@ func _pressed():
 	node = node.get_parent()
 	if(Globals.doge >= 15):
 		emit_signal("buy",node.current_item_sel)
+	if(self.text.ends_with("classes")):
+		for child in node.get_children():
+			if child.name == "You got The Homie Up Front!":
+				child.visible = false
 
