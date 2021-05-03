@@ -67,7 +67,7 @@ func handle_move(move):
 					e_prof.intel *= move_d[key].z
 	
 	# Apply damage buffer
-	e_prof.hp -= move_dmg
+	e_prof.hp -= (move_dmg - e_prof.defense * .65)
 
 # Probably keys for plr/cpu
 func init_battle(var plr, var cpu):

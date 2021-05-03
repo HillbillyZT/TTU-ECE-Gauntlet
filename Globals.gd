@@ -111,7 +111,7 @@ const move_base = {
 	},
 	"Three-Stage Amp" : {	# 300% all str, def
 		type = "stat+",
-		stat_s = Vector3(3, 3, 3)
+		stat_s = Vector3(2, 2, 2)
 	},
 	"Interrupt Vect" : {
 		type = "dmg",

@@ -13,6 +13,11 @@ func _ready():
 	else:
 		self.text = keys[0]
 
+func _process(delta):
+	var keys = Globals.temp_player_roster.keys()
+	if(keys.size() == 0): return
+	else:
+		self.text = keys[0]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
