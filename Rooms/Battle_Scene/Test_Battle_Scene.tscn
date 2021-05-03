@@ -53,120 +53,105 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Main Buttons" type="Control" parent="."]
+[node name="Professors" type="Control" parent="."]
 margin_left = -174.0
-margin_top = -102.0
-margin_right = 177.0
-margin_bottom = 98.0
+margin_top = -97.0
+margin_right = 173.0
+margin_bottom = 63.0
 theme = ExtResource( 20 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Moves" type="Button" parent="Main Buttons"]
-margin_left = 3.0
-margin_top = 157.0
-margin_right = 74.0
-margin_bottom = 197.0
-text = "Moves"
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Player Prof" type="Sprite" parent="Professors"]
+position = Vector2( 115, 101 )
+script = ExtResource( 21 )
 
-[node name="Hire" type="Button" parent="Main Buttons"]
-margin_left = 76.0
-margin_top = 157.0
-margin_right = 147.0
-margin_bottom = 197.0
-text = "Hire"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Enemy Prof" type="Sprite" parent="Professors"]
+position = Vector2( 235, 82 )
+script = ExtResource( 22 )
 
-[node name="Professors" type="Button" parent="Main Buttons"]
-margin_left = 203.0
-margin_top = 157.0
-margin_right = 274.0
-margin_bottom = 197.0
-text = "Profs"
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Move_Tween" type="Tween" parent="Professors"]
+script = ExtResource( 11 )
 
-[node name="Drop" type="Button" parent="Main Buttons"]
-margin_left = 276.0
-margin_top = 157.0
-margin_right = 347.0
-margin_bottom = 197.0
-text = "Drop"
-script = ExtResource( 19 )
-
-[node name="Move Set" type="Control" parent="."]
-margin_left = -120.0
-margin_top = -27.0
-margin_right = 54.0
-margin_bottom = 72.0
+[node name="Player_Ctrl_Tags" type="Control" parent="Professors"]
+margin_left = 24.0
+margin_top = 25.0
+margin_right = 174.0
+margin_bottom = 49.0
 theme = ExtResource( 20 )
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="Move1" type="Button" parent="Move Set"]
-margin_left = -51.0
-margin_top = 82.0
-margin_right = 92.0
-margin_bottom = 101.0
-text = "Move 1"
-script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Move2" type="Button" parent="Move Set"]
-margin_left = 146.0
-margin_top = 82.0
-margin_right = 293.0
-margin_bottom = 101.0
-text = "Move 2"
-script = ExtResource( 9 )
+[node name="Player_HB" type="TextureProgress" parent="Professors/Player_Ctrl_Tags"]
+margin_top = 13.0
+margin_right = 150.0
+margin_bottom = 24.0
+value = 100.0
+texture_under = ExtResource( 16 )
+texture_over = ExtResource( 13 )
+texture_progress = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Move3" type="Button" parent="Move Set"]
-margin_left = -51.0
-margin_top = 103.0
-margin_right = 92.0
-margin_bottom = 122.0
-text = "Move 3"
-script = ExtResource( 9 )
+[node name="Player_Name" type="Label" parent="Professors/Player_Ctrl_Tags"]
+margin_left = 2.0
+margin_right = 149.0
+margin_bottom = 15.0
+text = "ptag"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Move4" type="Button" parent="Move Set"]
-margin_left = 146.0
-margin_top = 103.0
-margin_right = 293.0
-margin_bottom = 122.0
-text = "Move 4"
-script = ExtResource( 9 )
+[node name="Player_Health" type="Label" parent="Professors/Player_Ctrl_Tags"]
+margin_left = 2.0
+margin_right = 149.0
+margin_bottom = 15.0
+text = "ptag"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Back" type="Button" parent="Move Set"]
-margin_left = 94.0
-margin_top = 92.0
-margin_right = 144.0
-margin_bottom = 112.0
-text = "Back"
-script = ExtResource( 7 )
+[node name="Enemy_Ctrl_Tags" type="Control" parent="Professors"]
+margin_left = 174.0
+margin_top = -6.0
+margin_right = 324.0
+margin_bottom = 18.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_HB" type="TextureProgress" parent="Professors/Enemy_Ctrl_Tags"]
+margin_top = 13.0
+margin_right = 150.0
+margin_bottom = 24.0
+value = 100.0
+texture_under = ExtResource( 16 )
+texture_over = ExtResource( 13 )
+texture_progress = ExtResource( 12 )
+fill_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Name" type="Label" parent="Professors/Enemy_Ctrl_Tags"]
+margin_left = 4.0
+margin_right = 149.0
+margin_bottom = 15.0
+text = "e-tag"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Health" type="Label" parent="Professors/Enemy_Ctrl_Tags"]
+margin_left = 4.0
+margin_right = 149.0
+margin_bottom = 15.0
+text = "e-health"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -302,109 +287,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Professors" type="Control" parent="."]
-margin_left = -174.0
-margin_top = -97.0
-margin_right = 173.0
-margin_bottom = 63.0
-theme = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Player Prof" type="Sprite" parent="Professors"]
-position = Vector2( 115, 101 )
-script = ExtResource( 21 )
-
-[node name="Enemy Prof" type="Sprite" parent="Professors"]
-position = Vector2( 235, 82 )
-script = ExtResource( 22 )
-
-[node name="Move_Tween" type="Tween" parent="Professors"]
-script = ExtResource( 11 )
-
-[node name="Player_Ctrl_Tags" type="Control" parent="Professors"]
-margin_left = 24.0
-margin_top = 25.0
-margin_right = 174.0
-margin_bottom = 49.0
-theme = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Player_HB" type="TextureProgress" parent="Professors/Player_Ctrl_Tags"]
-margin_top = 13.0
-margin_right = 150.0
-margin_bottom = 24.0
-value = 100.0
-texture_under = ExtResource( 16 )
-texture_over = ExtResource( 13 )
-texture_progress = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Player_Name" type="Label" parent="Professors/Player_Ctrl_Tags"]
-margin_left = 2.0
-margin_right = 149.0
-margin_bottom = 15.0
-text = "ptag"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Player_Health" type="Label" parent="Professors/Player_Ctrl_Tags"]
-margin_left = 2.0
-margin_right = 149.0
-margin_bottom = 15.0
-text = "ptag"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Enemy_Ctrl_Tags" type="Control" parent="Professors"]
-margin_left = 174.0
-margin_top = -6.0
-margin_right = 324.0
-margin_bottom = 18.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Enemy_HB" type="TextureProgress" parent="Professors/Enemy_Ctrl_Tags"]
-margin_top = 13.0
-margin_right = 150.0
-margin_bottom = 24.0
-value = 100.0
-texture_under = ExtResource( 16 )
-texture_over = ExtResource( 13 )
-texture_progress = ExtResource( 12 )
-fill_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Enemy_Name" type="Label" parent="Professors/Enemy_Ctrl_Tags"]
-margin_left = 4.0
-margin_right = 149.0
-margin_bottom = 15.0
-text = "e-tag"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Enemy_Health" type="Label" parent="Professors/Enemy_Ctrl_Tags"]
-margin_left = 4.0
-margin_right = 149.0
-margin_bottom = 15.0
-text = "e-health"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Drop Set" type="Control" parent="."]
 margin_left = -174.0
 margin_top = 63.0
@@ -450,12 +332,126 @@ margin_bottom = 32.0
 text = "No"
 script = ExtResource( 18 )
 
+[node name="Move Set" type="Control" parent="."]
+margin_left = -120.0
+margin_top = -27.0
+margin_right = 54.0
+margin_bottom = 72.0
+theme = ExtResource( 20 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Move1" type="Button" parent="Move Set"]
+margin_left = -51.0
+margin_top = 82.0
+margin_right = 92.0
+margin_bottom = 101.0
+text = "Move 1"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move2" type="Button" parent="Move Set"]
+margin_left = 146.0
+margin_top = 82.0
+margin_right = 293.0
+margin_bottom = 101.0
+text = "Move 2"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move3" type="Button" parent="Move Set"]
+margin_left = -51.0
+margin_top = 103.0
+margin_right = 92.0
+margin_bottom = 122.0
+text = "Move 3"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Move4" type="Button" parent="Move Set"]
+margin_left = 146.0
+margin_top = 103.0
+margin_right = 293.0
+margin_bottom = 122.0
+text = "Move 4"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Move Set"]
+margin_left = 94.0
+margin_top = 92.0
+margin_right = 144.0
+margin_bottom = 112.0
+text = "Back"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main Buttons" type="Control" parent="."]
+margin_left = -174.0
+margin_top = -102.0
+margin_right = 177.0
+margin_bottom = 98.0
+theme = ExtResource( 20 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Moves" type="Button" parent="Main Buttons"]
+margin_left = 3.0
+margin_top = 157.0
+margin_right = 74.0
+margin_bottom = 197.0
+text = "Moves"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hire" type="Button" parent="Main Buttons"]
+margin_left = 76.0
+margin_top = 157.0
+margin_right = 147.0
+margin_bottom = 197.0
+text = "Hire"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Professors" type="Button" parent="Main Buttons"]
+margin_left = 203.0
+margin_top = 157.0
+margin_right = 274.0
+margin_bottom = 197.0
+text = "Profs"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drop" type="Button" parent="Main Buttons"]
+margin_left = 276.0
+margin_top = 157.0
+margin_right = 347.0
+margin_bottom = 197.0
+text = "Drop"
+script = ExtResource( 19 )
+
 [connection signal="change_moves" from="." to="Move Set" method="_on_Battle_Scene_Test_change_moves"]
 [connection signal="change_texture" from="." to="Professors/Player Prof" method="_on_Battle_Scene_Test_change_texture"]
-[connection signal="used_move" from="Move Set/Move1" to="Professors/Player Prof" method="_used_move"]
-[connection signal="used_move" from="Move Set/Move2" to="Professors/Player Prof" method="_used_move"]
-[connection signal="used_move" from="Move Set/Move3" to="Professors/Player Prof" method="_used_move"]
-[connection signal="used_move" from="Move Set/Move4" to="Professors/Player Prof" method="_used_move"]
 [connection signal="change_cur_prof" from="Professor Set/Prof1" to="." method="_change_cur_prof"]
 [connection signal="change_cur_prof" from="Professor Set/Prof2" to="." method="_change_cur_prof"]
 [connection signal="change_cur_prof" from="Professor Set/Prof3" to="." method="_change_cur_prof"]

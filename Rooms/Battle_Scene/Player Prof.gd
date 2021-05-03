@@ -27,6 +27,8 @@ func _ready():
 	# Set up health bar and set name tag
 	health_bar.max_value = Globals.temp_player_roster[player_prof_name]["max_hp"]
 	name_tag.text = player_prof_name
+	
+	BattleHandler.connect("bh_used_move", self, "_used_move")
 
 func _process(delta):
 	health_bar.value = Globals.temp_player_roster[player_prof_name]["hp"]
@@ -51,7 +53,10 @@ func _on_Battle_Scene_Test_change_texture(prof_name):
 	health_bar.max_value = prof_max_hp
 	name_tag.text = player_prof_name
 
-func _used_move(move):
+
+# Hook this into the signal from Battle Handler, not UI
+func _used_move(move, player_prof_name, cpu_prof_name):
+	if(move == "0"): return
 	if Globals.move_base[move].type == "dmg":
 		move_effect.move_dmg("Player Prof", "Enemy Prof")
 	elif Globals.move_base[move].type == "stat+":

@@ -11,6 +11,8 @@ var move_heal = 0;
 var move_stat = Vector3.ZERO
 var move_stat_dir = -1;
 
+signal bh_used_move;
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -87,7 +89,7 @@ func _on_player_move(move):
 		return
 	handle_move(move)
 	
-	_on_move()
+	_on_move(move)
 	
 	pass
 
@@ -97,10 +99,10 @@ func _on_cpu_move(key):
 	yield(get_tree().create_timer(1.5 + randf() - 0.5), "timeout")
 	
 	# Validate move unnecessary
-	_on_move()
+	_on_move(key)
 
 # Called after every move
-func _on_move():
+func _on_move(move):
 	# Check player and cpu prof HP after every move
 	if(player_prof.hp <= 0):
 		pass
@@ -113,5 +115,22 @@ func _on_move():
 	active_prof = cpu_prof if (active_prof == player_prof) else player_prof
 	if(active_prof == cpu_prof): _on_cpu_move("0")
 	
+	var names = get_prof_names()
+	# Emit signal with move, player, cpu names
+	emit_signal("bh_used_move", move, names[0], names[1])
+	
 	# End conditions, gpa, yeet cetera
 	pass
+
+# The least efficient function in this game??
+func get_prof_names():
+	var cpu_name
+	var ppf_name
+	
+	for key in Globals.prof_current:
+		if(Globals.prof_current[key] == cpu_prof):
+			cpu_name=key
+		if(Globals.temp_player_roster[key] == player_prof):
+			ppf_name=key
+	
+	return [ppf_name, cpu_name]
